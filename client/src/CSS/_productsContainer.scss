@@ -1,0 +1,190 @@
+@import "./variables";
+
+.jewellery-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+  overflow: auto;
+  width: 100%;
+  margin-top: 30px;
+
+  .jewellery-card {
+    border: 1px solid rgba($color: $mainBg, $alpha: 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 5px;
+    width: 225px;
+    overflow: hidden;
+    height: 330px;
+    cursor: pointer;
+
+    .imgBox {
+      height: 170px;
+      width: 225px;
+      overflow: hidden;
+      border-radius: 5px 5px 0 0;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // border: 2px solid red;
+
+      .jewellery-image {
+        height: 70%;
+        width: 70%;
+        object-fit: cover;
+        transition: all 0.2s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .card-details {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 130px;
+      gap: 5px;
+
+      .jewellery-title {
+        font-weight: 500;
+        color: $mainBg;
+        text-align: center;
+        font-size: 18px;
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 200px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .jewellery-description {
+        font-weight: 300;
+        color: rgba($color: $mainBg, $alpha: 0.75);
+        font-size: 14px;
+        text-align: center;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .material-container {
+        // border: 2px solid red;
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        gap: 5px;
+        margin: 5px 0;
+
+        .material {
+          height: 25px;
+          width: 25px;
+          // border: 2px solid red;
+          border-radius: 50%;
+
+          &.gold {
+            background: linear-gradient(
+              30deg,
+              #e1b94f 0,
+              #fcf1d5 55%,
+              #fcf1d5 60%,
+              #e1b94f 100%
+            ) !important;
+          }
+          &.rosegold {
+            background: linear-gradient(
+              30deg,
+              #ec8a55 0,
+              #fcede2 55%,
+              #fcede2 60%,
+              #ec8a55 100%
+            ) !important;
+          }
+          &.whitegold,
+          &.silver {
+            background: linear-gradient(
+              30deg,
+              #b3b2af 0,
+              #f7f7f7 55%,
+              #f7f7f7 60%,
+              #b3b2af 100%
+            ) !important;
+          }
+          &.active {
+            border: 1px solid $mainBg;
+          }
+        }
+      }
+      .actionBtns {
+        display: flex;
+        gap: 10px;
+
+        button {
+          font-size: 16px;
+          border-radius: 100%;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 7px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &.edit {
+            border: 2px solid $mainBg;
+            background-color: $mainBg;
+            color: $fontcolor;
+            &:hover {
+              background-color: $fontcolor;
+              color: $mainBg;
+            }
+          }
+          &.delete {
+            border: 2px solid red;
+            background-color: red;
+            color: $fontcolor;
+            &:hover {
+              background-color: $fontcolor;
+              color: red;
+            }
+          }
+        }
+      }
+      .inquiry-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $mainBg;
+        color: $fontcolor;
+        border: none;
+        border-radius: 30px;
+        padding: 5px 15px;
+        font-size: 12px;
+        font-weight: 400;
+        border: 1px solid $mainBg;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        ion-icon {
+          font-size: 14px;
+          margin-left: 5px;
+        }
+
+        &:hover {
+          background-color: $fontcolor;
+          color: $mainBg;
+        }
+      }
+    }
+  }
+}

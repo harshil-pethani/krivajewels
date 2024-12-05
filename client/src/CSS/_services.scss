@@ -1,0 +1,22 @@
+@import "./variables";
+
+.services-component {
+  //   border: 2px solid red;
+  // background-color: rgba($color: $mainBg, $alpha: 0.05);
+  padding: 30px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+
+  .service {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 340px;
+
+    .description {
+      color: $mainBg;
+    }
+  }
+}

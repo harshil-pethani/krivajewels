@@ -1,0 +1,250 @@
+// @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Belleza&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Belleza&display=swap");
+@import "./scrollToTopArrow";
+@import "./navbar";
+@import "./header";
+@import "./category";
+@import "./topSellingItems";
+@import "./customizeJewellery";
+@import "./services";
+@import "./footer";
+@import "./exploreProducts";
+@import "./adminLogin";
+@import "./adminLayout";
+@import "./adminTop";
+@import "./loadingOverlay";
+@import "./singleProduct";
+@import "./productsContainer";
+@import "./faq";
+@import "./simpleTextComponent";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: $mainBg;
+  border: 2px solid $mainBg;
+  color: $fontcolor;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  gap: 5px;
+
+  &:hover {
+    background-color: $fontcolor;
+    color: $mainBg;
+  }
+}
+
+// .fullLayer {
+//   height: 100vh;
+//   width: 100vw;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 100;
+//   background-color: red;
+// }
+
+.no-data {
+  width: 100%;
+  text-align: center;
+  font-weight: 400;
+  margin: 20px 0;
+  font-size: 22px;
+}
+
+.filterContainer {
+  // border: 2px solid red;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 30px;
+  width: 100%;
+
+  .filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // border: 2px solid red;
+    width: 100%;
+    gap: 10px;
+
+    .leftPart {
+      // border: 2px solid red;
+      width: calc(100% - 300px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .searchBox {
+        border: 2px solid $mainBg;
+        border-right: none;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: $fontcolor;
+        // border-radius: 5px;
+        height: 40px;
+        padding: 0;
+
+        input {
+          width: 100%;
+          padding: 6px;
+          padding-left: 10px;
+          outline: none;
+          border: none;
+          background: transparent;
+          height: 40px;
+          // border: 1px solid red;
+        }
+        ion-icon {
+          // border: 2px solid red;
+          background: $mainBg;
+          color: $fontcolor;
+          font-size: 22px;
+          padding: 8px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+        button {
+          height: 40px;
+          padding: 6px 12px;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+    .centerPart {
+      display: flex;
+      align-items: center;
+
+      .filterText {
+        font-size: 18px;
+        margin-right: 5px;
+      }
+
+      .dropdowns-container {
+        display: flex;
+        gap: 10px;
+        margin-left: 10px;
+
+        .dropDown {
+          width: max-content;
+          // min-width: 200px;
+          position: relative;
+          user-select: none;
+          // margin: 0 10px;
+
+          .dropDown-Btn {
+            padding: 5px 10px;
+            height: 40px;
+            background: gray;
+            // border-radius: 5px;
+            box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+            font-weight: 300;
+            font-size: 16px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: none;
+            cursor: pointer;
+            gap: 5px;
+          }
+
+          .dropDown-content {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            padding: 3px 0;
+            background: gray;
+            box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+            font-weight: 300;
+            // border-radius: 5px;
+            color: white;
+            z-index: 2;
+            width: 100%;
+            z-index: 4;
+
+            ul {
+              list-style: none;
+              .dropDown-item {
+                padding: 5px 10px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                transition: all 0.2s;
+
+                &:hover {
+                  background-color: $mainBg;
+                }
+
+                ion-icon {
+                  font-size: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .filter-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    // border: 2px solid red;
+    width: 100%;
+
+    .appliedFiltersContainer {
+      display: flex;
+      .appliedCategoryFilter {
+        display: flex;
+        align-items: center;
+
+        .appliedFilter {
+          border: 2px solid $mainBg;
+          padding: 3px 10px;
+          display: flex;
+          align-items: center;
+          border-radius: 30px;
+          margin-right: 10px;
+          gap: 5px;
+
+          ion-icon {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  // .reset-button {
+  //   // border: 2px solid red;
+  //   background-color: rgb(216, 42, 42);
+  //   border: none;
+  //   color: white;
+  //   cursor: pointer;
+  //   // border-radius: 5px;
+  //   font-size: 16px;
+  //   width: fit-content;
+  //   margin-left: 20px;
+  // }
+}

@@ -1,0 +1,91 @@
+@import "./variables";
+
+.top-selling-component {
+  background-color: rgba($color: $mainBg, $alpha: 0.05);
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: "Belleza", sans-serif;
+    color: $mainBg;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -76px;
+      width: 50px;
+      height: 3px;
+      background-color: $mainBg;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -76px;
+      width: 50px;
+      height: 3px;
+      background-color: $mainBg;
+    }
+  }
+
+  .jewellery-types {
+    // border: 2px solid red;
+    display: flex;
+    gap: 20px;
+
+    .jewellery-type {
+      position: relative;
+      color: $secondary;
+      text-decoration: none;
+      font-size: 16px;
+      transition: all 0.2s ease;
+
+      &:hover,
+      &.active {
+        color: $mainBg;
+      }
+    }
+    .seperator {
+      height: 24px;
+      width: 2px;
+      background-color: $secondary;
+    }
+  }
+
+  .viewmore {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $mainBg;
+    color: $fontcolor;
+    border: none;
+    padding: 8px 30px;
+    font-size: 14px;
+    font-weight: 400;
+    border: 2px solid $mainBg;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    //   clipPath: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+
+    ion-icon {
+      font-size: 20px;
+      margin-left: 5px;
+    }
+
+    &:hover {
+      background-color: $fontcolor;
+      color: $mainBg;
+      border: 2px solid $mainBg;
+    }
+  }
+}

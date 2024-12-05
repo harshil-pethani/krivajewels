@@ -1,0 +1,55 @@
+@import "./variables";
+
+.explore-product-component {
+  background-color: rgba($color: $mainBg, $alpha: 0.05);
+  padding: 30px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px - 200px - 120px);
+
+  .title {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: "Belleza", sans-serif;
+    color: $mainBg;
+    position: relative;
+    // border: 2px solid red;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -76px;
+      width: 50px;
+      height: 3px;
+      background-color: $mainBg;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -76px;
+      width: 50px;
+      height: 3px;
+      background-color: $mainBg;
+    }
+  }
+
+  .subtitle {
+    // border: 2px solid red;
+    font-weight: 300;
+  }
+
+  .searchResultText {
+    font-size: 18px;
+    // border: 2px solid red;
+    width: 100%;
+
+    span {
+      font-weight: 500;
+    }
+  }
+}

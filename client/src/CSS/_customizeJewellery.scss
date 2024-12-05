@@ -1,0 +1,79 @@
+@import "./variables";
+
+.customize-jewellery-component {
+  // border: 2px solid red;
+  padding: 50px 100px;
+  display: flex;
+  align-items: center;
+  // background-color: rgba($color: $primary, $alpha: 0.05);
+  gap: 50px;
+
+  .left {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .title {
+      font-size: 32px;
+      font-weight: 600;
+      color: $mainBg;
+      position: relative;
+    }
+    .description {
+      font-weight: 300;
+      color: rgba($color: $mainBg, $alpha: 0.75);
+      font-size: 16px;
+    }
+    .learnmore {
+      align-self: flex-start;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $mainBg;
+      color: $fontcolor;
+      border: none;
+      padding: 8px 35px;
+      font-size: 14px;
+      font-weight: 400;
+      border: 2px solid $mainBg;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+      //   clipPath: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+
+      ion-icon {
+        font-size: 20px;
+        margin-left: 5px;
+      }
+
+      &:hover {
+        background-color: $fontcolor;
+        color: $mainBg;
+        border: 2px solid $mainBg;
+      }
+    }
+  }
+  .right {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    position: relative;
+
+    img {
+      height: 400px;
+      width: 250px;
+      object-fit: cover;
+      border-radius: 7px;
+
+      &.small {
+        height: auto;
+        width: auto;
+        position: absolute;
+        left: 50px;
+      }
+    }
+  }
+}
