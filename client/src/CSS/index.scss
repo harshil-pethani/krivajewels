@@ -1,6 +1,8 @@
 // @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Belleza&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Belleza&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import "./scrollToTopArrow";
 @import "./navbar";
 @import "./header";
@@ -27,10 +29,28 @@
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 5px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: $darkBlue;
+}
+
 button {
   padding: 5px 10px;
-  background-color: $mainBg;
-  border: 2px solid $mainBg;
+  background-color: $darkBlue;
+  border: 2px solid $darkBlue;
   color: $fontcolor;
   cursor: pointer;
   transition: all ease 0.3s;
@@ -41,21 +61,21 @@ button {
   width: fit-content;
   gap: 5px;
 
+  &.btn-secondary {
+    background-color: $fontcolor;
+    color: $darkBlue;
+  }
+
+  ion-icon {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+
   &:hover {
     background-color: $fontcolor;
-    color: $mainBg;
+    color: $darkBlue;
   }
 }
-
-// .fullLayer {
-//   height: 100vh;
-//   width: 100vw;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   z-index: 100;
-//   background-color: red;
-// }
 
 .no-data {
   width: 100%;
@@ -145,7 +165,6 @@ button {
 
         .dropDown {
           width: max-content;
-          // min-width: 200px;
           position: relative;
           user-select: none;
           // margin: 0 10px;
@@ -153,11 +172,11 @@ button {
           .dropDown-Btn {
             padding: 5px 10px;
             height: 40px;
-            background: gray;
+            background: $darkBlue;
             // border-radius: 5px;
             box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
             font-weight: 300;
-            font-size: 16px;
+            font-size: 14px;
             color: white;
             display: flex;
             align-items: center;
@@ -235,16 +254,93 @@ button {
       }
     }
   }
+}
 
-  // .reset-button {
-  //   // border: 2px solid red;
-  //   background-color: rgb(216, 42, 42);
-  //   border: none;
-  //   color: white;
-  //   cursor: pointer;
-  //   // border-radius: 5px;
-  //   font-size: 16px;
-  //   width: fit-content;
-  //   margin-left: 20px;
-  // }
+.section-title {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: "Belleza", sans-serif;
+  color: $black;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -76px;
+    width: 50px;
+    height: 3px;
+    background-color: $black;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -76px;
+    width: 50px;
+    height: 3px;
+    background-color: $black;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .section-title {
+    font-size: 26px;
+    font-weight: 600;
+
+    &::before {
+      right: -60px;
+      width: 40px;
+      height: 2px;
+    }
+
+    &::after {
+      left: -60px;
+      width: 40px;
+      height: 2px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 3px;
+    background-color: #f5f5f5;
+  }
+  .section-title {
+    font-size: 22px;
+    font-weight: 600;
+
+    &::before {
+      right: -40px;
+      width: 30px;
+      height: 2px;
+    }
+
+    &::after {
+      left: -40px;
+      width: 30px;
+      height: 2px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .section-title {
+    font-size: 18px;
+
+    &::before {
+      right: -40px;
+      width: 30px;
+      height: 2px;
+    }
+
+    &::after {
+      left: -40px;
+      width: 30px;
+      height: 2px;
+    }
+  }
 }

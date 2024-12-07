@@ -1,7 +1,6 @@
 // import axios from 'axios';
 import React, { useState } from 'react'
 import logoImg from "/logo2.png";
-// import loginIllustrator from "/login.png";
 import { Link } from 'react-router-dom';
 import { loginApi } from '../Config/API_constant';
 import apiRequest from '../CommonUtil';
@@ -77,12 +76,12 @@ const AdminLogin = ({ setAdminLogged, setAdminDetails }) => {
                         <label htmlFor="email">
                             Email<span>*</span>
                         </label>
-                        <input id="email" value={credentials.email} type="email" onChange={(e) => setCredentials({ ...credentials, email: e.target.value.toLowerCase() })} />
+                        <input id="email" value={credentials.email} type="email" placeholder="Enter your Email" onChange={(e) => setCredentials({ ...credentials, email: e.target.value.toLowerCase() })} />
 
                         <label htmlFor="password">
                             Password<span>*</span>
                         </label>
-                        <input id="password" value={credentials.password} onChange={(e) => setCredentials({ ...credentials, password: e.target.value })} type="password" />
+                        <input id="password" value={credentials.password} placeholder="Enter your password" onChange={(e) => setCredentials({ ...credentials, password: e.target.value })} type="password" />
                         <button onClick={handleLogin}>
                             Login
                         </button>

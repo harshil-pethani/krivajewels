@@ -1,47 +1,19 @@
 @import "./variables";
 
 .faqSection {
-  background-color: rgba($color: $mainBg, $alpha: 0.05);
+  background-color: rgba($color: $darkBlue, $alpha: 0.05);
   width: 100%;
   height: fit-content;
-  color: $mainBg;
+  color: $darkBlue;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 100px;
+  padding: 25px 100px;
+  padding-bottom: 50px;
   position: relative;
   // border: 2px solid red;
 
-  .title {
-    font-size: 32px;
-    font-weight: 600;
-    font-family: "Belleza", sans-serif;
-    color: $mainBg;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: -76px;
-      width: 50px;
-      height: 3px;
-      background-color: $mainBg;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: -76px;
-      width: 50px;
-      height: 3px;
-      background-color: $mainBg;
-    }
-  }
-
   .questionsContainer {
-    // border: 2px solid red;
     margin-top: 20px;
     width: 65%;
     details {
@@ -65,34 +37,30 @@
     details .que {
       width: 90%;
       position: relative;
-      color: $mainBg;
+      color: $darkBlue;
       cursor: pointer;
       font-size: 16px;
-      font-weight: 300;
+      font-weight: 500;
       list-style: none;
       // border: 2px solid red;
     }
 
     details .btn {
       font-size: 30px;
-      color: $mainBg;
+      color: $darkBlue;
       padding: 0;
       transform-origin: center;
       transition: all 0.5s ease;
     }
 
     details .ans {
+      color: $black;
       padding: 10px;
       padding-top: 0;
-      font-size: 16px;
+      font-size: 15px;
       width: 90%;
       text-align: left;
-
-      a {
-        color: white;
-        font-style: italic;
-        padding-left: 10px;
-      }
+      font-weight: 300;
     }
 
     details[open] summary .btn {
@@ -107,21 +75,11 @@
       display: none;
     }
   }
-
-  .faqBgFont {
-    position: absolute;
-    top: 130px;
-    transform: translateX(-50%);
-    left: 50%;
-    img {
-      width: 80%;
-    }
-  }
 }
 
 @media screen and (max-width: 768px) {
   .faqSection {
-    background-color: $mainBg;
+    background-color: $darkBlue;
     width: 100%;
     height: fit-content;
     color: white;
@@ -147,7 +105,7 @@
         left: 50%;
         transform: skew(-40deg) translateX(-50%);
         position: absolute;
-        background-color: $mainBg;
+        background-color: $darkBlue;
       }
     }
 
@@ -187,7 +145,7 @@
 
       details .btn {
         font-size: 50px;
-        color: $mainBg;
+        color: $darkBlue;
         padding: 0;
         transform-origin: center;
         transition: all 0.5s ease;

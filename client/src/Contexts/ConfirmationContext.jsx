@@ -32,11 +32,11 @@ export const ConfirmationProvider = ({ children }) => {
                 <div className="mailPopUpLayer addCategory">
                     <div className="popUpBox">
                         <h3 className="confirmationMessage">{confirmation.message}</h3>
-                        <div className="btn-container">
+                        <div className="btn-container confirmation">
                             <button onClick={() => { confirmation.onConfirm(); handleClose(); }}>
                                 Yes
                             </button>
-                            <button onClick={() => { confirmation.onCancel(); handleClose(); }}>
+                            <button className="btn-secondary" onClick={() => { confirmation.onCancel(); handleClose(); }}>
                                 No
                             </button>
                         </div>

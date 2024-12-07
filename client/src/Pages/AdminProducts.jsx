@@ -427,9 +427,14 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                                             }
                                         }} type="file" multiple accept="image/*,video/*" />
 
-                                        <button onClick={addProduct} type="submit">
-                                            Submit
-                                        </button>
+                                        <div className="btn-container">
+                                            <button onClick={() => setShowPopup("")} className="btn-secondary" type="submit">
+                                                Cancel
+                                            </button>
+                                            <button onClick={addProduct} type="submit">
+                                                Submit
+                                            </button>
+                                        </div>
                                     </form>
                                 </div>
                             }
@@ -482,9 +487,14 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                                             }
                                         </select>
 
-                                        <button onClick={(e) => handleUpdateProduct(e, updateProduct._id)} type="submit">
-                                            Update
-                                        </button>
+                                        <div className="btn-container">
+                                            <button onClick={() => setShowPopup("")} className="btn-secondary" type="submit">
+                                                Cancel
+                                            </button>
+                                            <button onClick={(e) => handleUpdateProduct(e, updateProduct._id)} type="submit">
+                                                Update
+                                            </button>
+                                        </div>
                                     </form>
                                 </div>
                             }

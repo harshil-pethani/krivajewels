@@ -8,7 +8,6 @@ const Category = () => {
     const [imageUrls, setImageUrls] = useState([]);
 
     useEffect(() => {
-        // setIsLoading(true);
         async function getAllCategories() {
             try {
                 const data = await apiRequest(getAllCategoriesApi, 'GET');
@@ -21,7 +20,6 @@ const Category = () => {
             } catch (error) {
                 console.error('Failed to fetch categories:', error);
             } finally {
-                // setIsLoading(false);
             }
         }
         getAllCategories();
@@ -29,13 +27,12 @@ const Category = () => {
 
     return (
         <div id='category' className="categoryComponent">
-            <p className="title">
+            <p className="section-title">
                 Shop By Categories
             </p>
             <div className="categoryContainer">
                 {
                     categories.map((category, index) => (
-
                         <Link to={`/explore?category=${category?._id}`} key={index} className="categoryBox">
                             <div className="imgBox">
                                 <img className="categoryImage" src={imageUrls[category._id]} alt={category.title} />

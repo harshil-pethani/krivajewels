@@ -46,7 +46,7 @@ const CustomizePage = () => {
             <ScrollToTopArrow />
             <Navbar sendSearchQuery={(queryString) => { setSearchQuery(queryString); }} />
             <div className="simple-text-component">
-                <p className="title">
+                <p className="section-title">
                     Cutomize Jewellery
                 </p>
                 <p className="main-sub-title">
@@ -82,7 +82,7 @@ const CustomizePage = () => {
                         </div>
                         <div className="right">
                             <p className="desc">
-                                After the design has been finalized, Luxica provides the customer with a quote for the custom piece of Jewelry. The quote includes the Price of Gold, Lab Grown Diamond, and making charge.
+                                After the design has been finalized, Kriva provides the customer with a quote for the custom piece of Jewelry. The quote includes the Price of Gold, Lab Grown Diamond, and making charge.
                             </p>
                         </div>
                     </div>
@@ -99,7 +99,7 @@ const CustomizePage = () => {
                         </div>
                         <div className="right">
                             <p className="desc">
-                                After the Luxica has created design, we send a photo or digital rendering to the customer for approval, the customer can provide feedback and request any changes the want made.
+                                After the Kriva has created design, we send a photo or digital rendering to the customer for approval, the customer can provide feedback and request any changes the want made.
                             </p>
                         </div>
                     </div>
@@ -133,7 +133,7 @@ const CustomizePage = () => {
                         </div>
                         <div className="right">
                             <p className="desc">
-                                Once the payment is received, Luxica begins the production process. Diamonds are carefully selected and expertly crafted into stunning pieces of Jewelry.
+                                Once the payment is received, Kriva begins the production process. Diamonds are carefully selected and expertly crafted into stunning pieces of Jewelry.
                             </p>
                         </div>
                     </div>
@@ -150,7 +150,7 @@ const CustomizePage = () => {
                         </div>
                         <div className="right">
                             <p className="desc">
-                                The finished piece is thoroughly inspected By Luxica’s Expert Team to ensure that it meets the customer's requirements and is of the highest quality.
+                                The finished piece is thoroughly inspected By Kriva’s Expert Team to ensure that it meets the customer's requirements and is of the highest quality.
                             </p>
                         </div>
                     </div>
@@ -167,7 +167,7 @@ const CustomizePage = () => {
                         </div>
                         <div className="right">
                             <p className="desc">
-                                Luxica’s Provides IGI Certificate for Solitaire Diamonds and SGL Certificate for Jewelry. Also Provide Gold with Hallmarking.
+                                Kriva’s Provides IGI Certificate for Solitaire Diamonds and SGL Certificate for Jewelry. Also Provide Gold with Hallmarking.
                             </p>
                         </div>
                     </div>
@@ -184,7 +184,7 @@ const CustomizePage = () => {
                         </div>
                         <div className="right">
                             <p className="desc">
-                                Once the piece is complete, Luxica ships it to the customer's address. They may offer free or expedited shipping with 100% Insurance.
+                                Once the piece is complete, Kriva ships it to the customer's address. They may offer free or expedited shipping with 100% Insurance.
                             </p>
                         </div>
                     </div>
@@ -201,7 +201,7 @@ const CustomizePage = () => {
                         </div>
                         <div className="right">
                             <p className="desc">
-                                Luxica offer 80% resale at that time of market value for Lab Grown Diamonds & 100% for Gold
+                                Kriva offer 60% resale at that time of market value for Lab Grown Diamonds & 100% for Gold
                             </p>
                         </div>
                     </div>
@@ -255,7 +255,7 @@ const CustomizePage = () => {
                         </p>
                         <div className="content-description">
                             <p>
-                                While there is no industry-wide return policy for lab-grown diamond Jewelry, our clients have been consistently satisfied with their purchases over the past 5-6 years. We therefore offer a buy back guarantee of 80% of the market value at the time of return.
+                                While there is no industry-wide return policy for lab-grown diamond Jewelry, our clients have been consistently satisfied with their purchases over the past 5-6 years. We therefore offer a buy back guarantee of 60% of the market value at the time of return.
                             </p>
                         </div>
                     </div>
@@ -368,7 +368,7 @@ const CustomizePage = () => {
 
                     <div className="btn-container">
                         <button onClick={submitForm} type="submit">
-                            Submit
+                            Submit<ion-icon name="arrow-forward"></ion-icon>
                         </button>
                     </div>
                 </form>

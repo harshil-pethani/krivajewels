@@ -3,46 +3,22 @@
 .categoryComponent {
   //   border: 2px solid red;
   padding: 50px 100px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
-
-  .title {
-    font-size: 32px;
-    font-weight: 600;
-    font-family: "Belleza", sans-serif;
-    color: $mainBg;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: -76px;
-      width: 50px;
-      height: 3px;
-      background-color: $mainBg;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: -76px;
-      width: 50px;
-      height: 3px;
-      background-color: $mainBg;
-    }
-  }
+  gap: 20px;
 
   .categoryContainer {
     // border: 2px solid red;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    padding-bottom: 15px;
+    overflow: auto;
+    width: 100%;
+    gap: 30px;
 
     .categoryBox {
       //   border: 2px solid red;
@@ -52,7 +28,7 @@
       justify-content: center;
       cursor: pointer;
       text-decoration: none;
-      gap: 5px;
+      gap: 10px;
 
       .imgBox {
         height: 150px;
@@ -68,8 +44,9 @@
         }
       }
       .categoryTitle {
-        font-weight: 400;
-        color: $secondary;
+        font-size: 16px;
+        font-weight: 500;
+        color: $black;
         transition: all 0.2s ease;
         text-decoration: none;
       }
@@ -81,7 +58,7 @@
           }
         }
         .categoryTitle {
-          color: $mainBg;
+          text-decoration: underline;
         }
       }
     }
@@ -90,46 +67,22 @@
 
 .diamondComponent {
   //   border: 2px solid red;
-  padding: 50px 100px;
+  padding: 25px 100px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
-
-  .title {
-    font-size: 32px;
-    font-weight: 600;
-    font-family: "Belleza", sans-serif;
-    color: $mainBg;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: -76px;
-      width: 50px;
-      height: 3px;
-      background-color: $mainBg;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: -76px;
-      width: 50px;
-      height: 3px;
-      background-color: $mainBg;
-    }
-  }
+  gap: 30px;
 
   .diamondContainer {
     // border: 2px solid red;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 15px;
+    overflow: auto;
+    width: 100%;
     gap: 50px;
 
     .diamondBox {
@@ -143,8 +96,8 @@
       text-decoration: none;
 
       .imgBox {
-        height: 50px;
-        width: 50px;
+        height: 65px;
+        width: 65px;
         border-radius: 100%;
         overflow: hidden;
 
@@ -157,7 +110,7 @@
       }
       .diamondTitle {
         font-weight: 400;
-        color: $secondary;
+        color: $black;
         transition: all 0.2s ease;
       }
 
@@ -168,7 +121,167 @@
           }
         }
         .diamondTitle {
-          color: $mainBg;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .categoryComponent {
+    // border: 2px solid red;
+    padding: 20px 50px;
+    padding-bottom: 10px;
+    gap: 20px;
+
+    .categoryContainer {
+      // border: 2px solid red;
+      gap: 30px;
+      padding-bottom: 20px;
+
+      .categoryBox {
+        cursor: pointer;
+        gap: 10px;
+
+        .imgBox {
+          height: 100px;
+          width: 100px;
+        }
+        .categoryTitle {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .diamondComponent {
+    padding: 20px 50px;
+    padding-bottom: 10px;
+    gap: 20px;
+
+    .diamondContainer {
+      // border: 2px solid red;
+      gap: 30px;
+      padding-bottom: 20px;
+
+      .diamondBox {
+        cursor: pointer;
+        gap: 10px;
+
+        .imgBox {
+          height: 50px;
+          width: 50px;
+        }
+        .diamondTitle {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .categoryComponent {
+    // border: 2px solid red;
+    padding: 20px 20px;
+    padding-bottom: 10px;
+    gap: 15px;
+
+    .categoryContainer {
+      // border: 2px solid red;
+      gap: 20px;
+      padding-bottom: 15px;
+
+      .categoryBox {
+        cursor: pointer;
+        gap: 10px;
+
+        .imgBox {
+          height: 70px;
+          width: 70px;
+        }
+        .categoryTitle {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .diamondComponent {
+    // border: 2px solid red;
+    padding: 20px 20px;
+    padding-bottom: 10px;
+    gap: 15px;
+
+    .diamondContainer {
+      // border: 2px solid red;
+      gap: 20px;
+      padding-bottom: 15px;
+
+      .diamondBox {
+        cursor: pointer;
+        gap: 10px;
+
+        .imgBox {
+          height: 35px;
+          width: 35px;
+        }
+        .diamondTitle {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .categoryComponent {
+    // border: 2px solid red;
+    padding: 10px 20px;
+    padding-bottom: 10px;
+    gap: 15px;
+    min-width: 400px;
+
+    .categoryContainer {
+      // border: 2px solid red;
+      gap: 15px;
+      padding-bottom: 15px;
+
+      .categoryBox {
+        cursor: pointer;
+        gap: 10px;
+
+        .imgBox {
+          height: 50px;
+          width: 50px;
+        }
+        .categoryTitle {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .diamondComponent {
+    // border: 2px solid red;
+    padding: 10px 20px;
+    padding-bottom: 10px;
+    gap: 15px;
+    min-width: 400px;
+
+    .diamondContainer {
+      // border: 2px solid red;
+      gap: 15px;
+      padding-bottom: 15px;
+
+      .diamondBox {
+        cursor: pointer;
+        gap: 10px;
+
+        .imgBox {
+          height: 30px;
+          width: 30px;
+        }
+        .diamondTitle {
+          font-size: 12px;
         }
       }
     }

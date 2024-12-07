@@ -4,7 +4,7 @@ const SimpleTextComponent = ({ data, title, subtitle }) => {
 
     return (
         <div className='simple-text-component'>
-            <p className="title">
+            <p className="section-title">
                 {title}
             </p>
             {

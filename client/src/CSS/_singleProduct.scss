@@ -14,7 +14,21 @@
     li {
       a {
         text-decoration: none;
-        color: $secondary;
+        color: $darkBlue;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &:last-child {
+        a {
+          font-weight: 500;
+
+          &:hover {
+            text-decoration: none;
+            cursor: default;
+          }
+        }
       }
     }
   }
@@ -156,6 +170,7 @@
         width: fit-content;
         display: flex;
         align-items: center;
+        padding: 8px 30px;
       }
     }
   }

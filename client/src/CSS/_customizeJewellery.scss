@@ -17,41 +17,18 @@
     .title {
       font-size: 32px;
       font-weight: 600;
-      color: $mainBg;
+      color: $darkBlue;
       position: relative;
     }
     .description {
       font-weight: 300;
-      color: rgba($color: $mainBg, $alpha: 0.75);
+      color: $black;
       font-size: 16px;
     }
     .learnmore {
       align-self: flex-start;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: $mainBg;
-      color: $fontcolor;
-      border: none;
-      padding: 8px 35px;
-      font-size: 14px;
-      font-weight: 400;
-      border: 2px solid $mainBg;
-      cursor: pointer;
+      padding: 8px 25px;
       margin-top: 10px;
-      transition: all 0.3s ease;
-      //   clipPath: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
-
-      ion-icon {
-        font-size: 20px;
-        margin-left: 5px;
-      }
-
-      &:hover {
-        background-color: $fontcolor;
-        color: $mainBg;
-        border: 2px solid $mainBg;
-      }
     }
   }
   .right {

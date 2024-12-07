@@ -58,7 +58,7 @@ const ExploreProducts = () => {
 
     return (
         <div id='topSelling' className="explore-product-component">
-            <p className="title">
+            <p className="section-title">
                 Explore Jewelleries
             </p>
             <span className="subtitle">

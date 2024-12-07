@@ -160,9 +160,15 @@ const AdminDiamonds = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                                             Image<span>*</span>
                                         </label>
                                         <input name='diamondImage' id="diamondImage" onChange={(e) => setNewDiamond({ ...newDiamond, file: e.target.files[0] })} type="file" />
-                                        <button onClick={addDiamond} type="submit">
-                                            Submit
-                                        </button>
+
+                                        <div className="btn-container">
+                                            <button onClick={() => setShowPopup("")} className="btn-secondary" type="submit">
+                                                Cancel
+                                            </button>
+                                            <button onClick={addDiamond} type="submit">
+                                                Submit
+                                            </button>
+                                        </div>
                                     </form>
                                 </div>
                             }
@@ -189,9 +195,15 @@ const AdminDiamonds = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                                             Image<span>*</span> ({updateDiamond.diamondImage})
                                         </label>
                                         <input name='diamondImage' id="diamondImage" onChange={(e) => setUpdateDiamond({ ...updateDiamond, file: e.target.files[0] })} type="file" />
-                                        <button onClick={(e) => handleUpdateDiamond(e, updateDiamond._id)} type="submit">
-                                            Update
-                                        </button>
+
+                                        <div className="btn-container">
+                                            <button onClick={() => setShowPopup("")} className="btn-secondary" type="submit">
+                                                Cancel
+                                            </button>
+                                            <button onClick={(e) => handleUpdateDiamond(e, updateDiamond._id)} type="submit">
+                                                Update
+                                            </button>
+                                        </div>
                                     </form>
                                 </div>
                             }

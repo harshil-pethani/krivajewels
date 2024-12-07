@@ -9,30 +9,27 @@
   align-items: center;
   justify-content: center;
   background-color: $fontcolor;
-  background: url("/public/heroImage2.jpg");
+  background: url("/public/headerbg2.png");
   background-repeat: no-repeat;
   background-size: cover;
 
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
+  // input::-webkit-outer-spin-button,
+  // input::-webkit-inner-spin-button {
+  //   // -webkit-appearance: none;
+  //   // margin: 0;
+  // }
 
-  /* Firefox */
-  input[type="number"] {
-    -moz-appearance: textfield;
-  }
+  // /* Firefox */
+  // input[type="number"] {
+  //   -moz-appearance: textfield;
+  // }
   .loginBox {
-    // border: 2px solid red;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    // background-color: white;
     padding: 20px 20px;
     background: inherit;
     width: 450px;
-    // box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     min-height: 200px;
 
@@ -50,24 +47,16 @@
       filter: blur(10px);
     }
 
-    .tokenError {
-      color: red;
-      margin: auto;
-      text-align: center;
-      font-weight: 300;
-      font-size: 25px;
-    }
-
     .title {
       font-size: 32px;
       font-weight: 500;
-      color: $mainBg;
+      color: $darkBlue;
       text-align: center;
       margin-bottom: 0;
     }
 
     .slogan {
-      color: $mainBg;
+      color: $darkBlue;
       font-weight: 300;
       margin-bottom: 20px;
     }
@@ -84,7 +73,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      color: $mainBg;
+      color: $black;
 
       label {
         margin-bottom: 10px;
@@ -98,30 +87,14 @@
 
       input {
         width: 100%;
-        margin-bottom: 10px;
         padding: 10px;
-        background: none;
-        border: 1px solid $mainBg;
         border-radius: 5px;
         font-size: 14px;
-        color: $mainBg;
+        color: black;
+        background: $lightBtn;
+        border: 1px solid $darkBlue;
         outline: none;
-        background-color: white;
-
-        &::placeholder {
-          color: $mainBg;
-        }
-      }
-
-      input:-webkit-autofill,
-      input:-webkit-autofill:hover,
-      input:-webkit-autofill:focus,
-      input:-webkit-autofill:active {
-        -webkit-box-shadow: 0 0 0 30px $mainBg inset !important;
-      }
-
-      input:-webkit-autofill {
-        -webkit-text-fill-color: $mainBg !important;
+        margin-bottom: 10px;
       }
 
       .resMsg {
@@ -129,24 +102,17 @@
       }
 
       button {
-        // cursor: pointer;
-        padding: 10px;
+        padding: 8px;
         width: 100%;
-        // font-weight: 500;
-        // background-color: $mainBg;
-        // border: none;
-        // color: $fontcolor;
-        // border-radius: 5px;
         margin-top: 10px;
         font-size: 14px;
         text-transform: uppercase;
         letter-spacing: 2px;
-        // border: 2px solid red;
       }
     }
 
     .subLink {
-      color: $mainBg;
+      color: $darkBlue;
       margin-top: 10px;
       cursor: pointer;
       font-weight: 400;

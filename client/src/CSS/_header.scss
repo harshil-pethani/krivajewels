@@ -1,10 +1,8 @@
 @import "./variables";
 
 .homeHeader {
-  background-color: $mainBg;
   height: calc(100vh - 80px);
-  max-height: calc(0.6 * 100vw);
-  // width: 100vw;
+  max-height: calc(0.5 * 100vw);
   display: flex;
   position: relative;
 
@@ -15,6 +13,7 @@
 
     img {
       height: calc(100vh - 80px);
+      max-height: calc(0.5 * 100vw);
       width: 100%;
       object-fit: cover;
     }
@@ -31,7 +30,7 @@
     gap: 20px;
 
     .title {
-      color: $fontcolor;
+      color: $darkBlue;
       font-size: 72px;
       letter-spacing: 10px;
       font-family: "Belleza", sans-serif;
@@ -42,7 +41,7 @@
     .slogan {
       text-transform: uppercase;
       font-size: 42px;
-      color: $fontcolor;
+      color: $black;
       font-family: "Belleza", sans-serif;
       font-weight: 400;
       position: relative;
@@ -55,7 +54,7 @@
         right: -76px;
         width: 50px;
         height: 1px;
-        background-color: $fontcolor;
+        background-color: $black;
       }
 
       &::after {
@@ -65,42 +64,22 @@
         left: 0px;
         width: 50px;
         height: 1px;
-        background-color: $fontcolor;
+        background-color: $black;
       }
     }
     .desc {
-      color: rgba($color: $fontcolor, $alpha: 0.8);
-      font-weight: 300;
+      color: rgba($color: $black, $alpha: 1);
+      color: $black;
+      font-weight: 400;
       margin-right: 150px;
       max-width: 520px;
       font-size: 18px;
     }
     .learnmore {
       align-self: flex-start;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: $mainBg;
-      color: $fontcolor;
-      border: none;
       padding: 8px 35px;
       font-size: 14px;
       font-weight: 400;
-      cursor: pointer;
-      // border-radius: 7px;
-      border: 2px solid $mainBg;
-      transition: all 0.3s ease;
-      // clipPath: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
-
-      ion-icon {
-        font-size: 20px;
-        margin-left: 5px;
-      }
-
-      &:hover {
-        background-color: white;
-        color: $mainBg;
-      }
     }
   }
 
@@ -141,91 +120,256 @@
   }
 }
 
-// @media screen and (max-width: 768px) {
-//   .homeHeader {
-//     background-color: $mainBg;
-//     height: auto;
-//     max-height: unset;
-//     width: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     position: relative;
+@media screen and (max-width: 1000px) {
+  .homeHeader {
+    max-height: calc(0.45 * 100vw);
 
-//     // .mobileNavbar {
-//     //   // border: 2px solid red;
-//     // }
+    .background {
+      img {
+        max-height: calc(0.45 * 100vw);
+      }
+    }
+    .content {
+      // border: 2px solid red;
+      padding-left: 80px;
+      gap: 15px;
 
-//     // .navbar {
-//     //   display: none;
-//     // }
+      .title {
+        font-size: 52px;
+        letter-spacing: 8px;
+      }
+      .slogan {
+        font-size: 28px;
+        padding-left: 56px;
 
-//     .left {
-//       // background: $mainBg;
-//       height: 100vw;
-//       width: 100%;
-//       clipPath: none;
-//       background-repeat: no-repeat;
+        &::before {
+          right: -56px;
+          width: 40px;
+        }
+        &::after {
+          width: 40px;
+        }
+      }
+      .desc {
+        color: $black;
+        margin-right: 150px;
+        max-width: 450px;
+        font-size: 18px;
+      }
+      .learnmore {
+        align-self: flex-start;
+        padding: 8px 30px;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
 
-//       img {
-//         height: 100%;
-//         width: 100%;
-//         object-fit: cover;
-//       }
-//       // border: 2px solid red;
-//     }
+    &.explorePageHeader {
+      height: 200px;
+      max-height: 200px;
 
-//     .right {
-//       width: 100%;
-//       background-color: $mainBg;
-//       height: fit-content;
-//       padding: 20px 10px;
-//       padding-bottom: 30px;
-//       display: flex;
-//       flex-direction: column;
-//       align-items: flex-end;
-//       justify-content: flex-start;
+      .background {
+        img {
+          height: 200px;
+          object-fit: cover;
+        }
+      }
+      .content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        // border: 2px solid red;
+        position: absolute;
+        padding: 0;
+        padding-right: 100px;
+        gap: 20px;
 
-//       .slogan {
-//         color: $white;
-//         padding: 0 5px;
-//         margin-right: 0;
-//         margin-left: 0;
-//         margin-top: 0;
-//         text-align: center;
-//         font-size: 24px;
-//         font-weight: 700;
-//         text-transform: uppercase;
-//       }
-//       .desc {
-//         // border: 2px solid red;
-//         color: white;
-//         margin-right: 0;
-//         margin-left: 0;
-//         margin-top: 10px;
-//         padding: 0 5px;
-//         font-size: 17px;
-//         text-align: center;
-//       }
-//       .learnmore {
-//         align-self: center;
-//         margin-left: 0;
-//         margin-top: 20px;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         background: $orange;
-//         color: $white;
-//         border: none;
-//         padding: 13px 40px;
-//         font-size: 16px;
-//         cursor: pointer;
-//         clipPath: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+        .title {
+          color: $fontcolor;
+          font-size: 42px;
+          letter-spacing: 10px;
+          font-family: "Belleza", sans-serif;
+          font-weight: 400;
+          text-transform: uppercase;
+          margin-left: 10px;
+          text-align: right;
+          width: 500px;
+        }
+      }
+    }
+  }
+}
 
-//         ion-icon {
-//           font-size: 20px;
-//           margin-left: 10px;
-//         }
-//       }
-//     }
-//   }
-// }
+@media screen and (max-width: 800px) {
+  .homeHeader {
+    max-height: calc(0.45 * 100vw);
+
+    .background {
+      img {
+        max-height: calc(0.45 * 100vw);
+      }
+    }
+    .content {
+      // border: 2px solid red;
+      padding-left: 50px;
+      gap: 10px;
+
+      .title {
+        font-size: 42px;
+        letter-spacing: 6px;
+      }
+      .slogan {
+        font-size: 22px;
+        padding-left: 36px;
+
+        &::before {
+          right: -36px;
+          width: 30px;
+        }
+        &::after {
+          width: 30px;
+        }
+      }
+      .desc {
+        color: $black;
+        margin-right: 150px;
+        max-width: 350px;
+        font-size: 16px;
+      }
+      .learnmore {
+        align-self: flex-start;
+        padding: 6px 25px;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+    &.explorePageHeader {
+      height: 200px;
+      max-height: 200px;
+
+      .background {
+        img {
+          height: 200px;
+          object-fit: cover;
+        }
+      }
+      .content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        // border: 2px solid red;
+        position: absolute;
+        padding: 0;
+        padding-right: 100px;
+        gap: 20px;
+
+        .title {
+          color: $fontcolor;
+          font-size: 42px;
+          letter-spacing: 10px;
+          font-family: "Belleza", sans-serif;
+          font-weight: 400;
+          text-transform: uppercase;
+          margin-left: 10px;
+          text-align: right;
+          width: 500px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .homeHeader {
+    max-height: calc(0.5 * 100vw);
+    min-width: 400px;
+    min-height: calc(0.5 * 400px);
+
+    .background {
+      img {
+        max-height: calc(0.5 * 100vw);
+        min-height: calc(0.5 * 400px);
+      }
+    }
+    .content {
+      // border: 2px solid red;
+      padding-left: 30px;
+      gap: 5px;
+
+      .title {
+        font-size: 24px;
+        letter-spacing: 6px;
+      }
+      .slogan {
+        font-size: 16px;
+        padding-left: 26px;
+
+        &::before {
+          right: -26px;
+          width: 20px;
+        }
+        &::after {
+          width: 20px;
+        }
+      }
+      .desc {
+        color: $black;
+        margin-right: 150px;
+        max-width: 300px;
+        font-size: 10px;
+      }
+      .learnmore {
+        align-self: flex-start;
+        padding: 2px 15px;
+        font-size: 10px;
+        font-weight: 400;
+        gap: 0px;
+
+        ion-icon {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &.explorePageHeader {
+      height: 200px;
+      max-height: 200px;
+
+      .background {
+        img {
+          height: 200px;
+          object-fit: cover;
+        }
+      }
+      .content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        // border: 2px solid red;
+        position: absolute;
+        padding: 0;
+        padding-right: 100px;
+        gap: 20px;
+
+        .title {
+          color: $fontcolor;
+          font-size: 42px;
+          letter-spacing: 10px;
+          font-family: "Belleza", sans-serif;
+          font-weight: 400;
+          text-transform: uppercase;
+          margin-left: 10px;
+          text-align: right;
+          width: 500px;
+        }
+      }
+    }
+  }
+}

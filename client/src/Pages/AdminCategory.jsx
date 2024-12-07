@@ -159,9 +159,15 @@ const AdminCategory = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                                             Image<span>*</span>
                                         </label>
                                         <input name='categoryImage' id="categoryImage" onChange={(e) => setNewCategory({ ...newCategory, file: e.target.files[0] })} type="file" />
-                                        <button onClick={addCategory} type="submit">
-                                            Submit
-                                        </button>
+
+                                        <div className="btn-container">
+                                            <button onClick={() => setShowPopup("")} className="btn-secondary" type="submit">
+                                                Cancel
+                                            </button>
+                                            <button onClick={addCategory} type="submit">
+                                                Submit
+                                            </button>
+                                        </div>
                                     </form>
                                 </div>
                             }
@@ -188,9 +194,15 @@ const AdminCategory = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                                             Image<span>*</span> ({updateCategory.categoryImage})
                                         </label>
                                         <input name='categoryImage' id="categoryImage" onChange={(e) => setUpdateCategory({ ...updateCategory, file: e.target.files[0] })} type="file" />
-                                        <button onClick={(e) => handleUpdateCategory(e, updateCategory._id)} type="submit">
-                                            Update
-                                        </button>
+
+                                        <div className="btn-container">
+                                            <button onClick={() => setShowPopup("")} className="btn-secondary" type="submit">
+                                                Cancel
+                                            </button>
+                                            <button onClick={(e) => handleUpdateCategory(e, updateCategory._id)} type="submit">
+                                                Update
+                                            </button>
+                                        </div>
                                     </form>
                                 </div>
                             }

@@ -22,7 +22,7 @@ const ShopByDiamond = () => {
 
     return (
         <div className="diamondComponent">
-            <p className="title">
+            <p className="section-title">
                 Shop By diamonds
             </p>
             <div className="diamondContainer">

@@ -11,12 +11,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // background-color: red;
-  // border: 2px solid red;
 
   &.addCategory {
     .popUpBox {
-      // border: 2px solid red;
       height: fit-content;
       max-height: 80vh;
       width: 50%;
@@ -25,8 +22,7 @@
   }
 
   .popUpBox {
-    // border: 2px solid red;
-    background-color: white;
+    background-color: $fontcolor;
     padding: 20px 30px;
     border-radius: 10px;
     display: flex;
@@ -36,7 +32,7 @@
     justify-content: flex-start;
     width: 70vw;
     height: 80vh;
-    color: black;
+    color: $black;
     overflow: auto;
 
     &.mailSentPopUpBox {
@@ -48,8 +44,8 @@
 
     ion-icon {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 30px;
+      right: 30px;
       font-size: 25px;
       cursor: pointer;
     }
@@ -57,7 +53,7 @@
     .popuptitle {
       font-size: 25px;
       font-weight: 500;
-      color: black;
+      color: $black;
       align-self: center;
     }
 
@@ -66,26 +62,20 @@
       font-weight: 300;
     }
 
-    .btn-container {
-      display: flex;
-      gap: 10px;
-    }
-
     form {
       // border: 2px solid red;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
-      // margin-top: 100px;
-      width: 90%;
+      width: 100%;
       height: fit-content;
 
       label {
         font-size: 14px;
         font-weight: 500;
         margin-bottom: 5px;
-        margin-top: 15px;
+        margin-top: 10px;
 
         span {
           color: red;
@@ -97,11 +87,10 @@
       textarea,
       select {
         width: 100%;
-        border: 2px solid red;
         padding: 8px;
         border-radius: 5px;
-        font-size: 16px;
-        color: black;
+        font-size: 14px;
+        color: $black;
         background: $secondary;
         border: none;
         resize: none;
@@ -112,16 +101,6 @@
         height: 100px;
       }
 
-      input:-webkit-autofill,
-      input:-webkit-autofill:hover,
-      input:-webkit-autofill:focus,
-      input:-webkit-autofill:active {
-        -webkit-box-shadow: 0 0 0 30px $secondary inset !important;
-      }
-
-      input:-webkit-autofill {
-        -webkit-text-fill-color: black !important;
-      }
       .previewImages {
         img {
           height: 30px;
@@ -137,17 +116,18 @@
         color: rgba(0, 0, 0, 0.8);
         margin-top: 20px;
       }
-      .errMsg {
-        font-size: 12px;
-        color: red;
-        margin-top: 20px;
-        align-self: center;
-      }
     }
-    button {
-      margin-top: 10px;
-      font-size: 16px;
-      align-self: center;
+    .btn-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      gap: 10px;
+
+      &.confirmation {
+        justify-content: center;
+      }
     }
   }
 }
@@ -157,11 +137,12 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
+  // border: 2px solid red;
 
   h2 {
     font-weight: 500;
     font-size: 24px;
-    color: black;
+    color: $black;
   }
 }
 
@@ -173,31 +154,25 @@
   position: relative;
 
   .right {
-    background-color: rgb(198, 198, 198);
+    background-color: $fontcolor;
     width: 100%;
     height: 100%;
     padding-left: 220px;
     padding-top: 95px;
-    color: black;
+    color: $black;
   }
 
   .adminSide {
     width: 200px;
-    background-color: $mainBg;
-    background-color: black;
-
-    // height: 100vh;
+    background-color: $darkBlue;
     position: fixed;
     left: 0;
     top: 0;
     padding-top: 80px;
-    // top: 120px;
     z-index: 5;
-    // border: 2px solid red;
-    color: black;
+    color: $darkBlue;
 
     .menus {
-      // border: 2px solid red;
       width: 100%;
       height: calc(100vh - 80px);
       padding: 10px;
@@ -210,7 +185,6 @@
         overflow: auto;
         list-style: none;
         overflow: hidden;
-        // border: 2px solid red;
         margin-bottom: 10px;
         font-weight: 300;
 
@@ -222,22 +196,21 @@
           justify-content: flex-start;
           align-items: center;
           width: 100%;
-          color: $secondary;
+          color: $fontcolor;
           text-decoration: none;
           font-size: 16px;
           border-radius: 5px;
           cursor: pointer;
-          transition: color 0.3s linear;
+          transition: color 0.3s ease;
           padding: 8px;
 
           &:hover {
-            color: $fontcolor;
             text-decoration: underline;
           }
 
           &.menuActive {
-            color: $fontcolor;
-            background-color: $mainBg;
+            color: $darkBlue;
+            background-color: $fontcolor;
             &:hover {
               text-decoration: none;
             }
@@ -254,27 +227,6 @@
 
   button {
     outline: none;
-  }
-
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 100px $mainBg inset !important;
-  }
-
-  input:-webkit-autofill {
-    -webkit-text-fill-color: black !important;
-  }
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  /* Firefox */
-  input[type="number"] {
-    -moz-appearance: textfield;
   }
 
   .adminSettings {
@@ -304,7 +256,6 @@
 
       .formField {
         display: flex;
-        // border: 2px solid red;
         flex-direction: column;
         margin-bottom: 20px;
 
@@ -346,18 +297,15 @@
           background: $fontcolor;
           width: 45%;
           border-radius: 5px;
-          color: black;
+          color: $black;
           font-size: 16px;
+          border: 2px solid $darkBlue;
 
           &::placeholder {
-            color: black;
+            color: $black;
             opacity: 0.7;
             font-weight: 0;
           }
-        }
-
-        ::-webkit-calendar-picker-indicator {
-          filter: invert(1);
         }
 
         label {
@@ -415,11 +363,12 @@
               background: $fontcolor;
               width: 100%;
               border-radius: 5px;
-              color: black;
+              color: $black;
+              border: 2px solid $darkBlue;
               font-size: 16px;
 
               &::placeholder {
-                color: black;
+                color: $black;
                 opacity: 0.7;
                 font-weight: 0;
               }
@@ -437,10 +386,6 @@
           }
         }
 
-        ::-webkit-calendar-picker-indicator {
-          filter: invert(1);
-        }
-
         label {
           font-size: 16px;
           margin-bottom: 8px;
@@ -452,11 +397,6 @@
           margin-bottom: 8px;
         }
       }
-
-      .submit {
-        width: fit-content;
-        font-size: 16px;
-      }
     }
     .submit {
       width: fit-content;
@@ -467,20 +407,19 @@
   .adminCategory {
     padding-right: 50px;
     overflow-y: auto;
-    // border: 2px solid red;
     padding-bottom: 50px;
     overflow-x: hidden;
 
     .categoryContainer {
-      // border: 2px solid red;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      gap: 30px;
+      overflow: hidden;
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(6, minmax(150px, 1fr));
+      width: 100%;
 
       .categoryBox {
-        border: 1px solid $mainBg;
+        width: 100%;
+        border: 1px solid $darkBlue;
         padding: 10px;
         border-radius: 5px;
         display: flex;
@@ -509,7 +448,7 @@
         }
         .categoryTitle {
           font-weight: 500;
-          color: $mainBg;
+          color: $darkBlue;
           transition: all 0.2s ease;
         }
         .actionBtns {
@@ -517,23 +456,29 @@
           gap: 10px;
 
           button {
-            font-size: 16px;
             border-radius: 100%;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 7px;
             cursor: pointer;
             transition: all 0.3s ease;
+            padding: 0;
+            height: 35px;
+            width: 35px;
+
+            ion-icon {
+              margin: 0;
+              font-size: 14px;
+            }
 
             &.edit {
-              border: 2px solid $mainBg;
-              background-color: $mainBg;
+              border: 2px solid $darkBlue;
+              background-color: $darkBlue;
               color: $fontcolor;
               &:hover {
                 background-color: $fontcolor;
-                color: $mainBg;
+                color: $darkBlue;
               }
             }
             &.delete {
@@ -556,129 +501,5 @@
     overflow-y: auto;
     padding-bottom: 50px;
     overflow-x: hidden;
-
-    // .productsContainer {
-    //   // border: 2px solid red;
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: flex-start;
-    //   flex-wrap: wrap;
-    //   gap: 30px;
-
-    //   .jewellery-card {
-    //     border: 1px solid rgba($color: $mainBg, $alpha: 0.75);
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     justify-content: flex-start;
-    //     border-radius: 5px;
-    //     width: 225px;
-    //     overflow: hidden;
-    //     height: 320px;
-    //     cursor: pointer;
-
-    //     .imgBox {
-    //       height: 170px;
-    //       width: 225px;
-    //       overflow: hidden;
-    //       border-radius: 5px 5px 0 0;
-    //       // border: 2px solid red;
-
-    //       .jewellery-image {
-    //         height: 100%;
-    //         width: 100%;
-    //         object-fit: cover;
-    //         transition: all 0.2s ease;
-
-    //         &:hover {
-    //           transform: scale(1.1);
-    //         }
-    //       }
-    //     }
-
-    //     .card-details {
-    //       padding: 10px;
-    //       display: flex;
-    //       flex-direction: column;
-    //       align-items: center;
-    //       justify-content: space-between;
-    //       height: 130px;
-    //       gap: 5px;
-
-    //       .jewellery-title {
-    //         font-weight: 500;
-    //         color: $mainBg;
-    //         text-align: center;
-    //         font-size: 18px;
-    //         text-wrap: nowrap;
-    //         text-overflow: ellipsis;
-    //         overflow: hidden;
-    //         width: 200px;
-
-    //         &:hover {
-    //           text-decoration: underline;
-    //         }
-    //       }
-    //       .jewellery-description {
-    //         font-weight: 300;
-    //         color: rgba($color: $mainBg, $alpha: 0.75);
-    //         font-size: 14px;
-    //         text-align: center;
-    //         display: -webkit-box;
-    //         -webkit-line-clamp: 2;
-    //         -webkit-box-orient: vertical;
-    //         overflow: hidden;
-    //       }
-    //       .material-container {
-    //         // border: 2px solid red;
-    //         display: flex;
-    //         list-style: none;
-    //         justify-content: center;
-    //         gap: 5px;
-    //         margin: 5px 0;
-
-    //         .material {
-    //           height: 25px;
-    //           width: 25px;
-    //           // border: 2px solid red;
-    //           border-radius: 50%;
-
-    //           &.gold {
-    //             background: linear-gradient(
-    //               30deg,
-    //               #e1b94f 0,
-    //               #fcf1d5 55%,
-    //               #fcf1d5 60%,
-    //               #e1b94f 100%
-    //             ) !important;
-    //           }
-    //           &.rosegold {
-    //             background: linear-gradient(
-    //               30deg,
-    //               #ec8a55 0,
-    //               #fcede2 55%,
-    //               #fcede2 60%,
-    //               #ec8a55 100%
-    //             ) !important;
-    //           }
-    //           &.whitegold,
-    //           &.silver {
-    //             background: linear-gradient(
-    //               30deg,
-    //               #b3b2af 0,
-    //               #f7f7f7 55%,
-    //               #f7f7f7 60%,
-    //               #b3b2af 100%
-    //             ) !important;
-    //           }
-    //           &.active {
-    //             border: 1px solid $mainBg;
-    //           }
-    //         }
-    //       }
-    //       
-    //     }
-    //   }
-    // }
   }
 }

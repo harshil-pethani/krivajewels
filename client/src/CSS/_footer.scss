@@ -1,7 +1,7 @@
 @import "./variables";
 
 .footerContainer {
-  background-color: $mainBg;
+  background-color: $darkBlue;
   padding: 30px 100px;
 
   .footer {
@@ -23,67 +23,107 @@
       height: 100%;
     }
 
-    .left {
+    .rightNew {
       display: flex;
       flex-direction: column;
+      justify-content: flex-end;
       gap: 10px;
       width: 35%;
-      padding-right: 100px;
+      padding-left: 150px;
+
+      .footer-title {
+        // border: 2px solid red;
+        text-align: right;
+      }
 
       .about-text {
         font-size: 14px;
+        text-align: right;
       }
       .certifications {
         display: flex;
+        justify-content: flex-end;
         gap: 10px;
 
         img {
-          height: 50px;
+          height: 60px;
           margin-top: 12px;
         }
       }
     }
     .center {
       display: flex;
+      flex-direction: column;
       // border: 2px solid red;
-      gap: 70px;
+      gap: 20px;
 
-      .useful-links-container {
+      .inner-center {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 10px;
-        // border: 2px solid red;
+        gap: 70px;
 
-        .useful-links {
-          list-style: none;
+        .useful-links-container {
           display: flex;
           flex-direction: column;
-          gap: 5px;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 10px;
+          // border: 2px solid red;
 
-          li {
-            text-align: center;
-            padding: 0 15px 0 0;
+          .useful-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
 
-            a {
-              text-decoration: none;
-              color: white;
-              font-weight: 300;
-              font-size: 14px;
+            li {
+              text-align: center;
+              padding: 0 15px 0 0;
+
+              a {
+                text-decoration: none;
+                color: white;
+                font-weight: 300;
+                font-size: 14px;
+              }
             }
           }
         }
       }
+      .socialIcons {
+        // border: 2px solid red;
+        justify-content: center;
+        display: flex;
+        gap: 20px;
+
+        a {
+          font-size: 24px;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0;
+          border-radius: 50%;
+        }
+      }
     }
-    .right {
+    .leftnew {
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: flex-start;
       justify-content: center;
       gap: 10px;
       width: 35%;
       // border: 2px solid red;
+
+      .logo {
+        // border: 2px solid red;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        img {
+          height: 170px;
+        }
+      }
 
       .sub-detail {
         // border: 2px solid red;
@@ -102,39 +142,23 @@
         }
       }
 
-      .socialIcons {
-        // border: 2px solid red;
-        display: flex;
-        gap: 20px;
+      // .branding {
+      //   font-size: 14px;
+      //   color: white;
+      //   text-decoration: none;
+      //   font-weight: 400;
+      // }
+      // .terms-privacy {
+      //   display: flex;
+      //   gap: 20px;
+      //   font-size: 12px;
+      //   margin-top: 20px;
 
-        a {
-          font-size: 24px;
-          color: white;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 0;
-          border-radius: 50%;
-        }
-      }
-
-      .branding {
-        font-size: 14px;
-        color: white;
-        text-decoration: none;
-        font-weight: 400;
-      }
-      .terms-privacy {
-        display: flex;
-        gap: 20px;
-        font-size: 12px;
-        margin-top: 20px;
-
-        a {
-          text-decoration: none;
-          color: $fontcolor;
-        }
-      }
+      //   a {
+      //     text-decoration: none;
+      //     color: $fontcolor;
+      //   }
+      // }
     }
   }
 }

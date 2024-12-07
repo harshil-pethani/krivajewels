@@ -45,6 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: calc(100vh - 80px - 262px);
 
   .loader {
     border: 8px solid rgba($mainBg, 0.3);

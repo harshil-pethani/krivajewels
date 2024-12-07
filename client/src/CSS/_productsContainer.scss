@@ -1,30 +1,28 @@
 @import "./variables";
 
 .jewellery-card-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 30px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
   overflow: auto;
   width: 100%;
   margin-top: 30px;
 
   .jewellery-card {
-    border: 1px solid rgba($color: $mainBg, $alpha: 0.75);
+    border: 1px solid $lightBg;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     border-radius: 5px;
-    width: 225px;
+    width: 100%;
     overflow: hidden;
-    height: 330px;
+    height: fit-content;
     cursor: pointer;
 
     .imgBox {
-      height: 170px;
-      width: 225px;
+      height: 200px;
+      width: 100%;
       overflow: hidden;
       border-radius: 5px 5px 0 0;
       background: white;
@@ -50,19 +48,25 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      height: 130px;
+      height: fit-content;
+      // border: 2px solid red;
       gap: 5px;
 
       .jewellery-title {
         font-weight: 500;
-        color: $mainBg;
+        color: $darkBlue;
         text-align: center;
         font-size: 18px;
-        text-wrap: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        width: 200px;
+        text-decoration: none;
+        border: 2px solid red;
+
+        span {
+          display: block;
+          width: 200px;
+          overflow: hidden;
+          text-wrap: nowrap;
+          text-overflow: ellipsis;
+        }
 
         &:hover {
           text-decoration: underline;
@@ -70,7 +74,7 @@
       }
       .jewellery-description {
         font-weight: 300;
-        color: rgba($color: $mainBg, $alpha: 0.75);
+        color: $black;
         font-size: 14px;
         text-align: center;
         display: -webkit-box;
@@ -121,7 +125,7 @@
             ) !important;
           }
           &.active {
-            border: 1px solid $mainBg;
+            border: 1px solid $darkBlue;
           }
         }
       }
@@ -140,13 +144,18 @@
           cursor: pointer;
           transition: all 0.3s ease;
 
+          ion-icon {
+            margin: 0;
+            font-size: 16px;
+          }
+
           &.edit {
-            border: 2px solid $mainBg;
-            background-color: $mainBg;
+            border: 2px solid $darkBlue;
+            background-color: $darkBlue;
             color: $fontcolor;
             &:hover {
               background-color: $fontcolor;
-              color: $mainBg;
+              color: $darkBlue;
             }
           }
           &.delete {
@@ -164,27 +173,66 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: $mainBg;
-        color: $fontcolor;
-        border: none;
-        border-radius: 30px;
-        padding: 5px 15px;
+        background: $lightBtn;
+        color: $darkBlue;
+        border-radius: 3px;
+        padding: 5px 20px;
         font-size: 12px;
-        font-weight: 400;
-        border: 1px solid $mainBg;
+        font-weight: 500;
+        border: 2px solid $lightBtn;
         cursor: pointer;
         transition: all 0.3s ease;
+        margin-top: 5px;
+        // border: 1px solid $darkBlue;
 
         ion-icon {
           font-size: 14px;
-          margin-left: 5px;
+          margin-left: 0;
         }
 
         &:hover {
-          background-color: $fontcolor;
-          color: $mainBg;
+          background-color: $darkBlue;
+          color: $fontcolor;
         }
       }
     }
+
+    &.admin-card {
+      width: 100%;
+
+      .imgBox {
+        height: 180px;
+        width: 100%;
+        // border: 2px solid red;
+      }
+
+      .card-details {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+
+        .jewellery-title {
+          font-size: 16px;
+        }
+        .jewellery-description {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .jewellery-card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .jewellery-card-container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

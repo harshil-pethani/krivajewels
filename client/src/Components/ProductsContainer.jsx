@@ -12,7 +12,7 @@ const ProductsContainer = ({ productData, materialChange, setMaterialChange, isL
                     </h1>
                     :
                     productData.map((jewellery, index) => (
-                        <div key={index} className="jewellery-card">
+                        <div key={index} className={isForAdminPanel ? "jewellery-card admin-card" : "jewellery-card"}>
                             <Link to={`/explore/${jewellery._id}`} className="imgBox">
                                 <img className="jewellery-image" src={
                                     materialChange[jewellery._id] === "rosegold"
@@ -23,9 +23,11 @@ const ProductsContainer = ({ productData, materialChange, setMaterialChange, isL
                             </Link>
                             <div className="card-details">
                                 <div>
-                                    <p className="jewellery-title" title={jewellery.title}>
-                                        {jewellery.title}
-                                    </p>
+                                    <Link to={`/explore/${jewellery._id}`} className="jewellery-title" title={jewellery.title}>
+                                        <span>
+                                            {jewellery.title}
+                                        </span>
+                                    </Link>
                                     <p className="jewellery-description">
                                         {jewellery.description}
                                     </p>
@@ -59,7 +61,7 @@ const ProductsContainer = ({ productData, materialChange, setMaterialChange, isL
                         </div>
                     ))
             }
-        </div>
+        </div >
     )
 }
 

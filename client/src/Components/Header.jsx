@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import heroImg from '/heroImage2.jpg';
-import exploreHeaderImg from '/exploreHeader.jpg';
+import heroImg from '/headerbg2.png';
+import exploreHeaderImg from '/exploreHeader2.jpeg';
 
 const Header = ({ ExplorePage }) => {
     const navigate = useNavigate();

@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../Components/Navbar'
-import Header from '../Components/Header';
 import Footer from '../Components/Footer';
-import ExploreProducts from '../Components/ExploreProducts';
 import { singleProductApi } from '../Config/API_constant';
-import axios from 'axios';
 import ScrollToTopArrow from '../Components/ScrollToTopArrow';
 import { ToastContainer, toast } from 'react-toastify';
 import { useLocation } from 'react-router-dom';

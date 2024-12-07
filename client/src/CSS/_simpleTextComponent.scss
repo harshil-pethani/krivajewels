@@ -7,37 +7,9 @@
   justify-content: center;
   align-items: center;
 
-  .title {
-    font-size: 32px;
-    font-weight: 600;
-    font-family: "Belleza", sans-serif;
-    color: $mainBg;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: -76px;
-      width: 50px;
-      height: 3px;
-      background-color: $mainBg;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: -76px;
-      width: 50px;
-      height: 3px;
-      background-color: $mainBg;
-    }
-  }
-
   .main-sub-title {
     font-size: 28px;
-    margin-top: 60px;
+    margin-top: 30px;
     font-weight: 500;
   }
 
@@ -67,7 +39,7 @@
 
       .content-title {
         font-size: 22px;
-        font-weight: 700;
+        font-weight: 500;
       }
 
       .content-sub-title {
@@ -179,7 +151,7 @@
     width: 80%;
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 30px;
 
     &:nth-child(even) {
       .content {
@@ -188,8 +160,9 @@
     }
 
     .sub-title {
-      font-size: 28px;
-      font-weight: 600;
+      font-size: 24px;
+      font-weight: 500;
+      color: $black;
     }
 
     .content {
@@ -211,10 +184,11 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: rgba($color: $mainBg, $alpha: 0.5);
+          // background-color: rgba($color: $mainBg, $alpha: 0.5);
+          background-color: $lightBtn;
 
           img {
-            width: 100px;
+            width: 80px;
           }
         }
       }
@@ -225,7 +199,7 @@
         p {
           text-align: center;
           font-size: 18px;
-          font-weight: 500;
+          font-weight: 400;
         }
       }
     }
@@ -267,13 +241,12 @@
       textarea,
       select {
         width: 100%;
-        border: 2px solid red;
-        padding: 8px;
+        padding: 10px;
         border-radius: 5px;
-        font-size: 16px;
+        font-size: 14px;
         color: black;
-        background: $secondary;
-        border: none;
+        background: $lightBtn;
+        border: 1px solid $darkBlue;
         resize: none;
         outline: none;
       }
@@ -283,18 +256,15 @@
       }
     }
     .btn-container {
-      // border: 2px solid red;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-top: 20px;
 
       button {
-        margin-top: 10px;
         font-size: 16px;
-        padding: 5px 20px;
-        // align-self: center;
-        // border: 2px solid red;
+        padding: 5px 35px;
       }
     }
   }

@@ -1,21 +1,15 @@
-import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import apiRequest from '../CommonUtil';
 import { logoutApi } from '../Config/API_constant';
-// import { getAllCoursesOfFacultyApi, logoutApi } from '../Config/Api';
 
 
-const AdminSide = ({ adminDetails, renderPage, setAdminLogged }) => {
-    const [activeMenu, setActiveMenu] = useState("categories");
-    const [activeSubMenu, setActiveSubMenu] = useState("banner");
+const AdminSide = ({ setAdminLogged }) => {
+    const [activeMenu, setActiveMenu] = useState("");
     const location = useLocation();
-    const [curFacultyApprovedCourses, setCurFacultyApprovedCourses] = useState([]);
-    const [curFacultyPendingCourses, setCurFacultyPendingCourses] = useState([]);
 
     useEffect(() => {
         setActiveMenu(location.pathname.split('/')[2]);
-        setActiveSubMenu(location.pathname.split('/')[3]);
     }, [location]);
 
     const handleLogout = async () => {

@@ -55,10 +55,10 @@ const HomePage = () => {
             <Category />
             <ShopByDiamond />
             <TopSellingItems />
-            <CustomizeJewellery />
+            {/* <CustomizeJewellery />
             <FAQ />
             <Services />
-            <Footer />
+            <Footer /> */}
         </div>
     )
 }

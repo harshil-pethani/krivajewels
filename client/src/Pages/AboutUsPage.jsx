@@ -40,17 +40,17 @@ const CustomizePage = () => {
             <ScrollToTopArrow />
             <Navbar sendSearchQuery={(queryString) => { setSearchQuery(queryString); }} />
             <div className="simple-text-component">
-                <p className="title">
+                <p className="section-title">
                     About Us
                 </p>
                 <div className="text-content-container">
                     <div className="text-content">
                         <div className="content-description">
                             <p>
-                                Where Beauty Meets Sustainability And Ethics. Our Story Began With A Passion For Lab Grown Diamonds And A Deep Commitment To Creating A Better World.
+                                Where Beauty, Sustainability, and Ethics Come Together. Our journey started with a love for lab-grown diamonds and a strong commitment to making the world a better place.
                             </p>
                             <p>
-                                We Know Lab Diamonds. You Know You. We Want To Share Our Extensive Knowledge Of Lab Grown Diamond Jewelry With You So, You Can Find The Right Engagement Ring, Wedding Band, Or Whatever Piece That You’re Looking For. It’s Dignified Moment For Ourselves To Serve You Better Love Symbolism Lab Grown Diamond Jewelry.
+                                We Know Lab Diamonds. You Know What You Want. At KrivaJewels, we’re here to share our expertise in lab-grown diamond jewelry with you. Whether you're looking for the perfect engagement ring, wedding band, or any other special piece, we want to help you find exactly what you're searching for. It's a privilege for us to offer you stunning, ethical jewelry that symbolizes love and meaning.
                             </p>
                         </div>
                     </div>
@@ -85,7 +85,7 @@ const CustomizePage = () => {
                         </div>
                         <div className="right">
                             <p className="desc">
-                                After the design has been finalized, Luxica provides the customer with a quote for the custom piece of Jewelry. The quote includes the Price of Gold, Lab Grown Diamond, and making charge.
+                                After the design has been finalized, Kriva provides the customer with a quote for the custom piece of Jewelry. The quote includes the Price of Gold, Lab Grown Diamond, and making charge.
                             </p>
                         </div>
                     </div>
@@ -102,7 +102,7 @@ const CustomizePage = () => {
                         </div>
                         <div className="right">
                             <p className="desc">
-                                After the Luxica has created design, we send a photo or digital rendering to the customer for approval, the customer can provide feedback and request any changes the want made.
+                                After the Kriva has created design, we send a photo or digital rendering to the customer for approval, the customer can provide feedback and request any changes the want made.
                             </p>
                         </div>
                     </div>

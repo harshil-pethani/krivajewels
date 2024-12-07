@@ -47,7 +47,7 @@ const FAQ = () => {
 
     return (
         <div className="faqSection">
-            <h1 className="title">
+            <h1 className="section-title">
                 Frequently Asked Questions
             </h1>
 
@@ -66,19 +66,6 @@ const FAQ = () => {
                                 </summary>
                                 <p className="ans">
                                     {faqQuestion.ans}
-                                    {
-                                        faqQuestion.url &&
-                                        <a target="_blank" rel="noreferrer" href={faqQuestion.url}>
-                                            {faqQuestion.urltext}
-                                        </a>
-                                    }
-                                    {
-                                        faqQuestion.link &&
-                                        <Link to={faqQuestion.link} style={{ margin: "0" }}>
-                                            {faqQuestion.linktext}
-                                        </Link>
-                                    }
-                                    {faqQuestion.ans2}
                                 </p>
                             </details>
                         )

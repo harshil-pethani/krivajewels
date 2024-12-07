@@ -47,11 +47,11 @@ const App = () => {
         <Route exact path="/customize-jewellery" element={<CustomizePage />} />
         <Route exact path="/explore" element={<ExplorePage />} />
         <Route exact path="/explore/:id" element={<SingleProduct />} />
-        <Route exact path="/admin" element={adminLogged ? <Navigate to="/admin/categories" /> : < AdminLogin setAdminDetails={setAdminDetails} setAdminLogged={setAdminLogged} />} />
-        <Route exact path="/admin/settings" element={adminLogged ? <AdminSettings setAdminLogged={setAdminLogged} adminDetails={adminDetails} setAdminDetails={setAdminDetails} /> : <Navigate to="/admin" />} />
-        <Route exact path="/admin/categories" element={adminLogged ? <AdminCategory setAdminLogged={setAdminLogged} adminDetails={adminDetails} setAdminDetails={setAdminDetails} /> : <Navigate to="/admin" />} />
-        <Route exact path="/admin/diamonds" element={adminLogged ? <AdminDiamonds setAdminLogged={setAdminLogged} adminDetails={adminDetails} setAdminDetails={setAdminDetails} /> : <Navigate to="/admin" />} />
-        <Route exact path="/admin/products" element={adminLogged ? <AdminProducts setAdminLogged={setAdminLogged} adminDetails={adminDetails} setAdminDetails={setAdminDetails} /> : <Navigate to="/admin" />} />
+        <Route exact path="/admin" element={adminLogged ? <Navigate to="/admin/categories" /> : <AdminLogin setAdminDetails={setAdminDetails} setAdminLogged={setAdminLogged} />} />
+        <Route exact path="/admin/settings" element={adminLogged ? <AdminSettings setAdminLogged={setAdminLogged} adminDetails={adminDetails} setAdminDetails={setAdminDetails} /> : <AdminLogin setAdminDetails={setAdminDetails} setAdminLogged={setAdminLogged} />} />
+        <Route exact path="/admin/categories" element={adminLogged ? <AdminCategory setAdminLogged={setAdminLogged} adminDetails={adminDetails} setAdminDetails={setAdminDetails} /> : <AdminLogin setAdminDetails={setAdminDetails} setAdminLogged={setAdminLogged} />} />
+        <Route exact path="/admin/diamonds" element={adminLogged ? <AdminDiamonds setAdminLogged={setAdminLogged} adminDetails={adminDetails} setAdminDetails={setAdminDetails} /> : <AdminLogin setAdminDetails={setAdminDetails} setAdminLogged={setAdminLogged} />} />
+        <Route exact path="/admin/products" element={adminLogged ? <AdminProducts setAdminLogged={setAdminLogged} adminDetails={adminDetails} setAdminDetails={setAdminDetails} /> : <AdminLogin setAdminDetails={setAdminDetails} setAdminLogged={setAdminLogged} />} />
       </Routes>
     </ScrollToTop>
   )

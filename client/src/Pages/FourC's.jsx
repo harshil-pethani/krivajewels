@@ -28,7 +28,7 @@ const FourCs = () => {
             <ScrollToTopArrow />
             <Navbar sendSearchQuery={(queryString) => { setSearchQuery(queryString); }} />
             <div className="simple-text-component">
-                <p className="title">
+                <p className="section-title">
                     The 4 C's of Diamonds
                 </p>
                 <div className="text-content-container">

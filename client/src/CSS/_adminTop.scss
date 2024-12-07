@@ -1,29 +1,36 @@
 @import "./variables";
 
 .adminTop {
+  width: 100%;
+  height: 80px;
+  background-color: $darkBlue;
   display: flex;
-  justify-content: space-between;
-  // border: 2px solid red;
-  background-color: $mainBg;
-  //   padding: 10px 0;
   align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 30px;
+  z-index: 8;
   position: fixed;
   left: 0;
   top: 0;
-  width: 100vw;
-  z-index: 7;
-  height: 80px;
 
-  .logo {
-    // border: 2px solid red;
-    width: 250px;
-    height: 100%;
+  .leftNav {
     display: flex;
-    justify-content: center;
     align-items: center;
-    img {
-      height: 50px;
+    margin-top: 10px;
+
+    a {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 4px;
+      font-weight: 300;
+      font-style: normal;
+      text-decoration: none;
+      font-size: 40px;
+      color: $fontcolor;
     }
+    // img {
+    //   height: 35px;
+    // }
   }
 
   .profile {
