@@ -1,8 +1,6 @@
 @import "./variables";
 
 .services-component {
-  //   border: 2px solid red;
-  // background-color: rgba($color: $mainBg, $alpha: 0.05);
   padding: 30px 100px;
   display: flex;
   justify-content: center;
@@ -17,6 +15,57 @@
 
     .description {
       color: $mainBg;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .services-component {
+    padding: 30px 50px;
+    gap: 30px;
+    flex-wrap: wrap;
+
+    .service {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: 340px;
+
+      svg {
+        height: 40px;
+      }
+
+      .description {
+        color: $mainBg;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .services-component {
+    padding: 20px 50px;
+    gap: 30px;
+    flex-wrap: wrap;
+    min-width: 400px;
+    flex-direction: column;
+    align-items: center;
+
+    .service {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      width: 340px;
+
+      svg {
+        height: 40px;
+      }
+
+      .description {
+        color: $mainBg;
+        font-size: 14px;
+      }
     }
   }
 }

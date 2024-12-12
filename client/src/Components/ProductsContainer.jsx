@@ -2,9 +2,9 @@ import React from 'react'
 import { bucketURL } from '../Config/API_constant'
 import { Link } from 'react-router-dom'
 
-const ProductsContainer = ({ productData, materialChange, setMaterialChange, isLoading, isForAdminPanel, setUpdateProduct, setShowPopup, deleteProduct }) => {
+const ProductsContainer = ({ homepage, productData, materialChange, setMaterialChange, isLoading, isForAdminPanel, setUpdateProduct, setShowPopup, deleteProduct }) => {
     return (
-        <div className="jewellery-card-container">
+        <div className={homepage ? "jewellery-card-container forHome" : "jewellery-card-container"}>
             {
                 (productData.length === 0 && !isLoading) ?
                     <h1 className='no-data'>
@@ -24,9 +24,7 @@ const ProductsContainer = ({ productData, materialChange, setMaterialChange, isL
                             <div className="card-details">
                                 <div>
                                     <Link to={`/explore/${jewellery._id}`} className="jewellery-title" title={jewellery.title}>
-                                        <span>
-                                            {jewellery.title}
-                                        </span>
+                                        {jewellery.title}
                                     </Link>
                                     <p className="jewellery-description">
                                         {jewellery.description}

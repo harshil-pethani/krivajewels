@@ -7,6 +7,12 @@ const Navbar = () => {
     const currentRoute = location.pathname.split("/")[1];
     const [activeMenu, setActiveMenu] = useState(false);
 
+    const handleOutsideClick = (e) => {
+        if (e.target.className.includes("mobile-menu-container")) {
+            setActiveMenu(false);
+        }
+    }
+
     return (
         <>
             <div className="navbar">
@@ -59,7 +65,7 @@ const Navbar = () => {
                     <div className="line3 line"></div>
                 </div>
 
-                <div className={activeMenu ? "activeMenu mobile-menu-container" : "mobile-menu-container"}>
+                <div className={activeMenu ? "activeMenu mobile-menu-container" : "mobile-menu-container"} onClick={handleOutsideClick}>
                     <div className="mobileMenu">
                         <ul>
                             <li>
@@ -82,7 +88,7 @@ const Navbar = () => {
                                     <ion-icon name="hammer-outline"></ion-icon> Customize
                                 </Link>
                             </li>
-                            <li className={currentRoute === "term-and-conditions" ? "active" : ""}>
+                            <li className={currentRoute === "four-c" ? "active" : ""}>
                                 <Link to="/four-c">
                                     <ion-icon name="diamond-outline"></ion-icon> 4 C’s of Diamonds
                                 </Link>

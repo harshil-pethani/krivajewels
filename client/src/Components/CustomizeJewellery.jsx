@@ -1,7 +1,5 @@
 import React from 'react'
-import customize1 from '/customize1.jpg';
-import customize2 from '/customize22.jpg';
-import customize3 from '/customize3.jpg';
+import customize from '/customize.png';
 import { useNavigate } from 'react-router-dom';
 
 const CustomizeJewellery = () => {
@@ -20,9 +18,7 @@ const CustomizeJewellery = () => {
                 </button>
             </div>
             <div className="right">
-                <img className="small" src={customize1} alt="" />
-                <img src={customize2} alt="" />
-                <img src={customize3} alt="" />
+                <img src={customize} alt="" />
             </div>
         </div>
     )

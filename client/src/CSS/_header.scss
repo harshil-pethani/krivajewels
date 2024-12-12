@@ -165,12 +165,12 @@
     }
 
     &.explorePageHeader {
-      height: 200px;
-      max-height: 200px;
+      height: 150px;
+      max-height: 150px;
 
       .background {
         img {
-          height: 200px;
+          height: 150px;
           object-fit: cover;
         }
       }
@@ -183,19 +183,19 @@
         // border: 2px solid red;
         position: absolute;
         padding: 0;
-        padding-right: 100px;
-        gap: 20px;
+        padding-right: 50px;
+        gap: 0px;
 
         .title {
           color: $fontcolor;
-          font-size: 42px;
+          font-size: 32px;
           letter-spacing: 10px;
           font-family: "Belleza", sans-serif;
           font-weight: 400;
           text-transform: uppercase;
           margin-left: 10px;
           text-align: right;
-          width: 500px;
+          width: 400px;
         }
       }
     }
@@ -247,12 +247,12 @@
     }
 
     &.explorePageHeader {
-      height: 200px;
-      max-height: 200px;
+      height: 150px;
+      max-height: 150px;
 
       .background {
         img {
-          height: 200px;
+          height: 150px;
           object-fit: cover;
         }
       }
@@ -265,19 +265,101 @@
         // border: 2px solid red;
         position: absolute;
         padding: 0;
-        padding-right: 100px;
-        gap: 20px;
+        padding-right: 50px;
+        gap: 0px;
 
         .title {
           color: $fontcolor;
-          font-size: 42px;
+          font-size: 32px;
           letter-spacing: 10px;
           font-family: "Belleza", sans-serif;
           font-weight: 400;
           text-transform: uppercase;
           margin-left: 10px;
           text-align: right;
-          width: 500px;
+          width: 400px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .homeHeader {
+    max-height: calc(0.45 * 100vw);
+
+    .background {
+      img {
+        max-height: calc(0.45 * 100vw);
+      }
+    }
+    .content {
+      // border: 2px solid red;
+      padding-left: 50px;
+      gap: 10px;
+
+      .title {
+        font-size: 42px;
+        letter-spacing: 6px;
+      }
+      .slogan {
+        font-size: 22px;
+        padding-left: 36px;
+
+        &::before {
+          right: -36px;
+          width: 30px;
+        }
+        &::after {
+          width: 30px;
+        }
+      }
+      .desc {
+        color: $black;
+        margin-right: 150px;
+        max-width: 350px;
+        font-size: 16px;
+      }
+      .learnmore {
+        align-self: flex-start;
+        padding: 6px 25px;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+    &.explorePageHeader {
+      height: 120px;
+      max-height: 120px;
+
+      .background {
+        img {
+          height: 120px;
+          object-fit: cover;
+        }
+      }
+      .content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        // border: 2px solid red;
+        position: absolute;
+        padding: 0;
+        padding-right: 20px;
+        gap: 0px;
+
+        .title {
+          color: $fontcolor;
+          font-size: 24px;
+          letter-spacing: 5px;
+          font-family: "Belleza", sans-serif;
+          font-weight: 400;
+          text-transform: uppercase;
+          margin-left: 10px;
+          text-align: right;
+          width: 280px;
         }
       }
     }
@@ -337,13 +419,15 @@
     }
 
     &.explorePageHeader {
-      height: 200px;
-      max-height: 200px;
+      height: 80px;
+      max-height: 80px;
+      min-height: 80px;
 
       .background {
         img {
-          height: 200px;
+          height: 80px;
           object-fit: cover;
+          min-height: 80px;
         }
       }
       .content {
@@ -355,19 +439,19 @@
         // border: 2px solid red;
         position: absolute;
         padding: 0;
-        padding-right: 100px;
-        gap: 20px;
+        padding-right: 20px;
+        gap: 0px;
 
         .title {
           color: $fontcolor;
-          font-size: 42px;
-          letter-spacing: 10px;
+          font-size: 16px;
+          letter-spacing: 5px;
           font-family: "Belleza", sans-serif;
           font-weight: 400;
           text-transform: uppercase;
           margin-left: 10px;
           text-align: right;
-          width: 500px;
+          width: 200px;
         }
       }
     }

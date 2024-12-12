@@ -30,7 +30,7 @@ const TopSellingItems = () => {
             <p className="section-title">
                 New Arrivals
             </p>
-            <ProductsContainer productData={newArrivals} materialChange={materialChange} setMaterialChange={setMaterialChange} />
+            <ProductsContainer homepage={true} productData={newArrivals} materialChange={materialChange} setMaterialChange={setMaterialChange} />
             {/* <Link to={"/explore"}>
                 View More <ion-icon name="arrow-forward"></ion-icon>
             </Link> */}
