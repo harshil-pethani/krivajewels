@@ -494,6 +494,7 @@
 
         .inner-center {
           display: flex;
+          justify-content: space-between;
           gap: 10px;
 
           .useful-links-container {
@@ -502,6 +503,7 @@
             align-items: center;
             justify-content: flex-start;
             gap: 5px;
+            width: 100%;
             // border: 2px solid red;
 
             .useful-links {

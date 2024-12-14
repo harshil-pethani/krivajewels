@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import apiRequest from '../CommonUtil';
 import { bucketURL, getAllCategoriesApi } from '../Config/API_constant';
+import apiRequest from '../CommonUtil';
+import { categorySectionTitle } from '../Config/Static_data';
 
 const Category = () => {
     const [categories, setCategories] = useState([]);
@@ -18,8 +19,6 @@ const Category = () => {
                 };
                 setImageUrls(x);
             } catch (error) {
-                console.error('Failed to fetch categories:', error);
-            } finally {
             }
         }
         getAllCategories();
@@ -28,7 +27,7 @@ const Category = () => {
     return (
         <div id='category' className="categoryComponent">
             <p className="section-title">
-                Shop By Categories
+                {categorySectionTitle}
             </p>
             <div className="categoryContainer">
                 {

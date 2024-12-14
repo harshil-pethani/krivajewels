@@ -1,11 +1,8 @@
-// import axios from 'axios';
-import React, { useState } from 'react'
-import logoImg from "/logo2.png";
-import { Link } from 'react-router-dom';
-import { loginApi } from '../Config/API_constant';
+import React, { useState } from 'react';
+import { forgotPassowrdApi, loginApi } from '../Config/API_constant';
 import apiRequest from '../CommonUtil';
 import { useLoader } from '../Contexts/LoaderContext';
-// import { forgotPassowrdApi, loginApi, registerApi } from '../Config/Api';
+import { ToastContainer, toast } from 'react-toastify';
 
 const AdminLogin = ({ setAdminLogged, setAdminDetails }) => {
     const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -33,7 +30,6 @@ const AdminLogin = ({ setAdminLogged, setAdminDetails }) => {
                 setAdminLogged(true);
                 setAdminDetails(data);
             } catch (e) {
-                console.log(e);
             } finally {
                 hideLoader();
             }
@@ -42,20 +38,21 @@ const AdminLogin = ({ setAdminLogged, setAdminDetails }) => {
 
     const handleForgotBtn = async (e) => {
         e.preventDefault();
+        if (!forgotEmail) {
+            toast.error("Please fill all the fields!", {
+                position: "top-right"
+            });
+            return;
+        }
+        showLoader();
         try {
-            const res = await axios.post(forgotPassowrdApi, { email: forgotEmail }, { withCredentials: true });
-            if (res?.status === 200) {
-                setIsLoading(false);
-                setIsError(false);
-                setResMsg("Password Reset URL is Sent to your Email.")
-            }
+            const res = await apiRequest(forgotPassowrdApi, 'POST', { email: forgotEmail }, { withCredentials: true });
+            toast.success(res.message, {
+                position: "top-right"
+            });
         } catch (e) {
-            setIsError(true);
-            if (e.response.status === 400) {
-                setResMsg(e.response.data);
-            } else {
-                setResMsg("Sorry, Something went wrong - Please try after some time.");
-            }
+        } finally {
+            hideLoader();
         }
 
     }
@@ -86,7 +83,7 @@ const AdminLogin = ({ setAdminLogged, setAdminDetails }) => {
                             Login
                         </button>
                     </form>
-                    <span className="subLink" onClick={() => { setResMsg(""); setActiveBox("forgotBox") }}>
+                    <span className="subLink" onClick={() => { setActiveBox("forgotBox") }}>
                         Forgot Password?
                     </span>
                 </div>
@@ -105,19 +102,17 @@ const AdminLogin = ({ setAdminLogged, setAdminDetails }) => {
                         <label htmlFor="email">
                             Email<span>*</span>
                         </label>
-                        <input id='email' value={forgotEmail} type="email" onChange={(e) => setForgotEmail(e.target.value.toLowerCase())} />
-                        <p className={isError ? "resMsg error" : "resMsg"}>
-                            {resMsg}
-                        </p>
+                        <input id='email' value={forgotEmail} type="email" onChange={(e) => setForgotEmail(e.target.value.toLowerCase())} placeholder="Enter your Email" />
                         <button onClick={handleForgotBtn}>
                             Send
                         </button>
                     </form>
-                    <span className="subLink" onClick={() => { setResMsg(""); setActiveBox("loginBox") }}>
+                    <span className="subLink" onClick={() => { setActiveBox("loginBox") }}>
                         Back to Login !
                     </span>
                 </div>
             }
+            <ToastContainer />
         </div>
     )
 }

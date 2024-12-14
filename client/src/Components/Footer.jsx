@@ -4,84 +4,69 @@ import IGI from "/IGI.png";
 import SGL from "/SGL.png";
 import BIS from "/BIS.png";
 import logo from "/logo.png";
+import { aboutDescription, information, tab_4Cs, tab_aboutUs, tab_customizeJewellery, tab_explore, tab_home, tab_privacyPolicy, tab_termsAndConditions, tab_whyChooseUs, usefulLinks } from '../Config/Static_data';
 
 const Footer = () => {
     return (
         <div className="footerContainer">
             <div className="footer">
                 <div className="leftnew">
-                    {/* <h2 className="footer-title">
-                        Get in Touch
-                    </h2> */}
                     <div className="logo">
                         <img src={logo} alt="" />
                     </div>
-                    {/* <p className="sub-detail">
-                        <ion-icon name="mail-outline"></ion-icon>
-                        <span> admin@krivajewels.com</span>
-                    </p>
-                    <p className="sub-detail">
-                        <ion-icon name="call-outline"></ion-icon>
-                        <span> +91 86464 23532</span>
-                    </p> */}
-                    {/* <p className="sub-detail">
-                        <ion-icon name="time-outline"></ion-icon>
-                        <span>(09:00AM to 06:00PM Mon to Sat)</span>
-                    </p> */}
-
                 </div>
                 <div className="center">
                     <div className="inner-center">
                         <div className="useful-links-container">
                             <h2 className='footer-title'>
-                                Useful Links
+                                {usefulLinks}
                             </h2>
                             <ul className='useful-links'>
                                 <li>
                                     <Link to="/">
-                                        Home
+                                        {tab_home}
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/explore">
-                                        Explore
+                                        {tab_explore}
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/customize-jewellery">
-                                        Cutomize Jewellery
+                                        {tab_customizeJewellery}
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/about-us">
-                                        About Us
+                                        {tab_aboutUs}
                                     </Link>
                                 </li>
                             </ul>
                         </div>
                         <div className="useful-links-container">
                             <h2 className='footer-title'>
-                                Information
+                                {information}
                             </h2>
                             <ul className='useful-links'>
                                 <li>
                                     <Link to="/why-choose-us">
-                                        Why Choose Us
+                                        {tab_whyChooseUs}
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/privacy-policy">
-                                        Privacy Policy
+                                        {tab_privacyPolicy}
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/term-and-conditions">
-                                        Terms & Conditions
+                                        {tab_termsAndConditions}
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/four-c">
-                                        The 4 C’s of Diamonds
+                                        {tab_4Cs}
                                     </Link>
                                 </li>
                             </ul>
@@ -89,10 +74,10 @@ const Footer = () => {
                     </div>
                     <div className="socialIcons">
                         <a target="_blank" rel="noreferrer" className="icon">
-                            <ion-icon name="logo-facebook"></ion-icon>
+                            <ion-icon name="call-outline"></ion-icon>
                         </a>
                         <a target="_blank" rel="noreferrer" className="icon">
-                            <ion-icon name="logo-facebook"></ion-icon>
+                            <ion-icon name="mail-outline"></ion-icon>
                         </a>
                         <a target="_blank" rel="noreferrer" className="icon">
                             <ion-icon name="logo-facebook"></ion-icon>
@@ -110,10 +95,10 @@ const Footer = () => {
                 </div>
                 <div className="rightNew">
                     <h2 className='footer-title'>
-                        About Us
+                        {tab_aboutUs}
                     </h2>
                     <p className='about-text'>
-                        Ethical elegance, certified! Shine responsibly with IGI/SGL & BIS Hallmark assurance, piece after precious piece.
+                        {aboutDescription}
                     </p>
                     <div className="certifications">
                         <div className="certification">

@@ -16,6 +16,13 @@
     .description {
       color: $mainBg;
     }
+    img {
+      height: 90px;
+
+      &.cross-diamond {
+        height: 80px;
+      }
+    }
   }
 }
 
@@ -31,8 +38,12 @@
       gap: 20px;
       width: 340px;
 
-      svg {
-        height: 40px;
+      img {
+        height: 70px;
+
+        &.cross-diamond {
+          height: 60px;
+        }
       }
 
       .description {
@@ -45,7 +56,7 @@
 
 @media screen and (max-width: 700px) {
   .services-component {
-    padding: 20px 50px;
+    padding: 20px;
     gap: 30px;
     flex-wrap: wrap;
     min-width: 400px;
@@ -58,9 +69,36 @@
       gap: 20px;
       width: 340px;
 
-      svg {
-        height: 40px;
+      img {
+        height: 50px;
+
+        &.cross-diamond {
+          height: 50px;
+        }
       }
+
+      .description {
+        color: $mainBg;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .services-component {
+    padding: 20px;
+    gap: 30px;
+    min-width: 400px;
+    flex-direction: column;
+    align-items: center;
+
+    .service {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      width: 280px;
+      // border: 2px solid red;
 
       .description {
         color: $mainBg;

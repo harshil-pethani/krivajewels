@@ -37,24 +37,14 @@ const ExploreProducts = () => {
         }
     }
 
-    const handeleInfiniteScroll = async () => {
+    const loadMore = () => {
         try {
-            if (
-                hasMoreProduct &&
-                window.innerHeight + document.documentElement.scrollTop + 1 >=
-                document.documentElement.scrollHeight
-            ) {
+            if (hasMoreProduct) {
                 setPage((prev) => prev + 1);
             }
         } catch (error) {
-            console.error(error);
         }
     };
-
-    useEffect(() => {
-        window.addEventListener("scroll", handeleInfiniteScroll);
-        return () => window.removeEventListener("scroll", handeleInfiniteScroll);
-    }, []);
 
     return (
         <div id='topSelling' className="explore-product-component">
@@ -80,6 +70,12 @@ const ExploreProducts = () => {
             />
             <ProductsContainer productData={products} materialChange={materialChange} setMaterialChange={setMaterialChange} isLoading={isLoading} />
             {isLoading && <Loader />}
+            {
+                hasMoreProduct && (
+                    <button style={{ marginTop: "10px" }} onClick={loadMore}>
+                        Load More <ion-icon name="arrow-forward"></ion-icon>
+                    </button>)
+            }
         </div>
     )
 }

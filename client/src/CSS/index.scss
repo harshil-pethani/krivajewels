@@ -59,6 +59,7 @@ button {
   align-items: center;
   justify-content: center;
   width: fit-content;
+  white-space: nowrap;
   gap: 5px;
 
   &.btn-secondary {
@@ -234,6 +235,9 @@ button {
 
     .appliedFiltersContainer {
       display: flex;
+      width: calc(100% - 150px);
+      overflow: auto;
+
       .appliedCategoryFilter {
         display: flex;
         align-items: center;
@@ -246,6 +250,7 @@ button {
           border-radius: 30px;
           margin-right: 10px;
           gap: 5px;
+          white-space: nowrap;
 
           ion-icon {
             cursor: pointer;
@@ -397,6 +402,7 @@ button {
       margin-top: 10px;
 
       .appliedFiltersContainer {
+        width: calc(100% - 110px);
         .appliedCategoryFilter {
           .appliedFilter {
             padding: 3px 10px;
@@ -542,10 +548,11 @@ button {
       margin-top: 10px;
 
       .appliedFiltersContainer {
-        flex-wrap: wrap;
+        width: calc(100% - 110px);
+        overflow-x: auto;
         row-gap: 5px;
+
         .appliedCategoryFilter {
-          flex-wrap: wrap;
           row-gap: 5px;
           .appliedFilter {
             padding: 3px 10px;

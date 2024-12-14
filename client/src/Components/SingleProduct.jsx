@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { bucketURL } from '../Config/API_constant'
+import { bucketURL, domain2, mobileNumber } from '../Config/API_constant'
+import { tab_home } from '../Config/Static_data';
 
 const SingleProduct = ({ productData }) => {
-    const [currentMaterial, setCurrentMaterial] = useState("gold");
+    const [currentMaterial, setCurrentMaterial] = useState("Yellow-Gold");
     const [currentImage, setCurrentImage] = useState(null);
     const [isVideo, setIsVideo] = useState(false);
 
@@ -16,13 +17,20 @@ const SingleProduct = ({ productData }) => {
         }
     }, []);
 
+    const inquireNow = (id) => {
+        const message = `Hello, I want to do inquiry on below product - %0A ${domain2}/explore/${id}`;
+
+        const phoneNumber = mobileNumber;
+        window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+    };
+
     return (
         productData &&
         <div className='single-product-component'>
             <ul className="bread-crumb">
                 <li>
                     <Link to={"/"}>
-                        Home
+                        {tab_home}
                     </Link>
                 </li>
                 &gt;
@@ -49,11 +57,11 @@ const SingleProduct = ({ productData }) => {
                     </div>
                     <div className="image-selection">
                         {
-                            currentMaterial === "gold"
+                            currentMaterial === "Yellow-Gold"
                                 ? productData.goldFiles?.map((image, index) => (
                                     <img key={index} onClick={() => { setCurrentImage(image); setIsVideo(false); }} src={`${bucketURL}/${image}`} alt="" className={currentImage === image ? 'active' : ''} />
                                 ))
-                                : (currentMaterial === "silver" || currentMaterial === "whitegold")
+                                : (currentMaterial === "Silver" || currentMaterial === "White-Gold")
                                     ? productData.silverFiles?.map((image, index) => (
                                         <img key={index} onClick={() => { setCurrentImage(image); setIsVideo(false); }} src={`${bucketURL}/${image}`} alt="" className={currentImage === image ? 'active' : ''} />
                                     ))
@@ -63,10 +71,10 @@ const SingleProduct = ({ productData }) => {
                         }
 
                         {
-                            currentMaterial === "gold"
+                            currentMaterial === "Yellow-Gold"
                                 ?
                                 <video onClick={() => { setCurrentImage(productData.goldVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.goldVideo}`} alt="" className={currentImage === productData.goldVideo ? 'active' : ''} />
-                                : (currentMaterial === "silver" || currentMaterial === "whitegold") ?
+                                : (currentMaterial === "Silver" || currentMaterial === "White-Gold") ?
                                     <video onClick={() => { setCurrentImage(productData.goldVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.silverVideo}`} alt="" className={currentImage === productData.goldVideo ? 'active' : ''} />
                                     :
                                     <video onClick={() => { setCurrentImage(productData.goldVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.roseGoldVideo}`} alt="" className={currentImage === productData.goldVideo ? 'active' : ''} />
@@ -91,20 +99,20 @@ const SingleProduct = ({ productData }) => {
                             Select Material:
                         </span>
                         <ul className="material-selection">
-                            <li onClick={() => { setCurrentMaterial("gold"); setCurrentImage(productData?.goldBannerImage); setIsVideo(false); }} title='Yello Gold' className={`material gold ${currentMaterial === "gold" ? "active" : ""}`} >
+                            <li onClick={() => { setCurrentMaterial("Yellow-Gold"); setCurrentImage(productData?.goldBannerImage); setIsVideo(false); }} title='Yello Gold' className={`material gold ${currentMaterial === "Yellow-Gold" ? "active" : ""}`} >
                             </li>
-                            <li onClick={() => { setCurrentMaterial("rosegold"); setCurrentImage(productData?.roseGoldBannerImage); setIsVideo(false); }} title='Rose Gold' className={`material rosegold ${currentMaterial === "rosegold" ? "active" : ""}`}>
+                            <li onClick={() => { setCurrentMaterial("Rose-Gold"); setCurrentImage(productData?.roseGoldBannerImage); setIsVideo(false); }} title='Rose Gold' className={`material rosegold ${currentMaterial === "Rose-Gold" ? "active" : ""}`}>
                             </li>
-                            <li onClick={() => { setCurrentMaterial("whitegold"); setCurrentImage(productData?.silverBannerImage); setIsVideo(false); }} title='White Gold' className={`material whitegold ${currentMaterial === "whitegold" ? "active" : ""}`}>
+                            <li onClick={() => { setCurrentMaterial("White-Gold"); setCurrentImage(productData?.silverBannerImage); setIsVideo(false); }} title='White Gold' className={`material whitegold ${currentMaterial === "White-Gold" ? "active" : ""}`}>
                             </li>
-                            <li onClick={() => { setCurrentMaterial("silver"); setCurrentImage(productData?.silverBannerImage); setIsVideo(false); }} title='Silver' className={`material silver ${currentMaterial === "silver" ? "active" : ""}`}>
+                            <li onClick={() => { setCurrentMaterial("Silver"); setCurrentImage(productData?.silverBannerImage); setIsVideo(false); }} title='Silver' className={`material silver ${currentMaterial === "Silver" ? "active" : ""}`}>
                             </li>
                         </ul>
                         <span className="material-value">
                             {currentMaterial}
                         </span>
                     </div>
-                    <button className="inquiry-btn">
+                    <button onClick={() => inquireNow(productData._id)} className="inquiry-btn">
                         Inquiry Now<ion-icon name="arrow-forward"></ion-icon>
                     </button>
                 </div>

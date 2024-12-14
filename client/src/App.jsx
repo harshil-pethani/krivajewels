@@ -17,6 +17,7 @@ import TermsAndConditions from "./Pages/TermAndConditions";
 import WhyChooseUs from "./Pages/WhyChooseUs";
 import FourCs from "./Pages/FourC's";
 import CustomizePage from "./Pages/CustomizePage";
+import AdminReset from "./Pages/AdminReset";
 
 const App = () => {
   const [adminLogged, setAdminLogged] = useState(false);
@@ -48,6 +49,7 @@ const App = () => {
         <Route exact path="/explore" element={<ExplorePage />} />
         <Route exact path="/explore/:id" element={<SingleProduct />} />
         <Route exact path="/admin" element={adminLogged ? <Navigate to="/admin/categories" /> : <AdminLogin setAdminDetails={setAdminDetails} setAdminLogged={setAdminLogged} />} />
+        <Route exact path="/admin/reset_password" element={adminLogged ? <Navigate to="/admin/settings" /> : < AdminReset />} />
         <Route exact path="/admin/settings" element={adminLogged ? <AdminSettings setAdminLogged={setAdminLogged} adminDetails={adminDetails} setAdminDetails={setAdminDetails} /> : <AdminLogin setAdminDetails={setAdminDetails} setAdminLogged={setAdminLogged} />} />
         <Route exact path="/admin/categories" element={adminLogged ? <AdminCategory setAdminLogged={setAdminLogged} adminDetails={adminDetails} setAdminDetails={setAdminDetails} /> : <AdminLogin setAdminDetails={setAdminDetails} setAdminLogged={setAdminLogged} />} />
         <Route exact path="/admin/diamonds" element={adminLogged ? <AdminDiamonds setAdminLogged={setAdminLogged} adminDetails={adminDetails} setAdminDetails={setAdminDetails} /> : <AdminLogin setAdminDetails={setAdminDetails} setAdminLogged={setAdminLogged} />} />

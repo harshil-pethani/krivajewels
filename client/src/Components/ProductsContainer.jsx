@@ -1,8 +1,16 @@
 import React from 'react'
-import { bucketURL } from '../Config/API_constant'
+import { bucketURL, domain, domain2, mobileNumber } from '../Config/API_constant'
 import { Link } from 'react-router-dom'
 
 const ProductsContainer = ({ homepage, productData, materialChange, setMaterialChange, isLoading, isForAdminPanel, setUpdateProduct, setShowPopup, deleteProduct }) => {
+
+    const inquireNow = (id) => {
+        const message = `Hello, I want to do inquiry on below product - %0A ${domain2}/explore/${id}`;
+
+        const phoneNumber = mobileNumber;
+        window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+    };
+
     return (
         <div className={homepage ? "jewellery-card-container forHome" : "jewellery-card-container"}>
             {
@@ -22,7 +30,7 @@ const ProductsContainer = ({ homepage, productData, materialChange, setMaterialC
                                             : `${bucketURL}/${jewellery.goldBannerImage}`} alt={jewellery.title} />
                             </Link>
                             <div className="card-details">
-                                <div>
+                                <div className="inner-detail">
                                     <Link to={`/explore/${jewellery._id}`} className="jewellery-title" title={jewellery.title}>
                                         {jewellery.title}
                                     </Link>
@@ -51,7 +59,7 @@ const ProductsContainer = ({ homepage, productData, materialChange, setMaterialC
                                             </button>
                                         </div>
                                         :
-                                        <button className="inquiry-btn">
+                                        <button className="inquiry-btn" onClick={() => inquireNow(jewellery._id)}>
                                             Inquiry Now<ion-icon name="arrow-forward"></ion-icon>
                                         </button>
                                 }

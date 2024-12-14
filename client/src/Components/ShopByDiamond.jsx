@@ -2,19 +2,17 @@ import React, { useEffect, useState } from 'react'
 import apiRequest from '../CommonUtil';
 import { bucketURL, getAllDiamondsApi } from '../Config/API_constant';
 import { Link } from 'react-router-dom';
+import { diamondSectionTitle } from '../Config/Static_data';
 
 const ShopByDiamond = () => {
     const [diamonds, setDiamonds] = useState([]);
+    
     useEffect(() => {
-        // setIsLoading(true);
         async function getAllDiamonds() {
             try {
                 const data = await apiRequest(getAllDiamondsApi, 'GET');
                 setDiamonds(data?.data || []);
             } catch (error) {
-                console.error('Failed to fetch diamonds:', error);
-            } finally {
-                // setIsLoading(false);
             }
         }
         getAllDiamonds();
@@ -23,7 +21,7 @@ const ShopByDiamond = () => {
     return (
         <div className="diamondComponent">
             <p className="section-title">
-                Shop By diamonds
+                {diamondSectionTitle}
             </p>
             <div className="diamondContainer">
                 {

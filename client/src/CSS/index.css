@@ -1242,6 +1242,12 @@
 .services-component .service .description {
   color: #2d2d2d;
 }
+.services-component .service img {
+  height: 90px;
+}
+.services-component .service img.cross-diamond {
+  height: 80px;
+}
 
 @media screen and (max-width: 1000px) {
   .services-component {
@@ -1255,8 +1261,11 @@
     gap: 20px;
     width: 340px;
   }
-  .services-component .service svg {
-    height: 40px;
+  .services-component .service img {
+    height: 70px;
+  }
+  .services-component .service img.cross-diamond {
+    height: 60px;
   }
   .services-component .service .description {
     color: #2d2d2d;
@@ -1265,7 +1274,7 @@
 }
 @media screen and (max-width: 700px) {
   .services-component {
-    padding: 20px 50px;
+    padding: 20px;
     gap: 30px;
     flex-wrap: wrap;
     min-width: 400px;
@@ -1278,8 +1287,30 @@
     gap: 20px;
     width: 340px;
   }
-  .services-component .service svg {
-    height: 40px;
+  .services-component .service img {
+    height: 50px;
+  }
+  .services-component .service img.cross-diamond {
+    height: 50px;
+  }
+  .services-component .service .description {
+    color: #2d2d2d;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .services-component {
+    padding: 20px;
+    gap: 30px;
+    min-width: 400px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .services-component .service {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 280px;
   }
   .services-component .service .description {
     color: #2d2d2d;
@@ -1695,6 +1726,7 @@
   }
   .footerContainer .footer .center .inner-center {
     display: flex;
+    justify-content: space-between;
     gap: 10px;
   }
   .footerContainer .footer .center .inner-center .useful-links-container {
@@ -1703,6 +1735,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 5px;
+    width: 100%;
   }
   .footerContainer .footer .center .inner-center .useful-links-container .useful-links {
     list-style: none;
@@ -1838,23 +1871,10 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 20px 20px;
-  background: inherit;
+  background-color: #f8f9ff;
   width: 450px;
   border-radius: 10px;
   min-height: 200px;
-}
-.adminlogin .loginBox::after {
-  content: "";
-  width: 300px;
-  height: 300px;
-  background: inherit;
-  position: absolute;
-  left: -25px;
-  right: 0;
-  top: -25px;
-  bottom: 0;
-  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.05);
-  filter: blur(10px);
 }
 .adminlogin .loginBox .title {
   font-size: 32px;
@@ -1869,7 +1889,7 @@
   margin-bottom: 20px;
 }
 .adminlogin .loginBox .instruction {
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
   margin-top: 10px;
   color: #2d2d2d;
@@ -2488,6 +2508,14 @@
 .single-product-component .bread-crumb li a {
   text-decoration: none;
   color: #000825;
+  white-space: nowrap;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 500px;
+  display: block;
 }
 .single-product-component .bread-crumb li a:hover {
   text-decoration: underline;
@@ -2542,12 +2570,6 @@
   border: 2px solid #2d2d2d;
   border-radius: 5px;
 }
-.single-product-component .product-details .left .image-selection video:after {
-  content: "";
-  height: 100px;
-  width: 100px;
-  background-color: red;
-}
 .single-product-component .product-details .right {
   width: 50%;
   display: flex;
@@ -2567,7 +2589,7 @@
   font-weight: 300;
 }
 .single-product-component .product-details .right .category .value {
-  font-weight: 600;
+  font-weight: 500;
 }
 .single-product-component .product-details .right .material-container {
   display: flex;
@@ -2600,7 +2622,7 @@
 }
 .single-product-component .product-details .right .material-value {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: capitalize;
 }
 .single-product-component .product-details .right .inquiry-btn {
@@ -2611,6 +2633,370 @@
   padding: 8px 30px;
 }
 
+@media screen and (max-width: 1000px) {
+  .single-product-component {
+    padding: 20px 50px;
+  }
+  .single-product-component .bread-crumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  .single-product-component .bread-crumb li a {
+    text-decoration: none;
+    color: #000825;
+  }
+  .single-product-component .bread-crumb li a:hover {
+    text-decoration: underline;
+  }
+  .single-product-component .bread-crumb li:last-child a {
+    font-weight: 500;
+  }
+  .single-product-component .bread-crumb li:last-child a:hover {
+    text-decoration: none;
+    cursor: default;
+  }
+  .single-product-component .product-details {
+    display: flex;
+    gap: 50px;
+  }
+  .single-product-component .product-details .left {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+  }
+  .single-product-component .product-details .left .selected-image {
+    height: 350px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .single-product-component .product-details .left .selected-image img,
+  .single-product-component .product-details .left .selected-image video {
+    height: 80%;
+    width: auto;
+  }
+  .single-product-component .product-details .left .image-selection {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+  }
+  .single-product-component .product-details .left .image-selection img,
+  .single-product-component .product-details .left .image-selection video {
+    height: 50px;
+    width: 50px;
+  }
+  .single-product-component .product-details .left .image-selection img.active,
+  .single-product-component .product-details .left .image-selection video.active {
+    border: 2px solid #2d2d2d;
+    border-radius: 5px;
+  }
+  .single-product-component .product-details .right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .single-product-component .product-details .right .title {
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .single-product-component .product-details .right .description {
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .single-product-component .product-details .right .category {
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .single-product-component .product-details .right .category .value {
+    font-weight: 500;
+  }
+  .single-product-component .product-details .right .material-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .single-product-component .product-details .right .material-container .material-selection {
+    display: flex;
+    list-style: none;
+    justify-content: flex-start;
+    gap: 5px;
+    margin: 5px 0;
+  }
+  .single-product-component .product-details .right .material-container .material-selection .material {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+  }
+  .single-product-component .product-details .right .material-container .material-selection .material.gold {
+    background: linear-gradient(30deg, #e1b94f 0, #fcf1d5 55%, #fcf1d5 60%, #e1b94f 100%) !important;
+  }
+  .single-product-component .product-details .right .material-container .material-selection .material.rosegold {
+    background: linear-gradient(30deg, #ec8a55 0, #fcede2 55%, #fcede2 60%, #ec8a55 100%) !important;
+  }
+  .single-product-component .product-details .right .material-container .material-selection .material.whitegold, .single-product-component .product-details .right .material-container .material-selection .material.silver {
+    background: linear-gradient(30deg, #b3b2af 0, #f7f7f7 55%, #f7f7f7 60%, #b3b2af 100%) !important;
+  }
+  .single-product-component .product-details .right .material-container .material-selection .material.active {
+    border: 1px solid #2d2d2d;
+  }
+  .single-product-component .product-details .right .material-value {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  .single-product-component .product-details .right .inquiry-btn {
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 8px 30px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .single-product-component {
+    padding: 20px;
+  }
+  .single-product-component .bread-crumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  .single-product-component .bread-crumb li a {
+    text-decoration: none;
+    color: #000825;
+    max-width: 400px;
+  }
+  .single-product-component .bread-crumb li a:hover {
+    text-decoration: underline;
+  }
+  .single-product-component .bread-crumb li:last-child a {
+    font-weight: 500;
+  }
+  .single-product-component .bread-crumb li:last-child a:hover {
+    text-decoration: none;
+    cursor: default;
+  }
+  .single-product-component .product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .single-product-component .product-details .left {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .single-product-component .product-details .left .selected-image {
+    height: 350px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .single-product-component .product-details .left .selected-image img,
+  .single-product-component .product-details .left .selected-image video {
+    height: 80%;
+    width: auto;
+  }
+  .single-product-component .product-details .left .image-selection {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+  }
+  .single-product-component .product-details .left .image-selection img,
+  .single-product-component .product-details .left .image-selection video {
+    height: 50px;
+    width: 50px;
+  }
+  .single-product-component .product-details .left .image-selection img.active,
+  .single-product-component .product-details .left .image-selection video.active {
+    border: 2px solid #2d2d2d;
+    border-radius: 5px;
+  }
+  .single-product-component .product-details .left .image-selection video:after {
+    content: "";
+    height: 100px;
+    width: 100px;
+    background-color: red;
+  }
+  .single-product-component .product-details .right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .single-product-component .product-details .right .title {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+  }
+  .single-product-component .product-details .right .description {
+    font-size: 18px;
+    font-weight: 300;
+    text-align: justify;
+  }
+  .single-product-component .product-details .right .category {
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .single-product-component .product-details .right .category .value {
+    font-weight: 500;
+  }
+  .single-product-component .product-details .right .material-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .single-product-component .product-details .right .material-container .material-selection {
+    display: flex;
+    list-style: none;
+    justify-content: flex-start;
+    gap: 5px;
+    margin: 5px 0;
+  }
+  .single-product-component .product-details .right .material-container .material-selection .material {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+  }
+  .single-product-component .product-details .right .material-container .material-selection .material.gold {
+    background: linear-gradient(30deg, #e1b94f 0, #fcf1d5 55%, #fcf1d5 60%, #e1b94f 100%) !important;
+  }
+  .single-product-component .product-details .right .material-container .material-selection .material.rosegold {
+    background: linear-gradient(30deg, #ec8a55 0, #fcede2 55%, #fcede2 60%, #ec8a55 100%) !important;
+  }
+  .single-product-component .product-details .right .material-container .material-selection .material.whitegold, .single-product-component .product-details .right .material-container .material-selection .material.silver {
+    background: linear-gradient(30deg, #b3b2af 0, #f7f7f7 55%, #f7f7f7 60%, #b3b2af 100%) !important;
+  }
+  .single-product-component .product-details .right .material-container .material-selection .material.active {
+    border: 1px solid #2d2d2d;
+  }
+  .single-product-component .product-details .right .material-value {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  .single-product-component .product-details .right .inquiry-btn {
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 8px 30px;
+    align-self: center;
+  }
+}
+@media screen and (max-width: 550px) {
+  .single-product-component {
+    padding: 20px;
+  }
+  .single-product-component .bread-crumb {
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  .single-product-component .bread-crumb li a {
+    max-width: 200px;
+  }
+  .single-product-component .product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .single-product-component .product-details .left {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .single-product-component .product-details .left .selected-image {
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .single-product-component .product-details .left .selected-image img,
+  .single-product-component .product-details .left .selected-image video {
+    height: auto;
+    min-height: 260px;
+    width: 70%;
+  }
+  .single-product-component .product-details .left .image-selection {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+  }
+  .single-product-component .product-details .left .image-selection img,
+  .single-product-component .product-details .left .image-selection video {
+    height: 50px;
+    width: 50px;
+  }
+  .single-product-component .product-details .right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .single-product-component .product-details .right .title {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .single-product-component .product-details .right .description {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  .single-product-component .product-details .right .category {
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .single-product-component .product-details .right .category .value {
+    font-weight: 500;
+  }
+  .single-product-component .product-details .right .material-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .single-product-component .product-details .right .material-container .material-selection {
+    display: flex;
+    list-style: none;
+    justify-content: flex-start;
+    gap: 5px;
+    margin: 5px 0;
+  }
+  .single-product-component .product-details .right .material-container .material-selection .material {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+  }
+  .single-product-component .product-details .right .material-container .material-selection .material.gold {
+    background: linear-gradient(30deg, #e1b94f 0, #fcf1d5 55%, #fcf1d5 60%, #e1b94f 100%) !important;
+  }
+  .single-product-component .product-details .right .material-container .material-selection .material.rosegold {
+    background: linear-gradient(30deg, #ec8a55 0, #fcede2 55%, #fcede2 60%, #ec8a55 100%) !important;
+  }
+  .single-product-component .product-details .right .material-container .material-selection .material.whitegold, .single-product-component .product-details .right .material-container .material-selection .material.silver {
+    background: linear-gradient(30deg, #b3b2af 0, #f7f7f7 55%, #f7f7f7 60%, #b3b2af 100%) !important;
+  }
+  .single-product-component .product-details .right .material-container .material-selection .material.active {
+    border: 1px solid #2d2d2d;
+  }
+  .single-product-component .product-details .right .material-value {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  .single-product-component .product-details .right .inquiry-btn {
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 8px 30px;
+  }
+}
 .jewellery-card-container {
   display: grid;
   grid-gap: 20px;
@@ -2642,7 +3028,8 @@
   cursor: pointer;
 }
 .jewellery-card-container .jewellery-card .imgBox {
-  height: 200px;
+  height: -moz-fit-content;
+  height: fit-content;
   width: 100%;
   overflow: hidden;
   border-radius: 5px 5px 0 0;
@@ -2662,6 +3049,7 @@
   transform: scale(1.1);
 }
 .jewellery-card-container .jewellery-card .card-details {
+  width: 100%;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -2670,22 +3058,25 @@
   height: fit-content;
   gap: 5px;
 }
-.jewellery-card-container .jewellery-card .card-details .jewellery-title {
+.jewellery-card-container .jewellery-card .card-details .inner-detail {
+  width: 100%;
+}
+.jewellery-card-container .jewellery-card .card-details .inner-detail .jewellery-title {
   font-weight: 500;
   color: #000825;
   text-align: center;
   font-size: 18px;
   text-decoration: none;
   display: block;
-  width: 200px;
+  width: 90%;
   overflow: hidden;
   text-wrap: nowrap;
   text-overflow: ellipsis;
 }
-.jewellery-card-container .jewellery-card .card-details .jewellery-title:hover {
+.jewellery-card-container .jewellery-card .card-details .inner-detail .jewellery-title:hover {
   text-decoration: underline;
 }
-.jewellery-card-container .jewellery-card .card-details .jewellery-description {
+.jewellery-card-container .jewellery-card .card-details .inner-detail .jewellery-description {
   font-weight: 300;
   color: #000000;
   font-size: 14px;
@@ -2695,28 +3086,28 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.jewellery-card-container .jewellery-card .card-details .material-container {
+.jewellery-card-container .jewellery-card .card-details .inner-detail .material-container {
   display: flex;
   list-style: none;
   justify-content: center;
   gap: 5px;
   margin: 5px 0;
 }
-.jewellery-card-container .jewellery-card .card-details .material-container .material {
+.jewellery-card-container .jewellery-card .card-details .inner-detail .material-container .material {
   height: 25px;
   width: 25px;
   border-radius: 50%;
 }
-.jewellery-card-container .jewellery-card .card-details .material-container .material.gold {
+.jewellery-card-container .jewellery-card .card-details .inner-detail .material-container .material.gold {
   background: linear-gradient(30deg, #e1b94f 0, #fcf1d5 55%, #fcf1d5 60%, #e1b94f 100%) !important;
 }
-.jewellery-card-container .jewellery-card .card-details .material-container .material.rosegold {
+.jewellery-card-container .jewellery-card .card-details .inner-detail .material-container .material.rosegold {
   background: linear-gradient(30deg, #ec8a55 0, #fcede2 55%, #fcede2 60%, #ec8a55 100%) !important;
 }
-.jewellery-card-container .jewellery-card .card-details .material-container .material.whitegold, .jewellery-card-container .jewellery-card .card-details .material-container .material.silver {
+.jewellery-card-container .jewellery-card .card-details .inner-detail .material-container .material.whitegold, .jewellery-card-container .jewellery-card .card-details .inner-detail .material-container .material.silver {
   background: linear-gradient(30deg, #b3b2af 0, #f7f7f7 55%, #f7f7f7 60%, #b3b2af 100%) !important;
 }
-.jewellery-card-container .jewellery-card .card-details .material-container .material.active {
+.jewellery-card-container .jewellery-card .card-details .inner-detail .material-container .material.active {
   border: 1px solid #000825;
 }
 .jewellery-card-container .jewellery-card .card-details .actionBtns {
@@ -2809,10 +3200,88 @@
   .jewellery-card-container {
     grid-template-columns: repeat(4, 1fr);
   }
+  .jewellery-card-container .jewellery-card .card-details .inner-detail .jewellery-title {
+    font-size: 18px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .inner-detail .jewellery-description {
+    font-size: 14px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .inner-detail .material-container .material {
+    height: 25px;
+    width: 25px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .actionBtns {
+    gap: 10px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .actionBtns button {
+    font-size: 16px;
+    padding: 7px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .inquiry-btn {
+    padding: 5px 20px;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .inquiry-btn ion-icon {
+    font-size: 14px;
+    margin-left: 0;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .imgBox {
+    height: 180px;
+    width: 100%;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .card-details {
+    padding: 10px;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .card-details .jewellery-title {
+    font-size: 16px;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .card-details .jewellery-description {
+    font-size: 14px;
+  }
 }
 @media (max-width: 1000px) {
   .jewellery-card-container {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .jewellery-card-container .jewellery-card .card-details .inner-detail .jewellery-title {
+    font-size: 16px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .inner-detail .jewellery-description {
+    font-size: 14px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .inner-detail .material-container .material {
+    height: 25px;
+    width: 25px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .actionBtns {
+    gap: 10px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .actionBtns button {
+    font-size: 16px;
+    padding: 7px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .inquiry-btn {
+    padding: 5px 20px;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .inquiry-btn ion-icon {
+    font-size: 14px;
+    margin-left: 0;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .imgBox {
+    height: 180px;
+    width: 100%;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .card-details {
+    padding: 10px;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .card-details .jewellery-title {
+    font-size: 16px;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .card-details .jewellery-description {
+    font-size: 14px;
   }
   .jewellery-card-container.forHome .jewellery-card {
     width: 200px;
@@ -2859,6 +3328,48 @@
     grid-template-columns: repeat(3, 1fr);
     min-width: 400px;
     margin-top: 10px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .inner-detail .jewellery-title {
+    font-size: 16px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .inner-detail .jewellery-description {
+    font-size: 14px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .inner-detail .material-container {
+    margin-bottom: 0;
+  }
+  .jewellery-card-container .jewellery-card .card-details .inner-detail .material-container .material {
+    height: 20px;
+    width: 20px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .actionBtns {
+    gap: 10px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .actionBtns button {
+    font-size: 16px;
+    padding: 7px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .inquiry-btn {
+    padding: 5px 20px;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .inquiry-btn ion-icon {
+    font-size: 14px;
+    margin-left: 0;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .imgBox {
+    height: 180px;
+    width: 100%;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .card-details {
+    padding: 10px;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .card-details .jewellery-title {
+    font-size: 16px;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .card-details .jewellery-description {
+    font-size: 14px;
   }
   .jewellery-card-container.forHome {
     gap: 10px;
@@ -2911,35 +3422,25 @@
     padding: 0 10px;
     grid-gap: 10px;
   }
-  .jewellery-card-container .jewellery-card {
-    width: 185px;
-  }
-  .jewellery-card-container .jewellery-card .imgBox {
-    height: 150px;
-  }
-  .jewellery-card-container .jewellery-card .imgBox img {
-    height: 60%;
-    width: 60%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .jewellery-card-container .jewellery-card .card-details {
-    padding: 10px;
-  }
-  .jewellery-card-container .jewellery-card .card-details .jewellery-title {
+  .jewellery-card-container .jewellery-card .card-details .inner-detail .jewellery-title {
     font-size: 14px;
-    width: 160px;
   }
-  .jewellery-card-container .jewellery-card .card-details .jewellery-description {
-    font-size: 12px;
+  .jewellery-card-container .jewellery-card .card-details .inner-detail .jewellery-description {
+    font-size: 14px;
   }
-  .jewellery-card-container .jewellery-card .card-details .material-container {
-    gap: 5px;
-    margin: 5px 0;
+  .jewellery-card-container .jewellery-card .card-details .inner-detail .material-container {
+    margin-bottom: 0;
   }
-  .jewellery-card-container .jewellery-card .card-details .material-container .material {
+  .jewellery-card-container .jewellery-card .card-details .inner-detail .material-container .material {
     height: 20px;
     width: 20px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .actionBtns {
+    gap: 10px;
+  }
+  .jewellery-card-container .jewellery-card .card-details .actionBtns button {
+    font-size: 16px;
+    padding: 7px;
   }
   .jewellery-card-container .jewellery-card .card-details .inquiry-btn {
     border-radius: 3px;
@@ -2950,6 +3451,19 @@
   .jewellery-card-container .jewellery-card .card-details .inquiry-btn ion-icon {
     font-size: 12px;
     margin-left: 0;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .imgBox {
+    height: 180px;
+    width: 100%;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .card-details {
+    padding: 10px;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .card-details .jewellery-title {
+    font-size: 16px;
+  }
+  .jewellery-card-container .jewellery-card.admin-card .card-details .jewellery-description {
+    font-size: 14px;
   }
   .jewellery-card-container.forHome {
     gap: 10px;
@@ -3859,6 +4373,7 @@ button {
   justify-content: center;
   width: -moz-fit-content;
   width: fit-content;
+  white-space: nowrap;
   gap: 5px;
 }
 button.btn-secondary {
@@ -4011,6 +4526,8 @@ button:hover {
 }
 .filterContainer .filter-actions .appliedFiltersContainer {
   display: flex;
+  width: calc(100% - 150px);
+  overflow: auto;
 }
 .filterContainer .filter-actions .appliedFiltersContainer .appliedCategoryFilter {
   display: flex;
@@ -4024,6 +4541,7 @@ button:hover {
   border-radius: 30px;
   margin-right: 10px;
   gap: 5px;
+  white-space: nowrap;
 }
 .filterContainer .filter-actions .appliedFiltersContainer .appliedCategoryFilter .appliedFilter ion-icon {
   cursor: pointer;
@@ -4152,6 +4670,9 @@ button:hover {
   .filterContainer .filter-actions {
     margin-top: 10px;
   }
+  .filterContainer .filter-actions .appliedFiltersContainer {
+    width: calc(100% - 110px);
+  }
   .filterContainer .filter-actions .appliedFiltersContainer .appliedCategoryFilter .appliedFilter {
     padding: 3px 10px;
     margin-right: 5px;
@@ -4271,11 +4792,11 @@ button:hover {
     margin-top: 10px;
   }
   .filterContainer .filter-actions .appliedFiltersContainer {
-    flex-wrap: wrap;
+    width: calc(100% - 110px);
+    overflow-x: auto;
     row-gap: 5px;
   }
   .filterContainer .filter-actions .appliedFiltersContainer .appliedCategoryFilter {
-    flex-wrap: wrap;
     row-gap: 5px;
   }
   .filterContainer .filter-actions .appliedFiltersContainer .appliedCategoryFilter .appliedFilter {

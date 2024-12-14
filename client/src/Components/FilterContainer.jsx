@@ -24,7 +24,7 @@ const FilterContainer = ({ searchQuery = { searchQuery }, setSearchQuery = { set
         if (diamond && initialCall.current) {
             const newSelectedOptions = [...selectedOptions];
             let diamondData = localFilters[1].data.find((opt) => opt._id === diamond);
-            newSelectedOptions[0].push(diamondData);
+            newSelectedOptions[1].push(diamondData);
             setSelectedOptions(newSelectedOptions);
         }
     }, []);
@@ -128,7 +128,7 @@ const FilterContainer = ({ searchQuery = { searchQuery }, setSearchQuery = { set
                         <div className="leftPart">
                             <div className="searchBox">
                                 {/* <ion-icon name="search"></ion-icon> */}
-                                <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} onKeyDown={() => { }} type="text" placeholder="Search for Gold jewellery, Diamonds jewellery and more..." />
+                                <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} onKeyDown={() => { }} type="text" placeholder="Search for Gold, Diamonds and other jewelleries..." />
                                 <button>
                                     Search
                                 </button>

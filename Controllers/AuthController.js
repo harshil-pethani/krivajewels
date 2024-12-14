@@ -373,9 +373,7 @@ export const resetPassword = {
     controller: async (req, res) => {
         try {
             const verified = JWT.verify(req.body.token, process.env.JWT_SEC_KEY);
-            const rootUser = await User.findOne({
-                _id: verified.id
-            });
+            const rootUser = await User.findById(verified.id);
 
             if (!rootUser) {
                 return res.status(400).json({
