@@ -32,7 +32,7 @@ const HomePage = () => {
             const filters = [{ name: "Category", data: res.data[0] }, { name: "Diamond", data: res.data[1] }];
             localStorage.setItem("KrivaFilters", JSON.stringify(filters));
         } catch (e) {
-            console.log(e);
+            // console.log(e);
             toast.error("Something went wrong !", {
                 position: "top-right"
             });

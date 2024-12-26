@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-// import logoImg from "/logo5.png";
 
 const AdminTop = ({ adminDetails }) => {
     const navigate = useNavigate();

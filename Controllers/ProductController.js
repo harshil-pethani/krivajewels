@@ -56,7 +56,7 @@ export const ProductCreate = {
             });
 
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             return res.status(500).json({
                 "success": false,
                 "message": "Product Creation Failed Internal server error"
@@ -100,7 +100,7 @@ export const getSingleProduct = {
             });
 
         } catch (e) {
-            console.log(e);
+            // console.log(e);
             return res.status(500).json({
                 "success": false,
                 "message": "Product fetching failed",
@@ -153,7 +153,7 @@ export const productUpdate = {
                 product
             });
         } catch (e) {
-            console.log(e);
+            // console.log(e);
             return res.status(500).json({
                 "success": false,
                 "message": "Product updation failed Internal server error"
@@ -203,7 +203,7 @@ export const productDelete = {
                 });
             }
         } catch (e) {
-            console.log(e);
+            // console.log(e);
             return res.status(500).json({
                 "success": false,
                 "message": "Product deletion failed"
@@ -334,7 +334,7 @@ export const getAllProducts = {
                 hasMoreProduct
             });
         } catch (err) {
-            console.error(err);
+            // console.error(err);
             res.status(500).json({ error: true, message: "Internal Server Error" });
         }
     }
@@ -418,7 +418,7 @@ export const getRecent5Products = {
                 products,
             });
         } catch (err) {
-            console.error(err);
+            // console.error(err);
             res.status(500).json({ error: true, message: "Internal Server Error" });
         }
     }
@@ -440,7 +440,7 @@ export const getAllFilters = {
                 "data": filters
             });
         } catch (err) {
-            console.error(err);
+            // console.error(err);
             res.status(500).json({ error: true, message: "Internal Server Error" });
         }
     }

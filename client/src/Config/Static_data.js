@@ -26,7 +26,7 @@ export const information = "Information";
 export const customizeSlogan = "Let's Talk About Your Dream Jewellery";
 export const customizeDescription = "When You Have Some Doubts Regarding The Purchase Of Lab Grown Diamond Jewelry Which Impacts Your Mind, Then Freely Contact Us Or Fill Up The Below Form. We Give Our Best Response To Your Doubts.";
 export const customizeProcess = "Jewellery customization process";
-
+export const mobileNumber = "+918154010045";
 
 // Static Data
 export const faqQuestions = [

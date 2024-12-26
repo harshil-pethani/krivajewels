@@ -169,7 +169,7 @@ export const categoryDelete = {
                 message: "Category and associated products updated successfully",
             });
         } catch (e) {
-            console.log(e);
+            // console.log(e);
             return res.status(500).json({
                 "success": false,
                 "message": "Category deletion failed"
@@ -194,7 +194,7 @@ export const getAllCategories = {
                 "data": findCategories
             });
         } catch (e) {
-            console.log(e);
+            // console.log(e);
             return res.status(500).json({
                 "success": false,
                 "message": "Category Fetching failed"

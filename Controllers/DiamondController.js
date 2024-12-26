@@ -276,7 +276,7 @@ export const diamondUpdate = {
                 diamond
             });
         } catch (error) {
-            console.error(error);
+            // console.error(error);
             return res.status(500).json({
                 "success": false,
                 "message": "Diamond updation failed internal server error"
@@ -311,20 +311,21 @@ export const diamondDelete = {
                 { isActive: false }
             );
 
-            if (await deleteFileFromBucket(diamond.diamondImage)) {
-                await Diamond.findByIdAndDelete(id);
-                return res.status(200).json({
-                    "success": true,
-                    "message": "Category deleted Successfully"
-                });
-            } else {
+            const fileDeleted = await deleteFileFromBucket(diamond.diamondImage);
+            if (!fileDeleted) {
                 return res.status(500).json({
-                    "success": false,
-                    "message": "Category deletion failed"
+                    success: false,
+                    message: "Diamond deletion failed due to image deletion error",
                 });
             }
+            await Diamond.findByIdAndDelete(id);
+
+            return res.status(500).json({
+                "success": false,
+                "message": "Diamond and associated products updated successfully"
+            });
         } catch (e) {
-            console.log(e);
+            // console.log(e);
             return res.status(500).json({
                 "success": false,
                 "message": "Diamond deletion failed"

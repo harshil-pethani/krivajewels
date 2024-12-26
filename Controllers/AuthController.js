@@ -176,7 +176,7 @@ export const updateAdmin = {
             });
         }
         catch (e) {
-            console.log(e);
+            // console.log(e);
             if (e.keyValue?.username) {
                 return res.status(409).json({
                     "success": false,
@@ -295,7 +295,7 @@ export const forgotPassword = {
             });
 
         } catch (e) {
-            console.log(e);
+            // console.log(e);
             return res.status(500).json({
                 "success": false,
                 "message": "Password Reset Failed"
@@ -394,7 +394,7 @@ export const resetPassword = {
             });
         }
         catch (e) {
-            console.log(e);
+            // console.log(e);
             return res.status(500).json({
                 "success": false,
                 "message": "Admin Data Update Failed"

@@ -44,7 +44,7 @@ const AdminSettings = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 position: "top-right"
             });
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             setUserData({ ...adminDetails });
         } finally {
             hideLoader();
@@ -78,7 +78,7 @@ const AdminSettings = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 position: "top-right"
             });
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         } finally {
             hideLoader();
         }

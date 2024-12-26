@@ -55,7 +55,7 @@ const AdminCategory = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 position: "top-right"
             });
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         } finally {
             hideLoader();
             setShowPopup("");
@@ -74,7 +74,7 @@ const AdminCategory = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 });
                 setRefreshCategories(!refreshCategories);
             } catch (error) {
-                console.error('Failed to fetch categories:', error);
+                // console.error('Failed to fetch categories:', error);
             } finally {
                 hideLoader();
             }
@@ -107,7 +107,7 @@ const AdminCategory = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 position: "top-right"
             });
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         } finally {
             hideLoader();
             setShowPopup("");
@@ -127,7 +127,7 @@ const AdminCategory = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 };
                 setImageUrls(x);
             } catch (error) {
-                console.error('Failed to fetch categories:', error);
+                // console.error('Failed to fetch categories:', error);
             } finally {
                 setIsLoading(false);
             }

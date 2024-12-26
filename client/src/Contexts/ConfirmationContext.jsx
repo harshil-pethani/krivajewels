@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState } from 'react';
-
 const ConfirmationContext = createContext();
 
 export const useConfirmation = () => useContext(ConfirmationContext);

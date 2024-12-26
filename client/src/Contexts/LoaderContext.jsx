@@ -1,5 +1,4 @@
 import React, { createContext, useState, useContext } from 'react';
-
 export const useLoader = () => useContext(LoaderContext);
 const LoaderContext = createContext();
 

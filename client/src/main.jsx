@@ -9,14 +9,14 @@ import LoadingOverlay from './Components/LoadingOverlay.jsx'
 import { ConfirmationProvider } from './Contexts/ConfirmationContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
-  <BrowserRouter>
-    <LoaderProvider>
-      <ConfirmationProvider>
-        <LoadingOverlay />
-        <App />
-      </ConfirmationProvider>
-    </LoaderProvider>
-  </BrowserRouter>
-  // </React.StrictMode>,
+  <React.StrictMode>
+    <BrowserRouter>
+      <LoaderProvider>
+        <ConfirmationProvider>
+          <LoadingOverlay />
+          <App />
+        </ConfirmationProvider>
+      </LoaderProvider>
+    </BrowserRouter>
+  </React.StrictMode>,
 )

@@ -42,7 +42,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 const data = await apiRequest(getAllCategoriesApi, 'GET');
                 setCategories(data?.data || []);
             } catch (error) {
-                console.error('Failed to fetch categories:', error);
+                // console.error('Failed to fetch categories:', error);
             }
         }
         async function getAllDiamonds() {
@@ -50,7 +50,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 const data = await apiRequest(getAllDiamondsApi, 'GET');
                 setDiamonds(data?.data || []);
             } catch (error) {
-                console.error('Failed to fetch categories:', error);
+                // console.error('Failed to fetch categories:', error);
             }
         }
         getAllDiamonds();
@@ -95,7 +95,6 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
 
     const addProduct = async (e) => {
         e.preventDefault();
-        console.log(newProduct);
         if (!newProduct.title || !newProduct.description || !newProduct.category || !newProduct.diamond) {
             toast.error("Please fill all the fields!", {
                 position: "top-right"
@@ -171,7 +170,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 position: "top-right"
             });
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         } finally {
             hideLoader();
             setShowPopup("");
@@ -191,7 +190,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 setRefreshProducts(!refreshProducts);
                 anyUpdate.current = true;
             } catch (error) {
-                console.error('Failed to fetch categories:', error);
+                // console.error('Failed to fetch categories:', error);
             } finally {
                 hideLoader();
             }
@@ -215,7 +214,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 position: "top-right"
             });
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         } finally {
             hideLoader();
             setShowPopup("");
@@ -237,7 +236,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
             setProducts((prev) => [...prev, ...data.products]);
             setHasMoreProduct(data.hasMoreProduct);
         } catch (error) {
-            console.error('Failed to fetch Products:', error);
+            // console.error('Failed to fetch Products:', error);
         } finally {
             isFetching.current = false;
             setIsLoading(false);
@@ -256,31 +255,14 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
         setPage(1);
     }, [refreshProducts]);
 
-    const handeleInfiniteScroll = async () => {
+    const loadMore = () => {
         try {
-            if (
-                hasMoreProduct &&
-                window.innerHeight + scrollContainerRef.current.scrollTop + 1 >=
-                scrollContainerRef.current.scrollHeight
-            ) {
+            if (hasMoreProduct) {
                 setPage((prev) => prev + 1);
             }
         } catch (error) {
-            console.error(error);
         }
     };
-
-    useEffect(() => {
-        const container = scrollContainerRef.current;
-        if (container) {
-            container.addEventListener("scroll", handeleInfiniteScroll);
-        }
-        return () => {
-            if (container) {
-                container.removeEventListener("scroll", handeleInfiniteScroll);
-            }
-        };
-    }, []);
 
     return (
         <>
@@ -530,6 +512,12 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                         />
                         <ProductsContainer productData={products} materialChange={materialChange} setMaterialChange={setMaterialChange} isLoading={isLoading} isForAdminPanel={true} setUpdateProduct={setUpdateProduct} setShowPopup={setShowPopup} deleteProduct={deleteProduct} />
                         {isLoading && <Loader />}
+                        {
+                            (hasMoreProduct && !isLoading) && (
+                                <button style={{ margin: "auto", marginTop: "10px" }} onClick={loadMore}>
+                                    Load More <ion-icon name="arrow-forward"></ion-icon>
+                                </button>)
+                        }
                     </div>
                 </div>
             </div >

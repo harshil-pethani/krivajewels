@@ -29,7 +29,6 @@ const sendForgotPassMail = async (forgotPassData) => {
         if (error) {
             console.log(error);
         } else {
-            // console.log(info)
             console.log("Email Sent");
         }
     })

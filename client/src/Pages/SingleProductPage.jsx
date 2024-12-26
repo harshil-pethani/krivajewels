@@ -17,17 +17,15 @@ const SingleProductPage = () => {
 
     useEffect(() => {
         setProductId(location.pathname.split("/")[2]);
-        console.log(location.pathname);
     }, [location]);
 
     async function findProduct() {
-        console.log("object");
         try {
             setIsLoading(true);
             const res = await apiRequest(`${singleProductApi}/${productId}`, 'GET');
             setProductData(res?.product);
         } catch (e) {
-            console.log(e);
+            // console.log(e);
         } finally {
             setIsLoading(false);
         }

@@ -1,14 +1,14 @@
 import React from 'react'
-import { bucketURL, domain, domain2, mobileNumber } from '../Config/API_constant'
-import { Link } from 'react-router-dom'
+import { bucketURL, domain, domain2 } from '../Config/API_constant'
+import { mobileNumber } from '../Config/Static_data';
+import { Link } from 'react-router-dom';
 
 const ProductsContainer = ({ homepage, productData, materialChange, setMaterialChange, isLoading, isForAdminPanel, setUpdateProduct, setShowPopup, deleteProduct }) => {
 
     const inquireNow = (id) => {
         const message = `Hello, I want to do inquiry on below product - %0A ${domain2}/explore/${id}`;
+        window.open(`https://wa.me/${mobileNumber}?text=${message}`, "_blank");
 
-        const phoneNumber = mobileNumber;
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
     };
 
     return (

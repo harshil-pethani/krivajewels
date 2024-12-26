@@ -1,7 +1,7 @@
-const domain = "http://localhost:5000";
+export const domain = "";
+export const domain2 = "https://krivajewel.com";
 
 export const bucketURL = "https://krivafiles.s3.eu-north-1.amazonaws.com";
-export const mobileNumber = "+918154010045";
 // const domain = "";
 
 // Auth API

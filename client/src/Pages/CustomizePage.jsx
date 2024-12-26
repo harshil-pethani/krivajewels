@@ -2,16 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer';
 import ScrollToTopArrow from '../Components/ScrollToTopArrow';
-import design from "/Customize/design.png";
-import approval from "/Customize/approval.png";
-import certification from "/Customize/certification.png";
-import inspection from "/Customize/inspection.png";
-import order from "/Customize/order.png";
-import production from "/Customize/production.png";
-import quote from "/Customize/quote.png";
-import returnImage from "/Customize/return.png";
-import shipped from "/Customize/shipped.png";
-import { mobileNumber } from '../Config/API_constant';
+import { mobileNumber } from '../Config/Static_data';
 import { customizationQueAns, customizationStepsData, customizeDescription, customizeJewellerySectionTitle, customizeProcess, customizeSlogan } from '../Config/Static_data';
 
 const CustomizePage = () => {
@@ -28,8 +19,7 @@ const CustomizePage = () => {
         e.preventDefault();
         const message = `FirstName: ${customizeForm.firstname}%0ALastname: ${customizeForm.lastname}%0AEmail: ${customizeForm.email}%0AMobile: ${customizeForm.phone}%0ABudget: ${customizeForm.budget}%0ACategory: ${customizeForm.category}%0AMetal: ${customizeForm.metal}%0AMetalTone: ${customizeForm.metalTone}%0AMessage: ${customizeForm.message}`;
 
-        const phoneNumber = mobileNumber;
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+        window.open(`https://wa.me/${mobileNumber}?text=${message}`, "_blank");
     };
 
     const checkScrollTop = () => {

@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import apiRequest from '../CommonUtil';
 import { logoutApi } from '../Config/API_constant';
 
-
 const AdminSide = ({ setAdminLogged }) => {
     const [activeMenu, setActiveMenu] = useState("");
     const location = useLocation();
@@ -18,7 +17,6 @@ const AdminSide = ({ setAdminLogged }) => {
             setAdminLogged(false);
             window.location.reload();
         } catch (e) {
-            // alert("login Failed");
         }
     }
 
@@ -46,7 +44,6 @@ const AdminSide = ({ setAdminLogged }) => {
                     <div className="subMenu">
                         <Link to="/admin/settings" className={activeMenu === "settings" ? "link menuActive" : "link"} onClick={() => {
                             setActiveMenu("settings")
-                            setActiveSubMenu("")
                         }
                         }>
                             <ion-icon name="settings-outline"></ion-icon>

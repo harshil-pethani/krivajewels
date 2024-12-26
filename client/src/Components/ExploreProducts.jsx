@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { getAllProductApi } from '../Config/API_constant';
 import apiRequest from '../CommonUtil';
 import Loader from './Loader';
@@ -30,7 +30,6 @@ const ExploreProducts = () => {
             setProducts((prev) => [...prev, ...data.products]);
             setHasMoreProduct(data.hasMoreProduct);
         } catch (error) {
-            console.error('Failed to fetch Products:', error);
         } finally {
             isFetching.current = false;
             setIsLoading(false);

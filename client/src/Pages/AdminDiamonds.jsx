@@ -6,7 +6,7 @@ import { useLoader } from '../Contexts/LoaderContext';
 import apiRequest from '../CommonUtil';
 import Loader from '../Components/Loader';
 import { useConfirmation } from '../Contexts/ConfirmationContext';
-import { bucketURL, createDiamondApi, createProductApi, deleteDiamondApi, getAllDiamondsApi, getUploadS3Url, updateDiamondApi } from '../Config/API_constant';
+import { bucketURL, createDiamondApi, deleteDiamondApi, getAllDiamondsApi, getUploadS3Url, updateDiamondApi } from '../Config/API_constant';
 import axios from 'axios';
 
 const AdminDiamonds = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
@@ -56,7 +56,7 @@ const AdminDiamonds = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 position: "top-right"
             });
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         } finally {
             hideLoader();
             setShowPopup("");
@@ -75,7 +75,7 @@ const AdminDiamonds = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 });
                 setRefreshDiamonds(!refreshDiamonds);
             } catch (error) {
-                console.error('Failed to fetch categories:', error);
+                // console.error('Failed to fetch categories:', error);
             } finally {
                 hideLoader();
             }
@@ -108,7 +108,7 @@ const AdminDiamonds = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 position: "top-right"
             });
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         } finally {
             hideLoader();
             setShowPopup("");
@@ -128,7 +128,7 @@ const AdminDiamonds = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 };
                 setImageUrls(x);
             } catch (error) {
-                console.error('Failed to fetch categories:', error);
+                // console.error('Failed to fetch categories:', error);
             } finally {
                 setIsLoading(false);
             }

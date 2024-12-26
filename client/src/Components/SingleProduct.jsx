@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { bucketURL, domain2, mobileNumber } from '../Config/API_constant'
-import { tab_home } from '../Config/Static_data';
+import { bucketURL, domain2 } from '../Config/API_constant'
+import { tab_home, mobileNumber } from '../Config/Static_data';
 
 const SingleProduct = ({ productData }) => {
     const [currentMaterial, setCurrentMaterial] = useState("Yellow-Gold");
@@ -20,8 +20,7 @@ const SingleProduct = ({ productData }) => {
     const inquireNow = (id) => {
         const message = `Hello, I want to do inquiry on below product - %0A ${domain2}/explore/${id}`;
 
-        const phoneNumber = mobileNumber;
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
+        window.open(`https://wa.me/${mobileNumber}?text=${message}`, "_blank");
     };
 
     return (

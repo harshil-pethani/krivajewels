@@ -27,7 +27,6 @@ router.get('/upload-url', async (req, res) => {
         const uploadUrl = await getSignedUrl(s3client, command, { expiresIn: 3600 });
         return res.json({ uploadUrl });
     } catch (error) {
-        console.log(error);
         return res.status(500).json({ error: 'Error generating upload URL' });
     }
 });
@@ -45,7 +44,6 @@ export const deleteFileFromBucket = async (fileName) => {
             return false;
         }
     } catch (e) {
-        console.error('Error deleting file from S3:', e);
         return false;
     }
 }
