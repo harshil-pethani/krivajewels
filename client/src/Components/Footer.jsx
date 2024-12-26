@@ -4,16 +4,16 @@ import IGI from "/IGI.png";
 import SGL from "/SGL.png";
 import BIS from "/BIS.png";
 import logo from "/logo.png";
-import { aboutDescription, information, tab_4Cs, tab_aboutUs, tab_customizeJewellery, tab_explore, tab_home, tab_privacyPolicy, tab_termsAndConditions, tab_whyChooseUs, usefulLinks } from '../Config/Static_data';
+import { aboutDescription, information, mailId, mobileNumber, tab_4Cs, tab_aboutUs, tab_customizeJewellery, tab_explore, tab_home, tab_privacyPolicy, tab_termsAndConditions, tab_whyChooseUs, usefulLinks } from '../Config/Static_data';
 
 const Footer = () => {
     return (
         <div className="footerContainer">
             <div className="footer">
                 <div className="leftnew">
-                    <div className="logo">
+                    <Link to="/" className="logo">
                         <img src={logo} alt="" />
-                    </div>
+                    </Link>
                 </div>
                 <div className="center">
                     <div className="inner-center">
@@ -73,22 +73,22 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="socialIcons">
-                        <a target="_blank" rel="noreferrer" className="icon">
+                        <a href={`tel:${mobileNumber}`} target="_blank" rel="noreferrer" className="icon">
                             <ion-icon name="call-outline"></ion-icon>
                         </a>
-                        <a target="_blank" rel="noreferrer" className="icon">
+                        <a href={`mailto:${mailId}`} target="_blank" rel="noreferrer" className="icon">
                             <ion-icon name="mail-outline"></ion-icon>
                         </a>
-                        <a target="_blank" rel="noreferrer" className="icon">
+                        <a href='' target="_blank" rel="noreferrer" className="icon">
                             <ion-icon name="logo-facebook"></ion-icon>
                         </a>
-                        <a target="_blank" rel="noreferrer" className="icon">
+                        <a href='' target="_blank" rel="noreferrer" className="icon">
                             <ion-icon name="logo-youtube"></ion-icon>
                         </a>
-                        <a target="_blank" rel="noreferrer" className="icon">
+                        <a href='' target="_blank" rel="noreferrer" className="icon">
                             <ion-icon name="logo-linkedin"></ion-icon>
                         </a>
-                        <a target="_blank" rel="noreferrer" className="icon">
+                        <a href='' target="_blank" rel="noreferrer" className="icon">
                             <ion-icon name="logo-instagram"></ion-icon>
                         </a>
                     </div>

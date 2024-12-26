@@ -27,6 +27,7 @@ export const customizeSlogan = "Let's Talk About Your Dream Jewellery";
 export const customizeDescription = "When You Have Some Doubts Regarding The Purchase Of Lab Grown Diamond Jewelry Which Impacts Your Mind, Then Freely Contact Us Or Fill Up The Below Form. We Give Our Best Response To Your Doubts.";
 export const customizeProcess = "Jewellery customization process";
 export const mobileNumber = "+918154010045";
+export const mailId = "krivajewel@gmail.com";
 
 // Static Data
 export const faqQuestions = [
@@ -236,72 +237,60 @@ export const customizationQueAns = [
 ];
 export const privacyPolicyData = [
     {
-        que: "What Do We Do With Your Information?",
+        que: "How Do We Use Your Information?",
         hasSubQue: false,
         ans: [
-            "When You Purchase Something From Our Store, As Part Of The Buying And Selling Process, We Collect The Personal Information You Give Us Such As Your Name, Address And Email Address.",
-            "When You Browse Our Store, We Also Automatically Receive Your Computer’s Internet Protocol (IP) Address In Order To Provide Us With Information That Helps Us Learn About Your Browser And Operating System.",
-            "Email Marketing (if Applicable): With Your Permission, We May Send You Emails About Our Store, New Products And Other Updates."
+            "When you make a purchase from our store, we collect personal details you provide, such as your name, address, and email address, as part of the transaction process.",
+            "Additionally, when you browse our store, we automatically collect your computer’s Internet Protocol (IP) address to gain insights into your browser and operating system.",
+            "Email Marketing (if applicable): With your consent, we may send you updates about our store, new products, and other relevant information."
         ]
     },
     {
-        que: "Consent",
-        hasSubQue: true,
+        que: "How Do We Obtain Your Consent?",
+        hasSubQue: false,
         ans: [
-            {
-                que: "How Do You Get My Consent?",
-                ans: [
-                    "When You Provide Us With Personal Information To Complete A Transaction, Verify Your Credit Card, Place An Order, Arrange For A Delivery Or Return A Purchase, We Imply That You Consent To Our Collecting It And Using It For That Specific Reason Only.",
-                    "If We Ask For Your Personal Information For A Secondary Reason, Like Marketing, We Will Either Ask You Directly For Your Expressed Consent, Or Provide You With An Opportunity To Say No."
-                ]
-            },
-            {
-                que: "How Do I Withdraw My Consent?",
-                ans: [
-                    "If After You Opt-in, You Change Your Mind, You May Withdraw Your Consent For Us To Contact You, For The Continued Collection, Use Or Disclosure Of Your Information, At Any Time, By Contacting Us At luxicajewels@gmail.com",
-                    "Luxica Jewels, #Tower – A, 406, Diamond World, Mini Bazar, Surat – 395006 Gujarat (india)"
-                ]
-            }
+            "By providing personal details to complete a purchase, verify your payment method, place an order, arrange for delivery, or process a return, you implicitly consent to the collection and use of your data for these specific purposes.",
+            "If we request your information for a secondary purpose, like marketing, we will ask for your explicit consent or provide an option to decline."
+        ]
+    },
+    {
+        que: "How Can You Withdraw Your Consent?",
+        ans: [
+            "If you change your mind after opting in, you may withdraw your consent for us to contact you or to continue collecting, using, or disclosing your information. You can do so by emailing us at krivajewel@gmail.com or writing to us at:",
+            "Kriva Jewels, #Tower – A, 406, Diamond World, Mini Bazar, Surat – 395006 Gujarat, India."
         ]
     },
     {
         que: "Disclosure",
         hasSubQue: false,
         ans: [
-            "We May Disclose Your Personal Information If We Are Required By Law To Do So Or If You Violate Our Terms Of Service."
-        ]
-    },
-    {
-        que: "Shopify",
-        hasSubQue: false,
-        ans: [
-            "Our Store Is Hosted On Shopify Inc. They Provide Us With The Online E-commerce Platform That Allows Us To Sell Our Products And Services To You.",
-            "your Data Is Stored Through Shopify’s Data Storage, Databases And The General Shopify Application. They Store Your Data On A Secure Server Behind A Firewall."
+            "We may disclose your personal information if required by law or if you breach our Terms of Service."
         ]
     },
     {
         que: "Security",
         hasSubQue: false,
         ans: [
-            "To Protect Your Personal Information, We Take Reasonable Precautions And Follow Industry Best Practices To Make Sure It Is Not Inappropriately Lost, Misused, Accessed, Disclosed, Altered Or Destroyed.",
-            "if You Provide Us With Your Information, The Information Is Encrypted Using Secure Socket Layer Technology (SSL)",
-            "although No Method Of Transmission Over The Internet Or Electronic Storage Is 100% Secure, We Follow All Pci-dss Requirements And Implement Additional Generally Accepted Industry Standards."
+            "We implement reasonable precautions and industry-standard practices to ensure your personal information is not lost, misused, accessed without authorization, disclosed, altered, or destroyed.",
+            "If you share sensitive information, it is encrypted using Secure Socket Layer Technology (SSL).",
+            "While no method of data transmission over the internet or electronic storage is completely secure, we adhere to PCI-DSS requirements and adopt additional industry-standard measures to protect your data."
         ]
     },
     {
         que: "Age Of Consent",
         hasSubQue: false,
         ans: [
-            "By Using This Site, You Represent That You Are At Least The Age Of Majority In Your State Or Province Of Residence, Or That You Are The Age Of Majority In Your State Or Province Of Residence And You Have Given Us Your Consent To Allow Any Of Your Minor Dependents To Use This Site."
+            "By using this site, you confirm that you are either of legal age in your state or province of residence or that you are of legal age and have provided consent for your minor dependents to use this site."
         ]
     },
     {
         que: "Limitation Of Liability",
         hasSubQue: false,
         ans: [
-            "This Disclaimer Of Liability Applies To Any Damages Or Injury Caused By Any Failure Or Performance, Error, Omission, Interruption, Deletion, Defect, Delay In Operation Or Transmission, Computer Virus, Act Of God, Communication Line Failure, Theft Or Destruction Or Unauthorized Access To, Alteration Of, Or Use Of Record, Whether For Breach Of Contract, Tortuous Behaviour, Negligence, Or Under Any Other Cause Of Action. You Also Specifically Acknowledge That Luxicajewels.com Is Not Liable For Your Defamatory, Offensive, Infringing Or Illegal Materials Or Conduct Or That Of Third Parties.",
-            "we As A Merchant Shall Be Under No Liability Whatsoever In Respect Of Any Loss Or Damage Arising Directly Or Indirectly Out Of The Decline Of Authorization For Any Transaction, On Account Of The Cardholder Having Exceeded The Present Limit Mutually Agreed By Us With Our Acquiring Bank From Time To Time.",
-            "the Law Of Certain Countries May Not Allow Limitations On Warranties Or Damages As Described Above. If Such Law Applies To You, Some Or All Of The Above Disclaimers, Exclusions Or Warranties May Not Apply To You And You May Have Additional Rights. However, In No Event Shall luxicajewels.com’s Aggregate Liability To You For All Claims, Damages, Losses, And Causes Of Action Exceed The Amount Paid To Luxicajewels.com By You For Accessing Luxicajewels.com Web Site."
+            "This liability disclaimer applies to any damages or injuries caused by failures in performance, errors, omissions, interruptions, delays in transmission, computer viruses, natural disasters, communication line failures, theft, destruction, or unauthorized access or use of data—whether resulting from breach of contract, negligence, or other causes.",
+            "You acknowledge that krivajewel.com is not responsible for defamatory, offensive, infringing, or unlawful content or actions by you or third parties.",
+            "As a merchant, we are not liable for any loss or damage resulting directly or indirectly from declined transaction authorizations due to cardholder limits agreed upon with our acquiring bank.",
+            "Certain jurisdictions may not allow some of the limitations described above. If applicable to you, some disclaimers may not apply, and you may have additional rights. However, under no circumstances shall krivajewel.com’s total liability exceed the amount you paid to access our website."
         ]
     }
 ];
@@ -310,47 +299,47 @@ export const TermsAndConditionsData = [
         que: "Overview",
         hasSubQue: false,
         ans: [
-            "This Website Is Operated By Luxica Jewels. Throughout The Site, The Terms “we”, “us” And “our” Refer To Luxica Jewels. Luxica Jewels Offers This Website, Including All Information, Tools And Services Available From This Site To You, The User, Conditioned Upon Your Acceptance Of All Terms, Conditions, Policies And Notices Stated Here.",
-            "by Visiting Our Site And/ Or Purchasing Something From Us, You Engage In Our “service” And Agree To Be Bound By The Following Terms And Conditions (“terms Of Service”, “terms”), Including Those Additional Terms And Conditions And Policies Referenced Herein And/or Available By Hyperlink. These Terms Of Service Apply To All Users Of The Site, Including Without Limitation Users Who Are Browsers, Vendors, Customers, Merchants, And/ Or Contributors Of Content.",
-            "please Read These Terms Of Service Carefully Before Accessing Or Using Our Website. By Accessing Or Using Any Part Of The Site, You Agree To Be Bound By These Terms Of Service. If You Do Not Agree To All The Terms And Conditions Of This Agreement, Then You May Not Access The Website Or Use Any Services. If These Terms Of Service Are Considered An Offer, Acceptance Is Expressly Limited To These Terms Of Service.",
-            "any New Features Or Tools Which Are Added To The Current Store Shall Also Be Subject To The Terms Of Service. You Can Review The Most Current Version Of The Terms Of Service At Any Time On This Page. We Reserve The Right To Update, Change Or Replace Any Part Of These Terms Of Service By Posting Updates And/or Changes To Our Website. It Is Your Responsibility To Check This Page Periodically For Changes. Your Continued Use Of Or Access To The Website Following The Posting Of Any Changes Constitutes Acceptance Of Those Changes."
+            "This website is managed by Kriva Jewels. Throughout the site, the terms “we,” “us,” and “our” refer to Kriva Jewels. We provide this website, including all the information, tools, and services offered here, to you, the user, based on your acceptance of the terms, conditions, policies, and notices outlined on this page.",
+            "By visiting our website and/or purchasing a product from us, you participate in our “service” and agree to adhere to the following terms and conditions (“Terms of Service” or “Terms”), along with any additional terms, conditions, and policies referenced herein or accessible through hyperlinks. These Terms of Service are applicable to all users of the site, including but not limited to browsers, vendors, customers, merchants, and contributors of content.",
+            "Please read these Terms of Service thoroughly before using or accessing our website. By accessing any portion of the site, you agree to comply with these Terms of Service. If you do not agree to all the terms and conditions of this agreement, you are prohibited from accessing the site or using any services. If these Terms of Service are deemed an offer, your acceptance is strictly limited to these terms.",
+            "Any new features or tools added to the website or store will also be governed by the Terms of Service. You may review the most up-to-date version of the Terms of Service on this page at any time. We retain the right to update, modify, or replace any part of these terms by posting updates or changes on our website. It is your responsibility to check this page regularly for updates. Your continued access to or use of the website following any modifications signifies your acceptance of those changes."
         ]
     },
     {
         que: "Online Store Terms",
         hasSubQue: false,
         ans: [
-            "By Agreeing To These Terms Of Service, You Represent That You Are At Least The Age Of Majority In Your State Or Province Of Residence, Or That You Are The Age Of Majority In Your State Or Province Of Residence And You Have Given Us Your Consent To Allow Any Of Your Minor Dependents To Use This Site.",
-            "you May Not Use Our Products For Any Illegal Or Unauthorized Purpose Nor May You, In The Use Of The Service, Violate Any Laws In Your Jurisdiction (including But Not Limited To Copyright Laws).",
-            "you Must Not Transmit Any Worms Or Viruses Or Any Code Of A Destructive Nature.",
-            "a Breach Or Violation Of Any Of The Terms Will Result In An Immediate Termination Of Your Services."
+            "By accepting these Terms of Service, you confirm that you are either of legal age in your state or province of residence or that you are of legal age and have provided consent for any minor dependents under your care to use this site.",
+            "You are prohibited from using our products for any unlawful or unauthorized purposes. Additionally, you must not, in your use of the service, violate any laws applicable in your jurisdiction (including but not limited to copyright regulations).",
+            "You are strictly forbidden from transmitting any viruses, worms, or malicious code of any kind.",
+            "Any violation or breach of these terms will result in the immediate termination of your access to our services."
         ]
     },
     {
         que: "General Conditions",
         hasSubQue: false,
         ans: [
-            "We Reserve The Right To Refuse Service To Anyone For Any Reason At Any Time.",
-            "you Understand That Your, May Be Transferred Unencrypted And Involve (a) Transmissions Over Various Networks; And (b) Changes To Conform And Adapt To Technical Requirements Of Connecting Networks Or Devices. Bank Account Information Is Always Encrypted During Transfer Over Networks.",
-            "you Agree Not To Reproduce, Duplicate, Copy, Sell, Resell Or Exploit Any Portion Of The Service, Use Of The Service, Or Access To The Service Or Any Contact On The Website Through Which The Service Is Provided, Without Express Written Permission By Us.",
-            "the Headings Used In This Agreement Are Included For Convenience Only And Will Not Limit Or Otherwise Affect These Terms."
+            "We reserve the right to deny service to anyone, at any time, for any reason.",
+            "You acknowledge that your data may be transmitted without encryption and may involve (a) transfers across various networks and (b) modifications to meet the technical requirements of connecting networks or devices. However, bank account information is always encrypted during transmission over networks.",
+            "You agree not to reproduce, duplicate, copy, sell, resell, or exploit any part of the service, the use of the service, access to the service, or any contact on the website through which the service is provided, without our explicit written consent.",
+            "The headings included in this agreement are for convenience only and do not limit or otherwise impact the terms outlined."
         ]
     },
     {
         que: "Accuracy, Completeness And Timelines Of Information",
         hasSubQue: false,
         ans: [
-            "We Are Not Responsible If Information Made Available On This Site Is Not Accurate, Complete Or Current. The Material On This Site Is Provided For General Information Only And Should Not Be Relied Upon Or Used As The Sole Basis For Making Decisions Without Consulting Primary, More Accurate, More Complete Or More Timely Sources Of Information. Any Reliance On The Material On This Site Is At Your Own Risk.",
-            "this Site May Contain Certain Historical Information. Historical Information, Necessarily, Is Not Current And Is Provided For Your Reference Only. We Reserve The Right To Modify The Contents Of This Site At Any Time, But We Have No Obligation To Update Any Information On Our Site. You Agree That It Is Your Responsibility To Monitor Changes To Our Site."
+            "We are not liable if the information provided on this site is inaccurate, incomplete, or outdated. The content on this site is intended for general informational purposes only and should not be solely relied upon for decision-making without consulting primary, more accurate, complete, or up-to-date sources of information. Any reliance you place on the material on this site is done at your own risk.",
+            "This site may include certain historical information. As a matter of course, historical data is not current and is offered solely for reference purposes. We reserve the right to change the content on this site at any time; however, we are under no obligation to update any information provided. You agree that it is your responsibility to stay informed about changes to the site."
         ]
     },
     {
         que: "Modifications To The Prices",
         hasSubQue: false,
         ans: [
-            "Prices For Our Products Are Subject To Change Without Notice.",
-            "we Reserve The Right At Any Time To Modify Or Discontinue The Service (or Any Part Or Content Thereof) Without Notice At Any Time.",
-            "we Shall Not Be Liable To You Or To Any Third-party For Any Modification, Price Change, Suspension Or Discontinuance Of The Service."
+            "The prices of our products are subject to change at any time without prior notice.",
+            "We reserve the right to modify or discontinue the service (or any part of its content) at our discretion and without notice at any time.",
+            "We shall not be held responsible to you or any third party for any modifications, price changes, suspensions, or discontinuation of the service."
         ]
     }
 ];

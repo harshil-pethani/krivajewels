@@ -3642,6 +3642,7 @@
   font-size: 28px;
   margin-top: 30px;
   font-weight: 500;
+  text-align: center;
 }
 .simple-text-component .main-description {
   font-size: 16px;
@@ -3658,6 +3659,7 @@
 }
 .simple-text-component .text-content-container .sub-title {
   font-size: 20px;
+  text-align: justify;
 }
 .simple-text-component .text-content-container .text-content {
   display: flex;

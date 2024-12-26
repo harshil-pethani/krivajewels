@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import VerifyToken from '../Middlewares/VerifyToken.js';
 import { DeleteObjectCommand, GetObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
@@ -8,8 +7,8 @@ const router = Router();
 const s3client = new S3Client({
     region: "eu-north-1",
     credentials: {
-        accessKeyId: "AKIA6IY353WYL7OPP345",
-        secretAccessKey: "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"
+        accessKeyId: process.env.BUCKET_ACCESS_KEY,
+        secretAccessKey: process.env.BUCKET_SECRET_KEY
     }
 })
 
