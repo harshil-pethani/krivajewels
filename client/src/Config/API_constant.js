@@ -1,7 +1,7 @@
 export const domain = "";
 export const domain2 = "https://krivajewel.com";
 
-export const bucketURL = "https://krivafiles.s3.eu-north-1.amazonaws.com";
+export const bucketURL = "https://krivajewelsfiles.s3.ap-south-1.amazonaws.com";
 // const domain = "";
 
 // Auth API

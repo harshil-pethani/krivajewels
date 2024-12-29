@@ -5,7 +5,7 @@ import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 const router = Router();
 
 const s3client = new S3Client({
-    region: "eu-north-1",
+    region: "ap-south-1",
     credentials: {
         accessKeyId: process.env.BUCKET_ACCESS_KEY,
         secretAccessKey: process.env.BUCKET_SECRET_KEY
