@@ -19,7 +19,7 @@ router.get('/upload-url', async (req, res) => {
     }
     try {
         const command = new PutObjectCommand({
-            Bucket: "krivafiles",
+            Bucket: process.env.BUCKET_NAME,
             Key: filename,
             ContentType: contentType
         });
@@ -33,7 +33,7 @@ router.get('/upload-url', async (req, res) => {
 export const deleteFileFromBucket = async (fileName) => {
     try {
         const command = new DeleteObjectCommand({
-            Bucket: "krivafiles",
+            Bucket: process.env.BUCKET_NAME,
             Key: fileName
         });
         const response = await s3client.send(command);
@@ -55,7 +55,7 @@ router.get('/download-url', async (req, res) => {
     }
     try {
         const command = new GetObjectCommand({
-            Bucket: "krivafiles",
+            Bucket: process.env.BUCKET_NAME,
             Key: key,
         });
         const downloadUrl = await getSignedUrl(s3client, command, { expiresIn: 3600 });
