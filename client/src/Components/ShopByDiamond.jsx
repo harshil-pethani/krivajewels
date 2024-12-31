@@ -6,7 +6,7 @@ import { diamondSectionTitle } from '../Config/Static_data';
 
 const ShopByDiamond = () => {
     const [diamonds, setDiamonds] = useState([]);
-    
+
     useEffect(() => {
         async function getAllDiamonds() {
             try {
@@ -26,7 +26,7 @@ const ShopByDiamond = () => {
             <div className="diamondContainer">
                 {
                     diamonds.map((diamond, index) => (
-                        diamond._id !== "673e22a5c22422f32e3b01b9" &&
+                        diamond.title !== "noDiamond" &&
                         <Link to={`/explore?diamond=${diamond?._id}`} key={index} className="diamondBox">
                             <div className="imgBox">
                                 <img className="diamondImage" src={`${bucketURL}/${diamond.diamondImage}`} alt={diamond.title} />
