@@ -32,6 +32,14 @@ export const mailId = "krivajewel@gmail.com";
 // Static Data
 export const faqQuestions = [
     {
+        que: "How Can I Trust Buying Diamonds Online?",
+        ans: [
+            "- Always choose a reputable jeweller with high positive reviews.",
+            "- Look for certification from reputable institutions like GIA, IGI, etc.",
+            "- Also, ensure a secure payment process and return policies.",
+        ]
+    },
+    {
         que: "Why Choose Kriva Jewels for Lab-Grown Diamond Jewellery?",
         ans: [
             "Certification Available on Request: We offer certification for all our lab-grown diamond jewellery, ensuring authenticity and quality upon request.",
@@ -43,7 +51,21 @@ export const faqQuestions = [
         ]
     },
     {
-        que: "What Makes Pure Jewels the Best Choice for Lab-Grown Diamond Jewelry?",
+        que: "Can you tell the difference between Lab Grown Diamonds and natural diamonds?",
+        ans: [
+            "No, there is no way of telling the difference between a lab grown diamond and a naturally mined diamond by only looking at them. Even an expert cannot tell the difference with normal microscopes. Only advanced equipment used in the gemological labs can identify Lab Grown Diamonds.",
+        ]
+    },
+    {
+        que: "How are Lab-Grown Diamonds Made?",
+        ans: [
+            "Lab diamonds are made using two primary methods:",
+            "HPHT (High Pressure, High Temperature): In this method a person follows the same natural diamond creation process.",
+            "CVD (Chemical Vapor Deposition): It is the process of growing diamond crystals from carbon gas in a controlled atmosphere.",
+        ]
+    },
+    {
+        que: "What Makes Kriva Jewels the Best Choice for Lab-Grown Diamond Jewelry?",
         ans: [
             "Whether you're seeking lab-grown diamond pendants, rings, necklaces, earrings, tennis bracelets, or nose rings, we offer pieces for every occasion and in a wide variety of styles.",
             "We aim to make luxury accessible for everyone. From custom engagement rings to statement necklaces, we ensure that every design offers exceptional value and transparency. At Pure Jewels, we believe your jewellery should reflect your individuality, and our expert jewellers are here to bring your vision to life."
@@ -71,12 +93,6 @@ export const faqQuestions = [
         ]
     },
     {
-        que: "Can you tell the difference between Lab Grown Diamonds and natural diamonds?",
-        ans: [
-            "No, there is no way of telling the difference between a lab grown diamond and a naturally mined diamond by only looking at them. Even an expert cannot tell the difference with normal microscopes. Only advanced equipment used in the gemological labs can identify Lab Grown Diamonds.",
-        ]
-    },
-    {
         que: "Is It Worth Buying Lab Grown Diamonds? ",
         ans: [
             "Yes, it is worth buying lab-grown diamonds due to several reasons. They can be easily affordable, eco-friendly, and sustainable, and offer the same quality and durability as mined diamonds at a lower price.",
@@ -86,14 +102,6 @@ export const faqQuestions = [
         que: "Do Lab Grown Diamonds have Resale Value? ",
         ans: [
             "Yes, Lab-grown diamonds also have high resale value, but as compared to the natural diamonds, the value tends to be lower than the purchase price. But their cheaper prices could help with this concern.",
-        ]
-    },
-    {
-        que: "How Are Lab-Grown Diamonds Made?",
-        ans: [
-            "Lab diamonds are made using two primary methods:",
-            "HPHT (High Pressure, High Temperature): In this method a person follows the same natural diamond creation process.",
-            "CVD (Chemical Vapor Deposition): It is the process of growing diamond crystals from carbon gas in a controlled atmosphere.",
         ]
     },
     {
@@ -120,14 +128,6 @@ export const faqQuestions = [
         que: "Do Lab Grown Diamonds Change Colour, Shine, and Sparkle Over Time?",
         ans: [
             "No, lab diamonds will not change color, or lose their shine, or sparkle over time. Like real diamonds, they are durable and maintain their beauty forever.",
-        ]
-    },
-    {
-        que: "How Can I Trust Buying Diamonds Online?",
-        ans: [
-            "- Always choose a reputable jeweller with high positive reviews.",
-            "- Look for certification from reputable institutions like GIA, IGI, etc.",
-            "- Also, ensure a secure payment process and return policies.",
         ]
     },
 ];

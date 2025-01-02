@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { faqQuestions, faqSectionTitle } from '../Config/Static_data';
 
 const FAQ = () => {
+    const [showAll, setShowAll] = useState(false);
+
+    const displayedQuestions = showAll ? faqQuestions : faqQuestions.slice(0, 4);
+
     return (
         <div className="faqSection">
             <h1 className="section-title">
@@ -10,7 +14,7 @@ const FAQ = () => {
 
             <div className="questionsContainer">
                 {
-                    faqQuestions.map((faqQuestion, index) => {
+                    displayedQuestions.map((faqQuestion, index) => {
                         return (
                             <details key={index}>
                                 <summary>
@@ -23,7 +27,7 @@ const FAQ = () => {
                                 </summary>
                                 {
                                     faqQuestion.ans.map((data, index) => (
-                                        <p className="ans">
+                                        <p key={index} className="ans">
                                             {data}
                                         </p>
                                     ))
@@ -33,6 +37,10 @@ const FAQ = () => {
                     })
                 }
             </div>
+
+            <button style={{ marginTop: "15px" }} onClick={() => { setShowAll(!showAll) }} className="learnmore">
+                {showAll ? 'Show less' : 'Show more'} <ion-icon name="arrow-forward"></ion-icon>
+            </button>
         </div>
     )
 }

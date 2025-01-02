@@ -1706,6 +1706,7 @@
   }
   .footerContainer .footer .rightNew .about-text {
     font-size: 14px;
+    font-weight: 300;
     text-align: center;
   }
   .footerContainer .footer .rightNew .certifications {
@@ -3618,6 +3619,7 @@
   }
   .faqSection .questionsContainer details .que {
     font-size: 14px;
+    font-weight: 400;
   }
   .faqSection .questionsContainer details .btn {
     font-size: 24px;
@@ -3625,8 +3627,8 @@
   .faqSection .questionsContainer details .ans {
     color: #000000;
     padding: 10px;
-    padding-top: 0;
-    font-size: 13px;
+    padding-top: 3px;
+    font-size: 14px;
   }
 }
 .simple-text-component {

@@ -16,7 +16,7 @@ const CustomizeJewellery = () => {
                     {customizeJewellerySlogan}
                 </p>
                 <button onClick={() => { navigate("/customize-jewellery") }} className="learnmore">
-                    Learn more <ion-icon name="arrow-forward"></ion-icon>
+                    Explore <ion-icon name="arrow-forward"></ion-icon>
                 </button>
             </div>
             <div className="right">
