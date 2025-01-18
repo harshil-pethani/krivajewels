@@ -2585,6 +2585,9 @@
   font-size: 18px;
   font-weight: 300;
 }
+.single-product-component .product-details .right .description strong {
+  font-weight: 500;
+}
 .single-product-component .product-details .right .category {
   font-size: 18px;
   font-weight: 300;

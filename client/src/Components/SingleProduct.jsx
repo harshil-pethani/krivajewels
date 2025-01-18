@@ -23,6 +23,24 @@ const SingleProduct = ({ productData }) => {
         window.open(`https://wa.me/${mobileNumber}?text=${message}`, "_blank");
     };
 
+    const renderDescription = (text) => {
+        if (!text) return null;
+        const lines = text.split('&&');
+
+        return lines.map((line, lineIndex) => {
+            const parts = line.split(/\$\$(.*?)\$\$/g);
+
+            return (
+                <React.Fragment key={lineIndex}>
+                    {parts.map((part, index) =>
+                        index % 2 === 1 ? <strong key={index}>{part}</strong> : part
+                    )}
+                    {lineIndex < lines.length - 1 && <br />}
+                </React.Fragment>
+            );
+        });
+    };
+
     return (
         productData &&
         <div className='single-product-component'>
@@ -84,9 +102,24 @@ const SingleProduct = ({ productData }) => {
                     <p className="title">
                         {productData?.title}
                     </p>
-                    <p className="description">
+                    {/* <p className="description">
                         {productData?.description}
-                    </p>
+                    </p> */}
+                    {
+                        // productData?.description.split("\n").map((desc, index) => {
+                        //     return (
+                        //         <p className="description" key={index}>
+                        //             {desc}
+                        //         </p>
+                        //     )
+                        // })
+
+                    }
+                    <span className="description">
+                        {
+                            renderDescription(productData?.description)
+                        }
+                    </span>
                     <p className="category">
                         Category: <span className='value'> {productData?.category.title}</span>
                     </p>
