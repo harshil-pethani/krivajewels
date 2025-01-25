@@ -11,7 +11,7 @@ const CustomizePage = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        const localFilters = JSON.parse(localStorage.getItem("KrivaFilters"));
+        const localFilters = JSON.parse(sessionStorage.getItem("KrivaFilters"));
         setCategories(localFilters[0]?.data?.map((category) => (category.title)));
     }, []);
 

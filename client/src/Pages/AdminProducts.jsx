@@ -19,10 +19,11 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
     const { requestConfirmation } = useConfirmation();
     const [materialChange, setMaterialChange] = useState({});
 
-    const [newProduct, setNewProduct] = useState({ title: "", goldBannerImage: null, goldOtherImages: [], goldVideo: null, roseGoldBannerImage: null, roseGoldOtherImages: [], roseGoldVideo: null, silverBannerImage: "", silverOtherImages: [], silverVideo: null, description: "", category: "", diamond: "" });
-    const [updateProduct, setUpdateProduct] = useState({ title: '', goldBannerImage: null, goldOtherImages: [], goldVideo: null, roseGoldBannerImage: null, roseGoldOtherImages: [], roseGoldVideo: null, silverBannerImage: "", silverOtherImages: [], silverVideo: null, category: '', diamond: '', description: '' });
+    const [newProduct, setNewProduct] = useState({ title: "", goldBannerImage: null, goldOtherImages: [], goldVideo: null, roseGoldBannerImage: null, roseGoldOtherImages: [], roseGoldVideo: null, silverBannerImage: "", silverOtherImages: [], silverVideo: null, description: "", category: "", subCategory: "", diamond: "" });
+    const [updateProduct, setUpdateProduct] = useState({ title: '', goldBannerImage: null, goldOtherImages: [], goldVideo: null, roseGoldBannerImage: null, roseGoldOtherImages: [], roseGoldVideo: null, silverBannerImage: "", silverOtherImages: [], silverVideo: null, category: '', subCategory: '', diamond: '', description: '' });
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [subCategories, setSubCategories] = useState([]);
     const [diamonds, setDiamonds] = useState([]);
     const [refreshProducts, setRefreshProducts] = useState(false);
     const anyUpdate = useRef(false);
@@ -30,11 +31,31 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
 
     // Filter related
     const isFetching = useRef(false);
-    const [selectedOptions, setSelectedOptions] = useState([[], []]);
+    const [selectedOptions, setSelectedOptions] = useState([[], [], []]);
     const [searchQuery, setSearchQuery] = useState("");
     const [page, setPage] = useState(1);
     const [hasMoreProduct, setHasMoreProduct] = useState(true);
     const initialCall = useRef(true);
+
+    const getSubCategory = (selectedCategoryId) => {
+        for (let i = 0, catLength = categories.length; i < catLength; i++) {
+            let subCategoryData;
+            if (categories[i]._id === selectedCategoryId) {
+                if (categories[i].title.toLowerCase() === "ring") {
+                    subCategoryData = JSON.parse(sessionStorage.getItem("KrivaRingFilters"));
+                } else if (categories[i].title.toLowerCase() === "earrings") {
+                    subCategoryData = JSON.parse(sessionStorage.getItem("KrivaEarringFilters"));
+                } else if (categories[i].title.toLowerCase() === "pendants") {
+                    subCategoryData = JSON.parse(sessionStorage.getItem("KrivaPendantFilters"));
+                } else if (categories[i].title.toLowerCase() === "bracelet") {
+                    subCategoryData = JSON.parse(sessionStorage.getItem("KrivaBraceletFilters"));
+                } else if (categories[i].title.toLowerCase() === "necklace") {
+                    subCategoryData = JSON.parse(sessionStorage.getItem("KrivaNecklaceFilters"));
+                }
+                setSubCategories(subCategoryData);
+            }
+        }
+    }
 
     useEffect(() => {
         async function getAllCategories() {
@@ -111,6 +132,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
             title: newProduct.title,
             description: newProduct.description,
             category: newProduct.category,
+            subCategory: newProduct.subCategory,
             diamond: newProduct.diamond,
             goldBannerImage: "",
             goldOtherImages: [],
@@ -227,12 +249,15 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
         if (initialCall.current) {
             initialCall.current = false;
         }
+        isFetching.current = true;
+        setIsLoading(true);
         try {
             const categoryFilters = selectedOptions[0].map((filter) => (filter._id))
             const diamondFilters = selectedOptions[1].map((filter) => (filter._id))
+            const subCategoryFilters = selectedOptions[2].map((filter) => (filter._id));
             const apiPath = getAllProductApi + `?page=${page}&limit=10&searchQuery=${searchQuery}`;
 
-            const data = await apiRequest(apiPath, 'POST', { filters: [categoryFilters, diamondFilters] });
+            const data = await apiRequest(apiPath, 'POST', { filters: [categoryFilters, diamondFilters, subCategoryFilters] });
             setProducts((prev) => [...prev, ...data.products]);
             setHasMoreProduct(data.hasMoreProduct);
         } catch (error) {
@@ -292,11 +317,23 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                                         <label htmlFor="productCategory">
                                             Category<span>*</span>
                                         </label>
-                                        <select value={newProduct.category} placeholder="Select Category" id="productCategory" onChange={(e) => { setNewProduct({ ...newProduct, category: e.target.value }) }}>
+                                        <select value={newProduct.category} placeholder="Select Category" id="productCategory" onChange={(e) => { getSubCategory(e.target.value); setNewProduct({ ...newProduct, category: e.target.value }) }}>
                                             <option value="">Select Category</option>
                                             {
                                                 categories.map((category) => (
-                                                    <option key={category._id} value={category._id}>{category.title}</option>
+                                                    <option name={category.title} key={category._id} value={category._id}>{category.title}</option>
+                                                ))
+                                            }
+                                        </select>
+
+                                        <label htmlFor="productSubCategory">
+                                            Sub Category
+                                        </label>
+                                        <select disabled={!subCategories.length} value={newProduct.subCategory} placeholder="Select Sub Category" id="productSubCategory" onChange={(e) => { setNewProduct({ ...newProduct, subCategory: e.target.value }) }}>
+                                            <option value="">Select Sub Category</option>
+                                            {
+                                                subCategories.map((subCat) => (
+                                                    <option name={subCat.title} key={subCat._id} value={subCat._id}>{subCat.title}</option>
                                                 ))
                                             }
                                         </select>

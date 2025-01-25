@@ -12,6 +12,7 @@ import FAQ from '../Components/FAQ';
 import { getAllFiltersApi } from '../Config/API_constant';
 import apiRequest from '../CommonUtil';
 import { toast } from 'react-toastify';
+import { braceletFilters, earringFilters, necklaceFilters, pendantsFilters, ringFilters } from '../Config/Static_data';
 
 
 const HomePage = () => {
@@ -30,8 +31,12 @@ const HomePage = () => {
     async function getAllFilters() {
         try {
             const res = await apiRequest(getAllFiltersApi, 'GET');
-            const filters = [{ name: "Category", data: res.data[0] }, { name: "Diamond", data: res.data[1] }];
-            localStorage.setItem("KrivaFilters", JSON.stringify(filters));
+            const filters = [
+                { name: "Category", disabled: false, data: res.data[0] },
+                { name: "Diamond", disabled: false, data: res.data[1] },
+                { name: "Sub Category", disabled: true, data: [] }
+            ];
+            sessionStorage.setItem("KrivaFilters", JSON.stringify(filters));
         } catch (e) {
             toast.error("Something went wrong !", {
                 position: "top-right"
@@ -41,6 +46,11 @@ const HomePage = () => {
 
     useEffect(() => {
         getAllFilters();
+        sessionStorage.setItem("KrivaRingFilters", JSON.stringify(ringFilters));
+        sessionStorage.setItem("KrivaEarringFilters", JSON.stringify(earringFilters));
+        sessionStorage.setItem("KrivaPendantFilters", JSON.stringify(pendantsFilters));
+        sessionStorage.setItem("KrivaBraceletFilters", JSON.stringify(braceletFilters));
+        sessionStorage.setItem("KrivaNecklaceFilters", JSON.stringify(necklaceFilters));
     }, []);
 
     return (

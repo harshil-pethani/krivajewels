@@ -9,7 +9,7 @@ const ExploreProducts = () => {
     const isFetching = useRef(false);
     const [page, setPage] = useState(1);
     const [materialChange, setMaterialChange] = useState({});
-    const [selectedOptions, setSelectedOptions] = useState([[], []]);
+    const [selectedOptions, setSelectedOptions] = useState([[], [], []]);
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [hasMoreProduct, setHasMoreProduct] = useState(true);
@@ -21,12 +21,15 @@ const ExploreProducts = () => {
         if (initialCall.current) {
             initialCall.current = false;
         }
+        isFetching.current = true;
+        setIsLoading(true);
         try {
-            const categoryFilters = selectedOptions[0].map((filter) => (filter._id))
-            const diamondFilters = selectedOptions[1].map((filter) => (filter._id))
+            const categoryFilters = selectedOptions[0].map((filter) => (filter._id));
+            const diamondFilters = selectedOptions[1].map((filter) => (filter._id));
+            const subCategoryFilters = selectedOptions[2].map((filter) => (filter._id));
             const apiPath = getAllProductApi + `?page=${page}&limit=10&searchQuery=${searchQuery}`;
 
-            const data = await apiRequest(apiPath, 'POST', { filters: [categoryFilters, diamondFilters] });
+            const data = await apiRequest(apiPath, 'POST', { filters: [categoryFilters, diamondFilters, subCategoryFilters] });
             setProducts((prev) => [...prev, ...data.products]);
             setHasMoreProduct(data.hasMoreProduct);
         } catch (error) {

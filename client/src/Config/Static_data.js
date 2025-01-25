@@ -26,8 +26,46 @@ export const information = "Information";
 export const customizeSlogan = "Let's Talk About Your Dream Jewellery";
 export const customizeDescription = "When You Have Some Doubts Regarding The Purchase Of Lab Grown Diamond Jewelry Which Impacts Your Mind, Then Freely Contact Us Or Fill Up The Below Form. We Give Our Best Response To Your Doubts.";
 export const customizeProcess = "Jewellery customization process";
-export const mobileNumber = "+918154010045";
+export const mobileNumber = "+919662365669";
 export const mailId = "krivajewel@gmail.com";
+
+export const ringFilters = [
+    { _id: "bezel", title: "Bezel" },
+    { _id: "halo", title: "Halo" },
+    { _id: "solitair", title: "Solitair" },
+    { _id: "engagement", title: "Engagement" },
+    { _id: "vintage", title: "Vintage" },
+    { _id: "side_stone", title: "Side Stone" },
+    { _id: "iternity_band", title: "Iternity Band" },
+    { _id: "diamond_on_band", title: "Diamond on Band" },
+];
+
+export const earringFilters = [
+    { _id: "stud", title: "Stud" },
+    { _id: "danglers", title: "Danglers" },
+    { _id: "hoop_and_ball", title: "Hoop and Ball" },
+    { _id: "kids", title: "Kids" },
+];
+
+export const pendantsFilters = [
+    { _id: "solitaire", title: "Solitaire" },
+    { _id: "fashion", title: "Fashion" },
+    { _id: "cluster", title: "Cluster" },
+    { _id: "kids", title: "Kids" },
+    { _id: "alphabet", title: "Alphabet" },
+];
+
+export const braceletFilters = [
+    { _id: "bangle", title: "Bangle" },
+    { _id: "fashion", title: "Fashion" },
+    { _id: "tennis", title: "Tennis" },
+    { _id: "loose", title: "Loose" },
+];
+
+export const necklaceFilters = [
+    { _id: "tennis", title: "Tennis" },
+    { _id: "color_stone", title: "Color Stone" },
+];
 
 // Static Data
 export const faqQuestions = [

@@ -185,6 +185,11 @@ button {
             border: none;
             cursor: pointer;
             gap: 5px;
+
+            &.disabled {
+              background-color: $secondary;
+              cursor: not-allowed;
+            }
           }
 
           .dropDown-content {

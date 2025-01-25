@@ -29,12 +29,13 @@ export const ProductCreate = {
     },
     controller: async (req, res) => {
         try {
-            const { title, description, category, diamond, goldBannerImage, goldOtherImages, goldVideo, silverBannerImage, silverOtherImages, silverVideo, roseGoldBannerImage, roseGoldOtherImages, roseGoldVideo } = req.body;
+            const { title, description, subCategory, category, diamond, goldBannerImage, goldOtherImages, goldVideo, silverBannerImage, silverOtherImages, silverVideo, roseGoldBannerImage, roseGoldOtherImages, roseGoldVideo } = req.body;
 
             // Create new product
             const product = new Product({
                 title,
                 description,
+                subCategory,
                 category: new mongoose.Types.ObjectId(String(category)),
                 diamond: new mongoose.Types.ObjectId(String(diamond)),
                 goldBannerImage,
@@ -129,7 +130,7 @@ export const productUpdate = {
 
             const { id } = req.params;
 
-            const { title, description, category, diamond } = req.body;
+            const { title, description, subCategory, category, diamond } = req.body;
 
             const product = await Product.findById(id);
 
@@ -142,6 +143,7 @@ export const productUpdate = {
 
             product.title = title;
             product.description = description;
+            product.subCategory = subCategory;
             product.category = new mongoose.Types.ObjectId(String(category));
             product.diamond = new mongoose.Types.ObjectId(String(diamond));
 
@@ -216,12 +218,14 @@ export const getAllProducts = {
     controller: async (req, res) => {
         try {
             const { page = 1, limit = 10, searchQuery = "" } = req.query;
-            const [category = "All", diamond = "All", material = "All"] = req.body.filters || [];
+            const [category = "All", diamond = "All", subCategory = "All"] = req.body.filters || [];
             const skip = (page - 1) * limit;
+
+            console.log(req.body.filters);
 
             const categories = Array.isArray(category) ? category.map(id => new mongoose.Types.ObjectId(String(id))) : [];
             const diamonds = Array.isArray(diamond) ? diamond.map(id => new mongoose.Types.ObjectId(String(id))) : [];
-            // const materials = Array.isArray(material) ? material.map(id => new mongoose.Types.ObjectId(String(id))) : [];
+            const subCategories = Array.isArray(subCategory) ? subCategory.map(id => (String(id))) : [];
 
             // const [sortField, sortOrder = "asc"] = sort.split(",");
             // const sortBy = { [sortField]: sortOrder === "asc" ? 1 : -1 };
@@ -236,15 +240,15 @@ export const getAllProducts = {
                                     { description: { $regex: searchQuery, $options: 'i' } }
                                 ],
                             },
+                            subCategories.length > 0
+                                ? { subCategory: { $in: subCategories } }
+                                : {},
                             categories.length > 0
                                 ? { category: { $in: categories } }
                                 : {},
                             diamonds.length > 0
                                 ? { diamond: { $in: diamonds } }
                                 : {},
-                            // materials.length > 0
-                            //     ? { material: { $in: materials } }
-                            //     : {},
                             { isActive: true }
                         ]
                     }
@@ -281,6 +285,7 @@ export const getAllProducts = {
                         _id: 1,
                         title: 1,
                         description: 1,
+                        subCategory: 1,
                         productImage: 1,
                         goldBannerImage: 1,
                         goldOtherImages: 1,

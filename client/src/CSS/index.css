@@ -4495,6 +4495,10 @@ button:hover {
   cursor: pointer;
   gap: 5px;
 }
+.filterContainer .filter .centerPart .dropdowns-container .dropDown .dropDown-Btn.disabled {
+  background-color: #a9c4bf;
+  cursor: not-allowed;
+}
 .filterContainer .filter .centerPart .dropdowns-container .dropDown .dropDown-content {
   position: absolute;
   top: 110%;

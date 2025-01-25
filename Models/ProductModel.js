@@ -10,6 +10,10 @@ const ProductSchema = new Mongoose.Schema(
         description: {
             type: String,
         },
+        subCategory: {
+            type: String,
+            default: ""
+        },
         diamond: {
             type: Mongoose.Schema.Types.ObjectId,
             ref: 'Diamond',

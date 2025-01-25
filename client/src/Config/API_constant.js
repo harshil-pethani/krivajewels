@@ -1,5 +1,6 @@
 export const domain = "";
-export const domain2 = "https://krivajewel.com";
+export const krivaDomain = "https://krivajewel.com";
+// export const domain = "http://localhost:5000";
 
 export const bucketURL = "https://krivajewelsfiles.s3.ap-south-1.amazonaws.com";
 // const domain = "";
