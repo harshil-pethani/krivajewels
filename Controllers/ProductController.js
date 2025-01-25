@@ -221,7 +221,6 @@ export const getAllProducts = {
             const [category = "All", diamond = "All", subCategory = "All"] = req.body.filters || [];
             const skip = (page - 1) * limit;
 
-            console.log(req.body.filters);
 
             const categories = Array.isArray(category) ? category.map(id => new mongoose.Types.ObjectId(String(id))) : [];
             const diamonds = Array.isArray(diamond) ? diamond.map(id => new mongoose.Types.ObjectId(String(id))) : [];

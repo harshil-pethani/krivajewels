@@ -92,6 +92,7 @@ const FilterContainer = ({ searchQuery = { searchQuery }, setSearchQuery = { set
         } else {
             if (findFilterIndex === -1) {
                 if (index === 0) {
+                    newSelectedOptions[2].length = 0;
                     newSelectedOptions[index].length === 0
                         ? newSelectedOptions[index].push(option)
                         : newSelectedOptions[index] = [option];

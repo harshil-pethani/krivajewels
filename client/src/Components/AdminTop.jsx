@@ -15,7 +15,7 @@ const AdminTop = ({ adminDetails }) => {
                     <ion-icon name="person"></ion-icon>
                 </div>
                 <h2 className="title">
-                    {adminDetails.username}
+                    {adminDetails?.username}
                 </h2>
             </div>
         </div>

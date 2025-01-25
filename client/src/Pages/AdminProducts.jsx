@@ -23,7 +23,8 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
     const [updateProduct, setUpdateProduct] = useState({ title: '', goldBannerImage: null, goldOtherImages: [], goldVideo: null, roseGoldBannerImage: null, roseGoldOtherImages: [], roseGoldVideo: null, silverBannerImage: "", silverOtherImages: [], silverVideo: null, category: '', subCategory: '', diamond: '', description: '' });
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
-    const [subCategories, setSubCategories] = useState([]);
+    const [subCategoriesAddProduct, setSubCategoriesAddProduct] = useState([]);
+    const [subCategoriesUpdateProduct, setSubCategoriesUpdateProduct] = useState([]);
     const [diamonds, setDiamonds] = useState([]);
     const [refreshProducts, setRefreshProducts] = useState(false);
     const anyUpdate = useRef(false);
@@ -38,8 +39,8 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
     const initialCall = useRef(true);
 
     const getSubCategory = (selectedCategoryId) => {
+        let subCategoryData = [];
         for (let i = 0, catLength = categories.length; i < catLength; i++) {
-            let subCategoryData;
             if (categories[i]._id === selectedCategoryId) {
                 if (categories[i].title.toLowerCase() === "ring") {
                     subCategoryData = JSON.parse(sessionStorage.getItem("KrivaRingFilters"));
@@ -52,9 +53,10 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                 } else if (categories[i].title.toLowerCase() === "necklace") {
                     subCategoryData = JSON.parse(sessionStorage.getItem("KrivaNecklaceFilters"));
                 }
-                setSubCategories(subCategoryData);
+                break;
             }
         }
+        return subCategoryData;
     }
 
     useEffect(() => {
@@ -79,7 +81,8 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
     }, []);
 
     const resetAddProductForm = () => {
-        setNewProduct({ title: "", goldBannerImage: null, goldOtherImages: [], goldVideo: null, roseGoldBannerImage: null, roseGoldOtherImages: [], roseGoldVideo: null, silverBannerImage: "", silverOtherImages: [], silverVideo: null, description: "", category: "", diamond: "" });
+        setSubCategoriesAddProduct([]);
+        setNewProduct({ title: "", goldBannerImage: null, goldOtherImages: [], goldVideo: null, roseGoldBannerImage: null, roseGoldOtherImages: [], roseGoldVideo: null, silverBannerImage: "", silverOtherImages: [], silverVideo: null, description: "", category: "", subCategory: "", diamond: "" });
     };
 
     const getUniqueFileName = (fileName, forImage = true) => {
@@ -226,6 +229,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
             title: updateProduct.title,
             description: updateProduct.description,
             category: updateProduct.category,
+            subCategory: updateProduct.subCategory,
             diamond: updateProduct.diamond
         }
         try {
@@ -317,7 +321,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                                         <label htmlFor="productCategory">
                                             Category<span>*</span>
                                         </label>
-                                        <select value={newProduct.category} placeholder="Select Category" id="productCategory" onChange={(e) => { getSubCategory(e.target.value); setNewProduct({ ...newProduct, category: e.target.value }) }}>
+                                        <select value={newProduct.category} placeholder="Select Category" id="productCategory" onChange={(e) => { setSubCategoriesAddProduct(getSubCategory(e.target.value)); setNewProduct({ ...newProduct, category: e.target.value }) }}>
                                             <option value="">Select Category</option>
                                             {
                                                 categories.map((category) => (
@@ -329,10 +333,10 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                                         <label htmlFor="productSubCategory">
                                             Sub Category
                                         </label>
-                                        <select disabled={!subCategories.length} value={newProduct.subCategory} placeholder="Select Sub Category" id="productSubCategory" onChange={(e) => { setNewProduct({ ...newProduct, subCategory: e.target.value }) }}>
+                                        <select disabled={!subCategoriesAddProduct.length} value={newProduct.subCategory} placeholder="Select Sub Category" id="productSubCategory" onChange={(e) => { setNewProduct({ ...newProduct, subCategory: e.target.value }) }}>
                                             <option value="">Select Sub Category</option>
                                             {
-                                                subCategories.map((subCat) => (
+                                                subCategoriesAddProduct.map((subCat) => (
                                                     <option name={subCat.title} key={subCat._id} value={subCat._id}>{subCat.title}</option>
                                                 ))
                                             }
@@ -447,7 +451,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                                         }} type="file" multiple accept="image/*,video/*" />
 
                                         <div className="btn-container">
-                                            <button onClick={() => setShowPopup("")} className="btn-secondary" type="submit">
+                                            <button onClick={() => { setShowPopup(""); resetAddProductForm(); }} className="btn-secondary" type="submit">
                                                 Cancel
                                             </button>
                                             <button onClick={addProduct} type="submit">
@@ -485,11 +489,23 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                                         <label htmlFor="productCategory">
                                             Category <span>*</span>
                                         </label>
-                                        <select value={updateProduct.category} placeholder="Select Category" id="productCategory" onChange={(e) => { setUpdateProduct({ ...updateProduct, category: e.target.value }) }}>
+                                        <select value={updateProduct.category} placeholder="Select Category" id="productCategory" onChange={(e) => { setSubCategoriesUpdateProduct(getSubCategory(e.target.value)); setUpdateProduct({ ...updateProduct, category: e.target.value }) }}>
                                             <option value="">Select Category</option>
                                             {
                                                 categories.map((category) => (
                                                     <option key={category._id} value={category._id}>{category.title}</option>
+                                                ))
+                                            }
+                                        </select>
+
+                                        <label htmlFor="productSubCategory">
+                                            Sub Category
+                                        </label>
+                                        <select disabled={!subCategoriesUpdateProduct.length} value={updateProduct.subCategory} placeholder="Select Sub Category" id="productSubCategory" onChange={(e) => { setUpdateProduct({ ...updateProduct, subCategory: e.target.value }) }}>
+                                            <option value="">Select Sub Category</option>
+                                            {
+                                                subCategoriesUpdateProduct.map((subCat) => (
+                                                    <option name={subCat.title} key={subCat._id} value={subCat._id}>{subCat.title}</option>
                                                 ))
                                             }
                                         </select>
@@ -547,7 +563,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                             getAllProducts={getAllProducts}
                             initialCall={initialCall}
                         />
-                        <ProductsContainer productData={products} materialChange={materialChange} setMaterialChange={setMaterialChange} isLoading={isLoading} isForAdminPanel={true} setUpdateProduct={setUpdateProduct} setShowPopup={setShowPopup} deleteProduct={deleteProduct} />
+                        <ProductsContainer productData={products} materialChange={materialChange} setMaterialChange={setMaterialChange} isLoading={isLoading} isForAdminPanel={true} getSubCategory={getSubCategory} setSubCategoriesUpdateProduct={setSubCategoriesUpdateProduct} setUpdateProduct={setUpdateProduct} setShowPopup={setShowPopup} deleteProduct={deleteProduct} />
                         {isLoading && <Loader />}
                         {
                             (hasMoreProduct && !isLoading) && (

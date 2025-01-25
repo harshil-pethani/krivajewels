@@ -3,7 +3,7 @@ import { bucketURL, krivaDomain } from '../Config/API_constant'
 import { mobileNumber } from '../Config/Static_data';
 import { Link } from 'react-router-dom';
 
-const ProductsContainer = ({ homepage, productData, materialChange, setMaterialChange, isLoading, isForAdminPanel, setUpdateProduct, setShowPopup, deleteProduct }) => {
+const ProductsContainer = ({ homepage, productData, materialChange, setMaterialChange, isLoading, isForAdminPanel, getSubCategory, setSubCategoriesUpdateProduct, setUpdateProduct, setShowPopup, deleteProduct }) => {
 
     const inquireNow = (id) => {
         const message = `Hello, I want to do inquiry on below product - %0A ${krivaDomain}/explore/${id}`;
@@ -51,7 +51,7 @@ const ProductsContainer = ({ homepage, productData, materialChange, setMaterialC
                                 {
                                     isForAdminPanel ?
                                         <div className="actionBtns">
-                                            <button className="edit" onClick={(e) => { setUpdateProduct({ ...jewellery, category: jewellery.category_detail._id, diamond: jewellery.diamond_detail._id }); setShowPopup("updateProduct"); }}>
+                                            <button className="edit" onClick={(e) => { setSubCategoriesUpdateProduct(getSubCategory(jewellery.category_detail._id)); setUpdateProduct({ ...jewellery, category: jewellery.category_detail._id, diamond: jewellery.diamond_detail._id }); setShowPopup("updateProduct"); }}>
                                                 <ion-icon name="pencil-outline"></ion-icon>
                                             </button>
                                             <button className="delete" onClick={() => deleteProduct(jewellery._id)}>
