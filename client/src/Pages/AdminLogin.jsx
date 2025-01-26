@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { forgotPassowrdApi, loginApi } from '../Config/API_constant';
+import React, { useEffect, useState } from 'react';
+import { forgotPassowrdApi, getAllFiltersApi, loginApi } from '../Config/API_constant';
 import apiRequest from '../CommonUtil';
 import { useLoader } from '../Contexts/LoaderContext';
 import { ToastContainer, toast } from 'react-toastify';
+import { braceletFilters, earringFilters, necklaceFilters, pendantsFilters, ringFilters } from '../Config/Static_data';
 
 const AdminLogin = ({ setAdminLogged, setAdminDetails }) => {
     const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -20,6 +21,31 @@ const AdminLogin = ({ setAdminLogged, setAdminDetails }) => {
         }
         return true;
     }
+
+    async function getAllFilters() {
+        try {
+            const res = await apiRequest(getAllFiltersApi, 'GET');
+            const filters = [
+                { name: "Category", disabled: false, data: res.data[0] },
+                { name: "Diamond", disabled: false, data: res.data[1] },
+                { name: "Sub Category", disabled: true, data: [] }
+            ];
+            sessionStorage.setItem("KrivaFilters", JSON.stringify(filters));
+        } catch (e) {
+            toast.error("Something went wrong !", {
+                position: "top-right"
+            });
+        }
+    }
+
+    useEffect(() => {
+        getAllFilters();
+        sessionStorage.setItem("KrivaRingFilters", JSON.stringify(ringFilters));
+        sessionStorage.setItem("KrivaEarringFilters", JSON.stringify(earringFilters));
+        sessionStorage.setItem("KrivaPendantFilters", JSON.stringify(pendantsFilters));
+        sessionStorage.setItem("KrivaBraceletFilters", JSON.stringify(braceletFilters));
+        sessionStorage.setItem("KrivaNecklaceFilters", JSON.stringify(necklaceFilters));
+    }, []);
 
     const handleLogin = async (e) => {
         e.preventDefault();

@@ -2,15 +2,23 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { bucketURL, krivaDomain } from '../Config/API_constant'
 import { tab_home, mobileNumber } from '../Config/Static_data';
+import { toast, ToastContainer } from 'react-toastify';
 
 const SingleProduct = ({ productData }) => {
-    const [currentMaterial, setCurrentMaterial] = useState("Yellow-Gold");
+    const [currentMaterial, setCurrentMaterial] = useState("");
     const [currentImage, setCurrentImage] = useState(null);
     const [isVideo, setIsVideo] = useState(false);
 
     useEffect(() => {
         if (productData) {
-            setCurrentImage(productData?.goldBannerImage || productData?.silverBannerImage || productData?.roseGoldBannerImage);
+            setCurrentImage(productData?.goldBannerImage || productData?.roseGoldBannerImage || productData?.silverBannerImage);
+            productData?.goldBannerImage
+                ? setCurrentMaterial("Yellow-Gold")
+                : productData?.roseGoldBannerImage
+                    ? setCurrentMaterial("Rose-Gold")
+                    : productData?.silverBannerImage
+                        ? setCurrentMaterial("White-Gold")
+                        : setCurrentMaterial("");
             productData.goldFiles = [productData.goldBannerImage, ...productData.goldOtherImages];
             productData.silverFiles = [productData.silverBannerImage, ...productData.silverOtherImages];
             productData.roseGoldFiles = [productData.roseGoldBannerImage, ...productData.roseGoldOtherImages];
@@ -102,26 +110,11 @@ const SingleProduct = ({ productData }) => {
                     <p className="title">
                         {productData?.title}
                     </p>
-                    {/* <p className="description">
-                        {productData?.description}
-                    </p> */}
-                    {
-                        // productData?.description.split("\n").map((desc, index) => {
-                        //     return (
-                        //         <p className="description" key={index}>
-                        //             {desc}
-                        //         </p>
-                        //     )
-                        // })
-
-                    }
-                    <span className="description">
-                        {
-                            renderDescription(productData?.description)
-                        }
-                    </span>
                     <p className="category">
                         Category: <span className='value'> {productData?.category.title}</span>
+                    </p>
+                    <p className="category">
+                        Sub Category: <span className='value'> {productData?.subCategory}</span>
                     </p>
                     <p className="category">
                         Diamond: <span className='value'>{productData?.diamond.title}</span>
@@ -130,25 +123,82 @@ const SingleProduct = ({ productData }) => {
                         <span className='category'>
                             Select Material:
                         </span>
-                        <ul className="material-selection">
-                            <li onClick={() => { setCurrentMaterial("Yellow-Gold"); setCurrentImage(productData?.goldBannerImage); setIsVideo(false); }} title='Yello Gold' className={`material gold ${currentMaterial === "Yellow-Gold" ? "active" : ""}`} >
-                            </li>
-                            <li onClick={() => { setCurrentMaterial("Rose-Gold"); setCurrentImage(productData?.roseGoldBannerImage); setIsVideo(false); }} title='Rose Gold' className={`material rosegold ${currentMaterial === "Rose-Gold" ? "active" : ""}`}>
-                            </li>
-                            <li onClick={() => { setCurrentMaterial("White-Gold"); setCurrentImage(productData?.silverBannerImage); setIsVideo(false); }} title='White Gold' className={`material whitegold ${currentMaterial === "White-Gold" ? "active" : ""}`}>
-                            </li>
-                            <li onClick={() => { setCurrentMaterial("Silver"); setCurrentImage(productData?.silverBannerImage); setIsVideo(false); }} title='Silver' className={`material silver ${currentMaterial === "Silver" ? "active" : ""}`}>
-                            </li>
-                        </ul>
-                        <span className="material-value">
-                            {currentMaterial}
-                        </span>
+                        <div className="material-wrapper">
+                            <ul className="material-selection">
+                                <li onClick={() => {
+                                    if (!productData?.goldBannerImage) {
+                                        toast.warn(
+                                            'This product is not available in Gold!',
+                                            { position: 'top-right' }
+                                        );
+                                        return;
+                                    }
+                                    setCurrentMaterial("Yellow-Gold");
+                                    setCurrentImage(productData?.goldBannerImage);
+                                    setIsVideo(false);
+                                }} title='Yello Gold' className={`material gold ${currentMaterial === "Yellow-Gold" ? "active" : ""}`} >
+                                </li>
+                                <li onClick={() => {
+                                    if (!productData?.roseGoldBannerImage) {
+                                        toast.warn(
+                                            'This product is not available in Rose-gold!',
+                                            { position: 'top-right' }
+                                        );
+                                        return;
+                                    }
+                                    setCurrentMaterial("Rose-Gold");
+                                    setCurrentImage(productData?.roseGoldBannerImage);
+                                    setIsVideo(false);
+                                }} title='Rose Gold' className={`material rosegold ${currentMaterial === "Rose-Gold" ? "active" : ""}`}>
+                                </li>
+                                <li onClick={() => {
+                                    if (!productData?.silverBannerImage) {
+                                        toast.warn(
+                                            'This product is not available in White-gold!',
+                                            { position: 'top-right' }
+                                        );
+                                        return;
+                                    }
+                                    setCurrentMaterial("White-Gold");
+                                    setCurrentImage(productData?.silverBannerImage);
+                                    setIsVideo(false);
+                                }} title='White Gold' className={`material whitegold ${currentMaterial === "White-Gold" ? "active" : ""}`}>
+                                </li>
+                                <li onClick={() => {
+                                    if (!productData?.silverBannerImage) {
+                                        toast.warn(
+                                            'This product is not available in Silver!',
+                                            { position: 'top-right' }
+                                        );
+                                        return;
+                                    }
+                                    setCurrentMaterial("Silver");
+                                    setCurrentImage(productData?.silverBannerImage);
+                                    setIsVideo(false);
+                                }} title='Silver' className={`material silver ${currentMaterial === "Silver" ? "active" : ""}`}>
+                                </li>
+                            </ul>
+                            <span className="material-value">
+                                {currentMaterial}
+                            </span>
+                        </div>
                     </div>
                     <button onClick={() => inquireNow(productData._id)} className="inquiry-btn">
                         Inquiry Now<ion-icon name="arrow-forward"></ion-icon>
                     </button>
                 </div>
             </div>
+            <div className="product-description">
+                <p className="title">
+                    Description
+                </p>
+                <span className="description">
+                    {
+                        renderDescription(productData?.description)
+                    }
+                </span>
+            </div>
+            <ToastContainer />
         </div>
     )
 }
