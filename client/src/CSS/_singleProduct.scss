@@ -55,7 +55,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid $mainBg;
+        // border: 2px solid $mainBg;
         border-radius: 10px;
         margin-bottom: 20px;
 
@@ -77,8 +77,8 @@
 
         img,
         video {
-          height: 50px;
-          width: 50px;
+          height: 80px;
+          width: 80px;
 
           &.active {
             border: 2px solid $mainBg;
@@ -258,11 +258,12 @@
           display: flex;
           gap: 5px;
           justify-content: center;
+          margin-top: 15px;
 
           img,
           video {
-            height: 50px;
-            width: 50px;
+            height: 80px;
+            width: 80px;
 
             &.active {
               border: 2px solid $mainBg;
@@ -426,8 +427,8 @@
 
           img,
           video {
-            height: 50px;
-            width: 50px;
+            height: 80px;
+            width: 80px;
 
             &.active {
               border: 2px solid $mainBg;
@@ -539,6 +540,7 @@
 @media screen and (max-width: 550px) {
   .single-product-component {
     padding: 20px;
+    min-width: 400px;
 
     .bread-crumb {
       gap: 5px;
@@ -581,8 +583,8 @@
 
           img,
           video {
-            height: 50px;
-            width: 50px;
+            height: 60px;
+            width: 60px;
           }
         }
       }

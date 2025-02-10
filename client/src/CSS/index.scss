@@ -20,6 +20,7 @@
 @import "./productsContainer";
 @import "./faq";
 @import "./simpleTextComponent";
+@import "./ImageMagnifier";
 
 * {
   margin: 0;
@@ -171,7 +172,7 @@ button {
           // margin: 0 10px;
 
           .dropDown-Btn {
-            padding: 5px 10px;
+            padding: 5px 15px;
             height: 40px;
             background: $darkBlue;
             // border-radius: 5px;
@@ -375,7 +376,7 @@ button {
             // margin: 0 10px;
 
             .dropDown-Btn {
-              padding: 5px 10px;
+              padding: 5px 12px;
               height: 35px;
               font-size: 12px;
               gap: 5px;
@@ -521,7 +522,7 @@ button {
             // margin: 0 10px;
 
             .dropDown-Btn {
-              padding: 5px 10px;
+              padding: 5px 12px;
               height: 35px;
               font-size: 12px;
               gap: 5px;

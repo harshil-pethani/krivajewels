@@ -3,11 +3,22 @@ import { Link } from 'react-router-dom'
 import { bucketURL, krivaDomain } from '../Config/API_constant'
 import { tab_home, mobileNumber } from '../Config/Static_data';
 import { toast, ToastContainer } from 'react-toastify';
+import ImageMagnifier from './ImageMagnifier';
 
 const SingleProduct = ({ productData }) => {
     const [currentMaterial, setCurrentMaterial] = useState("");
     const [currentImage, setCurrentImage] = useState(null);
     const [isVideo, setIsVideo] = useState(false);
+    const [showMagnifier, setShowMagnifier] = useState(window.innerWidth > 800);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setShowMagnifier(window.innerWidth > 800);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     useEffect(() => {
         if (productData) {
@@ -77,7 +88,10 @@ const SingleProduct = ({ productData }) => {
                         {
                             isVideo
                                 ? <video autoPlay loop src={`${bucketURL}/${currentImage}`}></video>
-                                : <img src={`${bucketURL}/${currentImage}`} alt="" />
+                                :
+                                showMagnifier ?
+                                    <ImageMagnifier imageUrl={`${bucketURL}/${currentImage}`} />
+                                    : <img src={`${bucketURL}/${currentImage}`} alt="" />
                         }
                     </div>
                     <div className="image-selection">
@@ -172,7 +186,7 @@ const SingleProduct = ({ productData }) => {
                                         );
                                         return;
                                     }
-                                    setCurrentMaterial("Silver");
+                                    setCurrentMaterial("Silver-925");
                                     setCurrentImage(productData?.silverBannerImage);
                                     setIsVideo(false);
                                 }} title='Silver' className={`material silver ${currentMaterial === "Silver" ? "active" : ""}`}>
@@ -184,7 +198,7 @@ const SingleProduct = ({ productData }) => {
                         </div>
                     </div>
                     <button onClick={() => inquireNow(productData._id)} className="inquiry-btn">
-                        Inquiry Now<ion-icon name="arrow-forward"></ion-icon>
+                        Inquiry Now
                     </button>
                 </div>
             </div>

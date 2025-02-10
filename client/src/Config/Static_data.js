@@ -38,6 +38,7 @@ export const ringFilters = [
     { _id: "side_stone", title: "Side Stone" },
     { _id: "iternity_band", title: "Iternity Band" },
     { _id: "diamond_on_band", title: "Diamond on Band" },
+    { _id: "color_bithstone", title: "Colour/bithstone" },
 ];
 
 export const earringFilters = [
@@ -45,6 +46,7 @@ export const earringFilters = [
     { _id: "danglers", title: "Danglers" },
     { _id: "hoop_and_ball", title: "Hoop and Ball" },
     { _id: "kids", title: "Kids" },
+    { _id: "color_bithstone", title: "Colour/bithstone" },
 ];
 
 export const pendantsFilters = [
@@ -53,6 +55,7 @@ export const pendantsFilters = [
     { _id: "cluster", title: "Cluster" },
     { _id: "kids", title: "Kids" },
     { _id: "alphabet", title: "Alphabet" },
+    { _id: "color_bithstone", title: "Colour/bithstone" },
 ];
 
 export const braceletFilters = [
