@@ -421,6 +421,7 @@
   .jewellery-card-container {
     grid-template-columns: repeat(3, 1fr);
     min-width: 400px;
+    width: 100%;
     margin-top: 10px;
 
     .jewellery-card {

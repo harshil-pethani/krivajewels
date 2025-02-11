@@ -150,6 +150,7 @@
     background-color: #000825;
     padding: 0 20px;
     min-width: 400px;
+    width: 100%;
   }
   .mobileNavbar .topNavbar {
     padding: 0;
@@ -614,6 +615,7 @@
     max-height: 50vw;
     min-width: 400px;
     min-height: 200px;
+    width: 100%;
   }
   .homeHeader .background img {
     max-height: 50vw;
@@ -899,6 +901,7 @@
     padding-bottom: 10px;
     gap: 15px;
     min-width: 400px;
+    width: 100%;
   }
   .categoryComponent .categoryContainer {
     gap: 15px;
@@ -920,6 +923,7 @@
     padding-bottom: 10px;
     gap: 15px;
     min-width: 400px;
+    width: 100%;
   }
   .diamondComponent .diamondContainer {
     gap: 15px;
@@ -991,6 +995,7 @@
   .top-selling-component {
     padding: 10px 20px;
     min-width: 400px;
+    width: 100%;
   }
   .top-selling-component > a {
     display: flex;
@@ -1154,6 +1159,7 @@
     gap: 10px;
     flex-direction: column-reverse;
     min-width: 400px;
+    width: 100%;
   }
   .customize-jewellery-component .left {
     width: 100%;
@@ -1191,6 +1197,7 @@
 @media screen and (max-width: 500px) {
   .customize-jewellery-component {
     min-width: 400px;
+    width: 100%;
   }
   .customize-jewellery-component .left {
     width: 100%;
@@ -1278,6 +1285,7 @@
     gap: 30px;
     flex-wrap: wrap;
     min-width: 400px;
+    width: 100%;
     flex-direction: column;
     align-items: center;
   }
@@ -1303,6 +1311,7 @@
     padding: 20px;
     gap: 30px;
     min-width: 400px;
+    width: 100%;
     flex-direction: column;
     align-items: center;
   }
@@ -1678,6 +1687,7 @@
     background-color: #000825;
     padding: 15px 20px;
     min-width: 400px;
+    width: 100%;
   }
   .footerContainer .footer {
     display: flex;
@@ -1807,6 +1817,7 @@
   align-items: center;
   min-height: calc(100vh - 100px - 200px - 120px);
   min-width: 400px;
+  width: 100%;
 }
 .explore-product-component .subtitle {
   font-weight: 300;
@@ -1824,6 +1835,7 @@
     padding: 10px 50px;
     min-height: calc(100vh - 100px - 200px - 120px);
     min-width: 400px;
+    width: 100%;
   }
   .explore-product-component .subtitle {
     font-weight: 300;
@@ -1842,6 +1854,7 @@
     padding: 10px 20px;
     min-height: calc(100vh - 100px - 200px - 120px);
     min-width: 400px;
+    width: 100%;
   }
   .explore-product-component .subtitle {
     font-weight: 300;
@@ -2915,6 +2928,7 @@
   .single-product-component {
     padding: 20px;
     min-width: 400px;
+    width: 100%;
   }
   .single-product-component .bread-crumb {
     gap: 5px;
@@ -3353,6 +3367,7 @@
   .jewellery-card-container {
     grid-template-columns: repeat(3, 1fr);
     min-width: 400px;
+    width: 100%;
     margin-top: 10px;
   }
   .jewellery-card-container .jewellery-card .card-details .inner-detail .jewellery-title {
@@ -3633,6 +3648,7 @@
     padding: 25px 20px;
     padding-bottom: 50px;
     min-width: 400px;
+    width: 100%;
   }
   .faqSection .questionsContainer {
     margin-top: 10px;
@@ -4203,6 +4219,7 @@
   .simple-text-component {
     padding: 20px;
     min-width: 400px;
+    width: 100%;
   }
   .simple-text-component .main-sub-title {
     font-size: 16px;

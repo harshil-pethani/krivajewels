@@ -160,6 +160,7 @@
     flex-direction: column-reverse;
     // border: 2px solid red;
     min-width: 400px;
+    width: 100%;
 
     .left {
       width: 100%;
@@ -204,6 +205,7 @@
 @media screen and (max-width: 500px) {
   .customize-jewellery-component {
     min-width: 400px;
+    width: 100%;
 
     .left {
       width: 100%;

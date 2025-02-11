@@ -9,6 +9,7 @@
   align-items: center;
   min-height: calc(100vh - 100px - 200px - 120px);
   min-width: 400px;
+  width: 100%;
 
   .subtitle {
     // border: 2px solid red;
@@ -31,6 +32,7 @@
     padding: 10px 50px;
     min-height: calc(100vh - 100px - 200px - 120px);
     min-width: 400px;
+    width: 100%;
 
     .subtitle {
       // border: 2px solid red;
@@ -55,6 +57,7 @@
     padding: 10px 20px;
     min-height: calc(100vh - 100px - 200px - 120px);
     min-width: 400px;
+    width: 100%;
 
     .subtitle {
       // border: 2px solid red;
