@@ -110,12 +110,13 @@ const SingleProduct = ({ productData }) => {
                         }
 
                         {
-                            currentMaterial === "Yellow-Gold"
+                            (currentMaterial === "Yellow-Gold" && productData.goldVideo)
                                 ?
                                 <video onClick={() => { setCurrentImage(productData.goldVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.goldVideo}`} alt="" className={currentImage === productData.goldVideo ? 'active' : ''} />
-                                : (currentMaterial === "Silver-925" || currentMaterial === "White-Gold") ?
+                                : ((currentMaterial === "Silver-925" && productData.silverVideo) || (currentMaterial === "White-Gold" && productData.silverVideo)) ?
                                     <video onClick={() => { setCurrentImage(productData.silverVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.silverVideo}`} alt="" className={currentImage === productData.silverVideo ? 'active' : ''} />
                                     :
+                                    (productData.roseGoldVideo) &&
                                     <video onClick={() => { setCurrentImage(productData.roseGoldVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.roseGoldVideo}`} alt="" className={currentImage === productData.roseGoldVideo ? 'active' : ''} />
                         }
                     </div>
