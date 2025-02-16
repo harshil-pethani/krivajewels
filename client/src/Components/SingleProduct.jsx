@@ -104,7 +104,7 @@ const SingleProduct = ({ productData }) => {
                                     ? productData.silverFiles?.map((image, index) => (
                                         <img key={index} onClick={() => { setCurrentImage(image); setIsVideo(false); }} src={`${bucketURL}/${image}`} alt="" className={currentImage === image ? 'active' : ''} />
                                     ))
-                                    : productData.roseGoldFiles?.map((image, index) => (
+                                    : currentMaterial === "Rose-Gold" && productData.roseGoldFiles?.map((image, index) => (
                                         <img key={index} onClick={() => { setCurrentImage(image); setIsVideo(false); }} src={`${bucketURL}/${image}`} alt="" className={currentImage === image ? 'active' : ''} />
                                     ))
                         }
@@ -116,7 +116,7 @@ const SingleProduct = ({ productData }) => {
                                 : ((currentMaterial === "Silver-925" && productData.silverVideo) || (currentMaterial === "White-Gold" && productData.silverVideo)) ?
                                     <video onClick={() => { setCurrentImage(productData.silverVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.silverVideo}`} alt="" className={currentImage === productData.silverVideo ? 'active' : ''} />
                                     :
-                                    (productData.roseGoldVideo) &&
+                                    (currentMaterial === "Rose-Gold" && productData.roseGoldVideo) &&
                                     <video onClick={() => { setCurrentImage(productData.roseGoldVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.roseGoldVideo}`} alt="" className={currentImage === productData.roseGoldVideo ? 'active' : ''} />
                         }
                     </div>
