@@ -114,9 +114,9 @@ const SingleProduct = ({ productData }) => {
                                 ?
                                 <video onClick={() => { setCurrentImage(productData.goldVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.goldVideo}`} alt="" className={currentImage === productData.goldVideo ? 'active' : ''} />
                                 : (currentMaterial === "Silver-925" || currentMaterial === "White-Gold") ?
-                                    <video onClick={() => { setCurrentImage(productData.goldVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.silverVideo}`} alt="" className={currentImage === productData.goldVideo ? 'active' : ''} />
+                                    <video onClick={() => { setCurrentImage(productData.silverVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.silverVideo}`} alt="" className={currentImage === productData.silverVideo ? 'active' : ''} />
                                     :
-                                    <video onClick={() => { setCurrentImage(productData.goldVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.roseGoldVideo}`} alt="" className={currentImage === productData.goldVideo ? 'active' : ''} />
+                                    <video onClick={() => { setCurrentImage(productData.roseGoldVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.roseGoldVideo}`} alt="" className={currentImage === productData.roseGoldVideo ? 'active' : ''} />
                         }
                     </div>
                 </div>
@@ -189,7 +189,7 @@ const SingleProduct = ({ productData }) => {
                                     setCurrentMaterial("Silver-925");
                                     setCurrentImage(productData?.silverBannerImage);
                                     setIsVideo(false);
-                                }} title='Silver' className={`material silver ${currentMaterial === "Silver" ? "active" : ""}`}>
+                                }} title='Silver-925' className={`material silver ${currentMaterial === "Silver-925" ? "active" : ""}`}>
                                 </li>
                             </ul>
                             <span className="material-value">
