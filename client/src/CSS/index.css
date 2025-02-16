@@ -149,7 +149,6 @@
     position: relative;
     background-color: #000825;
     padding: 0 20px;
-    min-width: 400px;
     width: 100%;
   }
   .mobileNavbar .topNavbar {
@@ -613,7 +612,6 @@
 @media screen and (max-width: 550px) {
   .homeHeader {
     max-height: 50vw;
-    min-width: 400px;
     min-height: 200px;
     width: 100%;
   }
@@ -900,7 +898,6 @@
     padding: 10px 20px;
     padding-bottom: 10px;
     gap: 15px;
-    min-width: 400px;
     width: 100%;
   }
   .categoryComponent .categoryContainer {
@@ -922,7 +919,6 @@
     padding: 10px 20px;
     padding-bottom: 10px;
     gap: 15px;
-    min-width: 400px;
     width: 100%;
   }
   .diamondComponent .diamondContainer {
@@ -994,7 +990,6 @@
 @media screen and (max-width: 700px) {
   .top-selling-component {
     padding: 10px 20px;
-    min-width: 400px;
     width: 100%;
   }
   .top-selling-component > a {
@@ -1158,7 +1153,6 @@
     padding: 10px 20px;
     gap: 10px;
     flex-direction: column-reverse;
-    min-width: 400px;
     width: 100%;
   }
   .customize-jewellery-component .left {
@@ -1196,7 +1190,6 @@
 }
 @media screen and (max-width: 500px) {
   .customize-jewellery-component {
-    min-width: 400px;
     width: 100%;
   }
   .customize-jewellery-component .left {
@@ -1284,7 +1277,6 @@
     padding: 20px;
     gap: 30px;
     flex-wrap: wrap;
-    min-width: 400px;
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -1310,7 +1302,6 @@
   .services-component {
     padding: 20px;
     gap: 30px;
-    min-width: 400px;
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -1686,7 +1677,6 @@
   .footerContainer {
     background-color: #000825;
     padding: 15px 20px;
-    min-width: 400px;
     width: 100%;
   }
   .footerContainer .footer {
@@ -1816,7 +1806,6 @@
   justify-content: flex-start;
   align-items: center;
   min-height: calc(100vh - 100px - 200px - 120px);
-  min-width: 400px;
   width: 100%;
 }
 .explore-product-component .subtitle {
@@ -1834,7 +1823,6 @@
   .explore-product-component {
     padding: 10px 50px;
     min-height: calc(100vh - 100px - 200px - 120px);
-    min-width: 400px;
     width: 100%;
   }
   .explore-product-component .subtitle {
@@ -1853,7 +1841,6 @@
   .explore-product-component {
     padding: 10px 20px;
     min-height: calc(100vh - 100px - 200px - 120px);
-    min-width: 400px;
     width: 100%;
   }
   .explore-product-component .subtitle {
@@ -2927,7 +2914,6 @@
 @media screen and (max-width: 550px) {
   .single-product-component {
     padding: 20px;
-    min-width: 400px;
     width: 100%;
   }
   .single-product-component .bread-crumb {
@@ -3366,7 +3352,6 @@
 @media (max-width: 700px) {
   .jewellery-card-container {
     grid-template-columns: repeat(3, 1fr);
-    min-width: 400px;
     width: 100%;
     margin-top: 10px;
   }
@@ -3647,7 +3632,6 @@
   .faqSection {
     padding: 25px 20px;
     padding-bottom: 50px;
-    min-width: 400px;
     width: 100%;
   }
   .faqSection .questionsContainer {
@@ -4218,7 +4202,6 @@
 @media screen and (max-width: 550px) {
   .simple-text-component {
     padding: 20px;
-    min-width: 400px;
     width: 100%;
   }
   .simple-text-component .main-sub-title {
@@ -4774,7 +4757,6 @@ button:hover {
     height: 2px;
   }
   .filterContainer {
-    min-width: 400px;
     margin-top: 10px;
     width: 100%;
     padding: 0 10px;
