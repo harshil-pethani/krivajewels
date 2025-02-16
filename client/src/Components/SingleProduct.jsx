@@ -100,7 +100,7 @@ const SingleProduct = ({ productData }) => {
                                 ? productData.goldFiles?.map((image, index) => (
                                     <img key={index} onClick={() => { setCurrentImage(image); setIsVideo(false); }} src={`${bucketURL}/${image}`} alt="" className={currentImage === image ? 'active' : ''} />
                                 ))
-                                : (currentMaterial === "Silver" || currentMaterial === "White-Gold")
+                                : (currentMaterial === "Silver-925" || currentMaterial === "White-Gold")
                                     ? productData.silverFiles?.map((image, index) => (
                                         <img key={index} onClick={() => { setCurrentImage(image); setIsVideo(false); }} src={`${bucketURL}/${image}`} alt="" className={currentImage === image ? 'active' : ''} />
                                     ))
@@ -113,7 +113,7 @@ const SingleProduct = ({ productData }) => {
                             currentMaterial === "Yellow-Gold"
                                 ?
                                 <video onClick={() => { setCurrentImage(productData.goldVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.goldVideo}`} alt="" className={currentImage === productData.goldVideo ? 'active' : ''} />
-                                : (currentMaterial === "Silver" || currentMaterial === "White-Gold") ?
+                                : (currentMaterial === "Silver-925" || currentMaterial === "White-Gold") ?
                                     <video onClick={() => { setCurrentImage(productData.goldVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.silverVideo}`} alt="" className={currentImage === productData.goldVideo ? 'active' : ''} />
                                     :
                                     <video onClick={() => { setCurrentImage(productData.goldVideo); setIsVideo(true); }} src={`${bucketURL}/${productData.roseGoldVideo}`} alt="" className={currentImage === productData.goldVideo ? 'active' : ''} />
