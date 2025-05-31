@@ -73,6 +73,9 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="socialIcons">
+                        <a href='https://maps.app.goo.gl/zMeWMfkjXhkQaX6x9?g_st=aw' target="_blank" rel="noreferrer" className="icon">
+                            <ion-icon name="location-outline"></ion-icon>
+                        </a>
                         <a href={`tel:${mobileNumber}`} target="_blank" rel="noreferrer" className="icon">
                             <ion-icon name="call-outline"></ion-icon>
                         </a>
@@ -81,9 +84,6 @@ const Footer = () => {
                         </a>
                         <a href='' target="_blank" rel="noreferrer" className="icon">
                             <ion-icon name="logo-facebook"></ion-icon>
-                        </a>
-                        <a href='' target="_blank" rel="noreferrer" className="icon">
-                            <ion-icon name="logo-youtube"></ion-icon>
                         </a>
                         <a href='' target="_blank" rel="noreferrer" className="icon">
                             <ion-icon name="logo-linkedin"></ion-icon>

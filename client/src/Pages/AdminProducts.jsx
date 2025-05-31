@@ -19,6 +19,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
     const { requestConfirmation } = useConfirmation();
     const [materialChange, setMaterialChange] = useState({});
 
+    const [totalProductCount, setTotalProductCount] = useState(0);
     const [newProduct, setNewProduct] = useState({ priority: "", title: "", goldBannerImage: null, goldOtherImages: [], goldVideo: null, roseGoldBannerImage: null, roseGoldOtherImages: [], roseGoldVideo: null, silverBannerImage: "", silverOtherImages: [], silverVideo: null, description: "", category: "", subCategory: "", diamond: "" });
     const [updateProduct, setUpdateProduct] = useState({ priority: "", title: '', goldBannerImage: null, goldOtherImages: [], goldVideo: null, roseGoldBannerImage: null, roseGoldOtherImages: [], roseGoldVideo: null, silverBannerImage: "", silverOtherImages: [], silverVideo: null, category: '', subCategory: '', diamond: '', description: '' });
     const [products, setProducts] = useState([]);
@@ -265,6 +266,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
 
             const data = await apiRequest(apiPath, 'POST', { filters: [categoryFilters, diamondFilters, subCategoryFilters] });
             setProducts((prev) => [...prev, ...data.products]);
+            setTotalProductCount(data.totalProducts[0].count);
             setHasMoreProduct(data.hasMoreProduct);
         } catch (error) {
             // console.error('Failed to fetch Products:', error);
@@ -487,7 +489,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                                             Priority<span>*</span>
                                         </label>
                                         <input placeholder="Enter Priority" name='priority' value={updateProduct.priority} id="productPriority" onChange={(e) => setUpdateProduct({ ...updateProduct, priority: e.target.value })} type="text" />
-                                        
+
                                         <label htmlFor="productTitle">
                                             Title<span>*</span>
                                         </label>
@@ -554,7 +556,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                     <div ref={scrollContainerRef} className="right AdminProducts">
                         <div className="titleHeader">
                             <h2 className="title">
-                                Products
+                                Products ({totalProductCount})
                             </h2>
                             <button onClick={() => { setShowPopup("addProduct") }}>
                                 Add Product

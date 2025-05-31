@@ -257,70 +257,70 @@ export const getAllProducts = {
                     }
                 },
                 {
-                    $lookup: {
-                        from: "categories",
-                        localField: "category",
-                        foreignField: "_id",
-                        as: "category_detail",
-                    },
-                },
-                {
-                    $lookup: {
-                        from: "diamonds",
-                        localField: "diamond",
-                        foreignField: "_id",
-                        as: "diamond_detail",
-                    },
-                },
-                // {
-                //     $lookup: {
-                //         from: "materials",
-                //         localField: "material",
-                //         foreignField: "_id",
-                //         as: "material_detail",
-                //     },
-                // },
-                { $unwind: '$category_detail' },
-                { $unwind: '$diamond_detail' },
-                // { $unwind: '$material_detail' },
-                {
-                    $project: {
-                        _id: 1,
-                        priority: 1,
-                        title: 1,
-                        description: 1,
-                        subCategory: 1,
-                        productImage: 1,
-                        goldBannerImage: 1,
-                        goldOtherImages: 1,
-                        goldVideo: 1,
-                        silverBannerImage: 1,
-                        silverOtherImages: 1,
-                        silverVideo: 1,
-                        roseGoldBannerImage: 1,
-                        roseGoldOtherImages: 1,
-                        roseGoldVideo: 1,
-                        isActive: 1,
-                        defaultSelected: 1,
-                        "category_detail.title": 1,
-                        "category_detail.categoryImage": 1,
-                        "category_detail._id": 1,
-                        "diamond_detail.title": 1,
-                        "diamond_detail.diamondImage": 1,
-                        "diamond_detail._id": 1,
-                        // "material_detail.title": 1,
-                        price: 1,
-                        createdAt: 1
-                    },
-                },
-                {
-                    $sort: { priority: 1 }
-                },
-                {
-                    $skip: skip
-                },
-                {
-                    $limit: parseInt(limit) + 1
+                    $facet: {
+                        totalCount: [
+                            { $count: "count" }
+                        ],
+                        result: [
+                            {
+                                $lookup: {
+                                    from: "categories",
+                                    localField: "category",
+                                    foreignField: "_id",
+                                    as: "category_detail",
+                                },
+                            },
+                            {
+                                $lookup: {
+                                    from: "diamonds",
+                                    localField: "diamond",
+                                    foreignField: "_id",
+                                    as: "diamond_detail",
+                                },
+                            },
+                            { $unwind: '$category_detail' },
+                            { $unwind: '$diamond_detail' },
+                            {
+                                $project: {
+                                    _id: 1,
+                                    priority: 1,
+                                    title: 1,
+                                    description: 1,
+                                    subCategory: 1,
+                                    productImage: 1,
+                                    goldBannerImage: 1,
+                                    goldOtherImages: 1,
+                                    goldVideo: 1,
+                                    silverBannerImage: 1,
+                                    silverOtherImages: 1,
+                                    silverVideo: 1,
+                                    roseGoldBannerImage: 1,
+                                    roseGoldOtherImages: 1,
+                                    roseGoldVideo: 1,
+                                    isActive: 1,
+                                    defaultSelected: 1,
+                                    "category_detail.title": 1,
+                                    "category_detail.categoryImage": 1,
+                                    "category_detail._id": 1,
+                                    "diamond_detail.title": 1,
+                                    "diamond_detail.diamondImage": 1,
+                                    "diamond_detail._id": 1,
+                                    // "material_detail.title": 1,
+                                    price: 1,
+                                    createdAt: 1
+                                },
+                            },
+                            {
+                                $sort: { priority: 1 }
+                            },
+                            {
+                                $skip: skip
+                            },
+                            {
+                                $limit: parseInt(limit) + 1
+                            }
+                        ]
+                    }
                 }
             ]
 
@@ -339,7 +339,8 @@ export const getAllProducts = {
                 diamonds,
                 page,
                 limit,
-                products,
+                products: products[0].result,
+                totalProducts: products[0].totalCount,
                 hasMoreProduct
             });
         } catch (err) {
