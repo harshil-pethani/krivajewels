@@ -19,8 +19,8 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
     const { requestConfirmation } = useConfirmation();
     const [materialChange, setMaterialChange] = useState({});
 
-    const [newProduct, setNewProduct] = useState({ title: "", goldBannerImage: null, goldOtherImages: [], goldVideo: null, roseGoldBannerImage: null, roseGoldOtherImages: [], roseGoldVideo: null, silverBannerImage: "", silverOtherImages: [], silverVideo: null, description: "", category: "", subCategory: "", diamond: "" });
-    const [updateProduct, setUpdateProduct] = useState({ title: '', goldBannerImage: null, goldOtherImages: [], goldVideo: null, roseGoldBannerImage: null, roseGoldOtherImages: [], roseGoldVideo: null, silverBannerImage: "", silverOtherImages: [], silverVideo: null, category: '', subCategory: '', diamond: '', description: '' });
+    const [newProduct, setNewProduct] = useState({ priority: "", title: "", goldBannerImage: null, goldOtherImages: [], goldVideo: null, roseGoldBannerImage: null, roseGoldOtherImages: [], roseGoldVideo: null, silverBannerImage: "", silverOtherImages: [], silverVideo: null, description: "", category: "", subCategory: "", diamond: "" });
+    const [updateProduct, setUpdateProduct] = useState({ priority: "", title: '', goldBannerImage: null, goldOtherImages: [], goldVideo: null, roseGoldBannerImage: null, roseGoldOtherImages: [], roseGoldVideo: null, silverBannerImage: "", silverOtherImages: [], silverVideo: null, category: '', subCategory: '', diamond: '', description: '' });
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [subCategoriesAddProduct, setSubCategoriesAddProduct] = useState([]);
@@ -132,6 +132,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
         }
         showLoader();
         const createProductPayload = {
+            priority: newProduct.priority,
             title: newProduct.title,
             description: newProduct.description,
             category: newProduct.category,
@@ -226,6 +227,7 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
         e.preventDefault();
         showLoader();
         const updateProductPayload = {
+            priority: updateProduct.priority,
             title: updateProduct.title,
             description: updateProduct.description,
             category: updateProduct.category,
@@ -308,6 +310,11 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                                         Add New Product
                                     </h2>
                                     <form autoComplete="off" action="">
+                                        <label htmlFor="productPriority">
+                                            Priority<span>*</span>
+                                        </label>
+                                        <input placeholder="Enter Priority" name='priority' value={newProduct.priority} id="productPriority" onChange={(e) => setNewProduct({ ...newProduct, priority: e.target.value })} type="text" />
+
                                         <label htmlFor="productTitle">
                                             Title<span>*</span>
                                         </label>
@@ -476,6 +483,11 @@ const AdminProducts = ({ adminDetails, setAdminDetails, setAdminLogged }) => {
                                         Update Product
                                     </h2>
                                     <form autoComplete="off" action="">
+                                        <label htmlFor="productPriority">
+                                            Priority<span>*</span>
+                                        </label>
+                                        <input placeholder="Enter Priority" name='priority' value={updateProduct.priority} id="productPriority" onChange={(e) => setUpdateProduct({ ...updateProduct, priority: e.target.value })} type="text" />
+                                        
                                         <label htmlFor="productTitle">
                                             Title<span>*</span>
                                         </label>

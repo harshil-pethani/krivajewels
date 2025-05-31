@@ -2,6 +2,10 @@ import Mongoose from "mongoose";
 
 const ProductSchema = new Mongoose.Schema(
     {
+        priority: {
+            type: Number,
+            required: true
+        },
         title: {
             type: String,
             required: true,

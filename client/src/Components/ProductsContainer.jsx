@@ -32,7 +32,7 @@ const ProductsContainer = ({ homepage, productData, materialChange, setMaterialC
                             <div className="card-details">
                                 <div className="inner-detail">
                                     <Link to={`/explore/${jewellery._id}`} className="jewellery-title" title={jewellery.title}>
-                                        {jewellery.title}
+                                       {isForAdminPanel && jewellery.priority}. {jewellery.title}
                                     </Link>
                                     <p className="jewellery-description">
                                         {jewellery.description}

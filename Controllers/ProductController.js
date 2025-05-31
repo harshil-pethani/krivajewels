@@ -10,6 +10,7 @@ import { deleteFileFromBucket } from "../Routes/S3Route.js";
 export const ProductCreate = {
     validator: async (req, res, next) => {
         if (
+            !req.body.priority ||
             !req.body.title ||
             !req.body.description ||
             !req.body.category ||
@@ -29,10 +30,11 @@ export const ProductCreate = {
     },
     controller: async (req, res) => {
         try {
-            const { title, description, subCategory, category, diamond, goldBannerImage, goldOtherImages, goldVideo, silverBannerImage, silverOtherImages, silverVideo, roseGoldBannerImage, roseGoldOtherImages, roseGoldVideo } = req.body;
+            const { priority, title, description, subCategory, category, diamond, goldBannerImage, goldOtherImages, goldVideo, silverBannerImage, silverOtherImages, silverVideo, roseGoldBannerImage, roseGoldOtherImages, roseGoldVideo } = req.body;
 
             // Create new product
             const product = new Product({
+                priority,
                 title,
                 description,
                 subCategory,
@@ -57,7 +59,7 @@ export const ProductCreate = {
             });
 
         } catch (error) {
-            // console.log(error);
+            console.log(error);
             return res.status(500).json({
                 "success": false,
                 "message": "Product Creation Failed Internal server error"
@@ -113,6 +115,7 @@ export const getSingleProduct = {
 export const productUpdate = {
     validator: async (req, res, next) => {
         if (
+            !req.body.priority ||
             !req.body.title ||
             !req.body.description ||
             !req.body.category ||
@@ -130,7 +133,7 @@ export const productUpdate = {
 
             const { id } = req.params;
 
-            const { title, description, subCategory, category, diamond } = req.body;
+            const { priority, title, description, subCategory, category, diamond } = req.body;
 
             const product = await Product.findById(id);
 
@@ -141,6 +144,7 @@ export const productUpdate = {
                 });
             }
 
+            product.priority = priority;
             product.title = title;
             product.description = description;
             product.subCategory = subCategory;
@@ -282,6 +286,7 @@ export const getAllProducts = {
                 {
                     $project: {
                         _id: 1,
+                        priority: 1,
                         title: 1,
                         description: 1,
                         subCategory: 1,
@@ -309,7 +314,7 @@ export const getAllProducts = {
                     },
                 },
                 {
-                    $sort: { createdAt: -1 }
+                    $sort: { priority: 1 }
                 },
                 {
                     $skip: skip
@@ -354,7 +359,7 @@ export const getRecent5Products = {
                     }
                 },
                 {
-                    $sort: { createdAt: -1 }
+                    $sort: { priority: 1 }
                 },
                 {
                     $group: {
@@ -387,6 +392,7 @@ export const getRecent5Products = {
                     $project: {
                         _id: 1,
                         title: 1,
+                        priority: 1,
                         description: 1,
                         productImage: 1,
                         goldBannerImage: 1,
