@@ -328,7 +328,7 @@ export const getAllProducts = {
 
             const hasMoreProduct = products.length > limit;
 
-            if (hasMoreProduct) products.pop();
+            if (hasMoreProduct) products[0].result.pop();
 
             res.status(200).json({
                 "success": true,
