@@ -324,11 +324,13 @@ export const getAllProducts = {
                 }
             ]
 
-            const products = await Product.aggregate(pipeline);
+            let resData = await Product.aggregate(pipeline);
+            const totalProducts = resData[0].totalCount;
+            const products = resData[0].result;
 
             const hasMoreProduct = products.length > limit;
 
-            if (hasMoreProduct) products[0].result.pop();
+            if (hasMoreProduct) products.pop();
 
             res.status(200).json({
                 "success": true,
@@ -339,8 +341,8 @@ export const getAllProducts = {
                 diamonds,
                 page,
                 limit,
-                products: products[0].result,
-                totalProducts: products[0].totalCount,
+                products,
+                totalProducts,
                 hasMoreProduct
             });
         } catch (err) {
