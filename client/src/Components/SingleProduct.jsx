@@ -4,6 +4,7 @@ import { bucketURL, krivaDomain } from '../Config/API_constant'
 import { tab_home, mobileNumber } from '../Config/Static_data';
 import { toast, ToastContainer } from 'react-toastify';
 import ImageMagnifier from './ImageMagnifier';
+import { renderDescription } from '../Config/Common';
 
 const SingleProduct = ({ productData }) => {
     const [currentMaterial, setCurrentMaterial] = useState("");
@@ -40,24 +41,6 @@ const SingleProduct = ({ productData }) => {
         const message = `Hello, I want to do inquiry on below product - %0A ${krivaDomain}/explore/${id}`;
 
         window.open(`https://wa.me/${mobileNumber}?text=${message}`, "_blank");
-    };
-
-    const renderDescription = (text) => {
-        if (!text) return null;
-        const lines = text.split('&&');
-
-        return lines.map((line, lineIndex) => {
-            const parts = line.split(/\$\$(.*?)\$\$/g);
-
-            return (
-                <React.Fragment key={lineIndex}>
-                    {parts.map((part, index) =>
-                        index % 2 === 1 ? <strong key={index}>{part}</strong> : part
-                    )}
-                    {lineIndex < lines.length - 1 && <br />}
-                </React.Fragment>
-            );
-        });
     };
 
     return (

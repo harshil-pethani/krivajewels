@@ -2,6 +2,7 @@ import React from 'react'
 import { bucketURL, krivaDomain } from '../Config/API_constant'
 import { mobileNumber } from '../Config/Static_data';
 import { Link } from 'react-router-dom';
+import { renderDescription } from '../Config/Common';
 
 const ProductsContainer = ({ homepage, productData, materialChange, setMaterialChange, isLoading, isForAdminPanel, getSubCategory, setSubCategoriesUpdateProduct, setUpdateProduct, setShowPopup, deleteProduct }) => {
 
@@ -32,10 +33,12 @@ const ProductsContainer = ({ homepage, productData, materialChange, setMaterialC
                             <div className="card-details">
                                 <div className="inner-detail">
                                     <Link to={`/explore/${jewellery._id}`} className="jewellery-title" title={jewellery.title}>
-                                       {isForAdminPanel && jewellery.priority}. {jewellery.title}
+                                        {isForAdminPanel && `${jewellery.priority}.`} {jewellery.title}
                                     </Link>
                                     <p className="jewellery-description">
-                                        {jewellery.description}
+                                        {
+                                            renderDescription(jewellery?.description)
+                                        }
                                     </p>
                                     <ul className="material-container">
                                         <li onClick={() => setMaterialChange({ ...materialChange, [jewellery._id]: "gold" })} title='Yello Gold' className={`material gold ${(materialChange[jewellery._id] === "gold" || !materialChange[jewellery._id]) ? "active" : ""}`} >
