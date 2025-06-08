@@ -75,11 +75,21 @@
       max-width: 520px;
       font-size: 18px;
     }
-    .learnmore {
-      align-self: flex-start;
-      padding: 8px 35px;
-      font-size: 14px;
-      font-weight: 400;
+    .btn-container {
+      display: flex;
+      gap: 15px;
+      // border: 2px solid red;
+      .learnmore {
+        align-self: flex-start;
+        padding: 8px 35px;
+        font-size: 14px;
+        font-weight: 400;
+
+        &.secondary {
+          background-color: white;
+          color: $darkBlue;
+        }
+      }
     }
   }
 
@@ -156,11 +166,16 @@
         max-width: 450px;
         font-size: 18px;
       }
-      .learnmore {
-        align-self: flex-start;
-        padding: 8px 30px;
-        font-size: 14px;
-        font-weight: 400;
+      .btn-container {
+        display: flex;
+        gap: 10px;
+        // border: 2px solid red;
+        .learnmore {
+          align-self: flex-start;
+          padding: 8px 30px;
+          font-size: 14px;
+          font-weight: 400;
+        }
       }
     }
 
@@ -238,11 +253,16 @@
         max-width: 350px;
         font-size: 16px;
       }
-      .learnmore {
-        align-self: flex-start;
-        padding: 6px 25px;
-        font-size: 14px;
-        font-weight: 400;
+      .btn-container {
+        display: flex;
+        gap: 10px;
+        // border: 2px solid red;
+        .learnmore {
+          align-self: flex-start;
+          padding: 6px 25px;
+          font-size: 14px;
+          font-weight: 400;
+        }
       }
     }
 
@@ -320,11 +340,17 @@
         max-width: 350px;
         font-size: 16px;
       }
-      .learnmore {
-        align-self: flex-start;
-        padding: 6px 25px;
-        font-size: 14px;
-        font-weight: 400;
+
+      .btn-container {
+        display: flex;
+        gap: 10px;
+        // border: 2px solid red;
+        .learnmore {
+          align-self: flex-start;
+          padding: 6px 25px;
+          font-size: 14px;
+          font-weight: 400;
+        }
       }
     }
 
@@ -406,15 +432,21 @@
         max-width: 300px;
         font-size: 10px;
       }
-      .learnmore {
-        align-self: flex-start;
-        padding: 2px 15px;
-        font-size: 10px;
-        font-weight: 400;
-        gap: 0px;
 
-        ion-icon {
-          font-size: 14px;
+      .btn-container {
+        display: flex;
+        gap: 10px;
+        // border: 2px solid red;
+        .learnmore {
+          align-self: flex-start;
+          padding: 2px 15px;
+          font-size: 10px;
+          font-weight: 400;
+          gap: 3px;
+
+          ion-icon {
+            font-size: 12px;
+          }
         }
       }
     }

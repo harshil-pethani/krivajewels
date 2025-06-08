@@ -3,7 +3,7 @@ import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer';
 import ScrollToTopArrow from '../Components/ScrollToTopArrow';
 import SimpleTextComponent from '../Components/SimpleTextComponent';
-import { tab_termsAndConditions, TermsAndConditionsData } from '../Config/Static_data';
+import { returnPolicyData, tab_returnPolicy, tab_termsAndConditions, TermsAndConditionsData } from '../Config/Static_data';
 
 const TermsAndConditions = () => {
     const [showScroll, setShowScroll] = useState(false);
@@ -23,6 +23,7 @@ const TermsAndConditions = () => {
             <ScrollToTopArrow />
             <Navbar sendSearchQuery={(queryString) => { setSearchQuery(queryString); }} />
             <SimpleTextComponent data={TermsAndConditionsData} title={tab_termsAndConditions} />
+            <SimpleTextComponent data={returnPolicyData} title={tab_returnPolicy} />
             <Footer />
         </div>
     )

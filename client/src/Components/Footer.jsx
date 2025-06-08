@@ -4,7 +4,7 @@ import IGI from "/IGI.png";
 import SGL from "/SGL.png";
 import BIS from "/BIS.png";
 import logo from "/logo.png";
-import { aboutDescription, information, mailId, mobileNumber, tab_4Cs, tab_aboutUs, tab_customizeJewellery, tab_explore, tab_home, tab_privacyPolicy, tab_termsAndConditions, tab_whyChooseUs, usefulLinks } from '../Config/Static_data';
+import { aboutDescription, information, instagramId, mailId, mobileNumber, tab_4Cs, tab_aboutUs, tab_customizeJewellery, tab_explore, tab_home, tab_privacyPolicy, tab_termsAndConditions, tab_whyChooseUs, usefulLinks } from '../Config/Static_data';
 
 const Footer = () => {
     return (
@@ -88,7 +88,7 @@ const Footer = () => {
                         <a href='' target="_blank" rel="noreferrer" className="icon">
                             <ion-icon name="logo-linkedin"></ion-icon>
                         </a>
-                        <a href='' target="_blank" rel="noreferrer" className="icon">
+                        <a href={instagramId} target="_blank" rel="noreferrer" className="icon">
                             <ion-icon name="logo-instagram"></ion-icon>
                         </a>
                     </div>

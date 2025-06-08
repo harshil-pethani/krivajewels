@@ -28,6 +28,7 @@ export const customizeDescription = "When You Have Some Doubts Regarding The Pur
 export const customizeProcess = "Jewellery customization process";
 export const mobileNumber = "+919662365669";
 export const mailId = "krivajewel@gmail.com";
+export const instagramId = "https://www.instagram.com/krivajewel?igsh=MmszMHprYXlhMW90";
 
 export const ringFilters = [
     { _id: "bezel", title: "Bezel" },
@@ -384,6 +385,50 @@ export const TermsAndConditionsData = [
         ]
     }
 ];
+export const returnPolicyData = [
+    {
+        que: "Overview",
+        hasSubQue: false,
+        ans: [
+            "At Kriva Jewels, customer satisfaction is our priority. We understand that sometimes you may need to return or exchange your purchase. Please read the following return and exchange terms carefully:"
+        ]
+    },
+    {
+        que: "Returns and Refunds",
+        hasSubQue: false,
+        ans: [
+            "Returns are accepted within *7 days* from the date of delivery, provided the item is unused, undamaged, and returned in its original packaging with all certificates and tags intact.",
+            "Upon approval of your return, a *refund of 80%* of the original purchase price will be issued. The remaining 20% will be deducted as restocking and handling fees.",
+            "Shipping charges (if any) are non-refundable.",
+            "Refunds will be processed to the original method of payment within *7 business days* of receiving the returned item."
+        ]
+    },
+    {
+        que: "Exchanges",
+        hasSubQue: false,
+        ans: [
+            "If you wish to exchange your item, you may choose another item of *equal or higher value*.",
+            "For exchanges involving items of higher value, the price difference must be paid in full before the new item is dispatched.",
+            "Exchanges are only allowed for items returned in their original condition and within the return window."
+        ]
+    },
+    {
+        que: "Non-Returnable Items",
+        hasSubQue: false,
+        ans: [
+            "Custom-made, engraved, or personalized items are *not eligible* for return or exchange unless damaged or defective on arrival."
+        ]
+    },
+    {
+        que: "Process",
+        hasSubQue: false,
+        ans: [
+            `To initiate a return or exchange, please contact our customer support team at ${mailId} with your order number and reason for return.`,
+            "Returns sent without prior approval may not be accepted.",
+            "We reserve the right to refuse returns that do not meet our policy requirements."
+        ]
+    }
+];
 export const WhyChooseUsData = [
     {
         que: "Exquisite Custom Jewelry",
@@ -432,4 +477,5 @@ export const tab_customizeJewellery = "Cutomize Jewellery";
 export const tab_whyChooseUs = "Why Choose Us";
 export const tab_privacyPolicy = "Privacy Policy";
 export const tab_termsAndConditions = "Terms & Conditions";
+export const tab_returnPolicy = "Return & Exchange Policy";
 export const tab_4Cs = "4 C’s of Diamonds"; 

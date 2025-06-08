@@ -362,11 +362,19 @@
   max-width: 520px;
   font-size: 18px;
 }
-.homeHeader .content .learnmore {
+.homeHeader .content .btn-container {
+  display: flex;
+  gap: 15px;
+}
+.homeHeader .content .btn-container .learnmore {
   align-self: flex-start;
   padding: 8px 35px;
   font-size: 14px;
   font-weight: 400;
+}
+.homeHeader .content .btn-container .learnmore.secondary {
+  background-color: white;
+  color: #000825;
 }
 .homeHeader.explorePageHeader {
   height: 200px;
@@ -432,7 +440,11 @@
     max-width: 450px;
     font-size: 18px;
   }
-  .homeHeader .content .learnmore {
+  .homeHeader .content .btn-container {
+    display: flex;
+    gap: 10px;
+  }
+  .homeHeader .content .btn-container .learnmore {
     align-self: flex-start;
     padding: 8px 30px;
     font-size: 14px;
@@ -502,7 +514,11 @@
     max-width: 350px;
     font-size: 16px;
   }
-  .homeHeader .content .learnmore {
+  .homeHeader .content .btn-container {
+    display: flex;
+    gap: 10px;
+  }
+  .homeHeader .content .btn-container .learnmore {
     align-self: flex-start;
     padding: 6px 25px;
     font-size: 14px;
@@ -572,7 +588,11 @@
     max-width: 350px;
     font-size: 16px;
   }
-  .homeHeader .content .learnmore {
+  .homeHeader .content .btn-container {
+    display: flex;
+    gap: 10px;
+  }
+  .homeHeader .content .btn-container .learnmore {
     align-self: flex-start;
     padding: 6px 25px;
     font-size: 14px;
@@ -646,15 +666,19 @@
     max-width: 300px;
     font-size: 10px;
   }
-  .homeHeader .content .learnmore {
+  .homeHeader .content .btn-container {
+    display: flex;
+    gap: 10px;
+  }
+  .homeHeader .content .btn-container .learnmore {
     align-self: flex-start;
     padding: 2px 15px;
     font-size: 10px;
     font-weight: 400;
-    gap: 0px;
+    gap: 3px;
   }
-  .homeHeader .content .learnmore ion-icon {
-    font-size: 14px;
+  .homeHeader .content .btn-container .learnmore ion-icon {
+    font-size: 12px;
   }
   .homeHeader.explorePageHeader {
     height: 80px;
